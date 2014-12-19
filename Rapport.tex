@@ -1,0 +1,278 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Kevin Rivière}
+\title{Rapport de Stage}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\setcounter{page}{0}
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+\newpage
+
+\section{Présentation de l'entreprise}
+\subsection{Secteur d'activité}
+La Fédération Nationale du Crédit Agricole fait partie du groupe Crédit Agricole, il dispose donc des mêmes secteurs d'activités.\par
+Le Crédit Agricole a pour secteur d'activité le secteur financier.
+En effet, celui-ci regroupe les secteurs bancaire et assurances, qui sont les deux activités de l'entreprise.
+\subsection{Fédération Nationale du Crédit Agricole}
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{images/logo_fnca.jpg} 
+\end{figure}
+La Fédération Nationale du Crédit Agricole est une entité du groupe Crédit Agricole.\par
+Afin de bien comprendre le rôle et le positionnement de la Fédération Nationale du Crédit Agricole, il est nécessaire d'expliquer ce qu'est le Crédit Agricole.
+\subsubsection{Le Crédit Agricole}
+Le Crédit Agricole est une banque et assurance mutualiste. Crée en 1885, en France, elle s'est depuis développé à l'internationale. Elle dispose de 21 millions de clients, dont 6 millions en France (chiffres de fin 2013).\par
+Le Crédit Agricole possède une organisation particulière, elle est divisé en Caisses régionales qui sont eux même divisé en Caisses locales. Ces divisions permettent au Crédit Agricole d'avoir une certaine proximité avec les client. En effet, les Caisses régionales sont des entreprises indépendante, partageant les même valeurs. De ce fait, les centre de décision plus proche des clients, ce qui permet de prendre en compte la situation et l'environnement du client.
+
+\subsubsection{Historique}
+Le Crédit Agricole est avant tout une banque faite pour les agriculteurs, c'est pour cela qu'en 1885 fut créé dans le Jura la première Caisse locale, qui permettait aux agriculteurs d'emprunter des fonds afin de développer leurs activité.\par
+Les Caisses régionales, sont été créées avec la loi du 31 mars 1899 pour encourager la création de Caisse locale et de les fédérer. Le développement des Caisses régionales s'est effectué rapidement car en 1913, il existait des Caisses régionales dans tous les départements et régions de France.\par 
+En 1926, avec la création de la Caisse Nationale du Crédit Agricole, la banque central du groupe, l'organisme devient publique et dépend du ministère de l'agriculture.\par 
+La Fédération Nationale du Crédit Agricole est crée en 1948, pour permettre aux Caisse régionales de pouvoir entre elles sur l'organisation et la stratégie du groupe face à l'état.\par 
+En 1988, grâce à la loi relative à le mutualisation de la CNCA, la Caisse nationale est affranchie de l'état. Son capital est détenu à 90\% par les Caisses régionales et à 10\% par le personnel. Plus tard, la Caisse entrera en bourse sous le nom de Crédit Agricole SA.\par 
+En 1985, le Crédit Agricole crée une filiale d'assurance vie : Prédica, et lance cinq ans plus tard sa compagnie d'assurance Pacifica.\par 
+Dans les années 2000, elle étant son activité en rachetant Sofinco, le Crédit Lyonnais et se lance à l'internationale en rachetant Cariparma une banque italienne.\par 
+
+Aujourd'hui, le Crédit Agricole est composé de 2509 caisses locales qui sont regroupé en 39 caisses régionales.\par 
+Bien que les caisses régionales sont des entreprises indépendantes, elles font partie du groupe Crédit Agricole et doivent être coordonnées. Ce rôle est tenu par Crédit Agricole SA, qui garantie l'unité financière et veille au bon fonctionnement du réseau Crédit Agricole. De plus Crédit Agricole SA gère aussi les filiales internationales du Crédit Agricole.
+\subsubsection{Fédération Nationale du Crédit Agricole}
+La Fédération Nationale du Crédit Agricole est une association du groupe Crédit Agricole. Contrairement au entités présenté précédemment, la Fédération Nationale du Crédit Agricole n'a pas de chiffre à faire. La Fédération Nationale du Crédit Agricole qui a 3 grandes fonctions au sein du groupe : 
+\begin{itemize}
+\item orienter,
+\item représenter,
+\item gérer.
+\end{itemize}
+La Fédération Nationale du Crédit Agricole est le lieu ou les grandes orientations du groupe sont prise. Elle est l'instance de réflexion des Caisses régionales, c'est pour cela qu'elle est qualifié de "Parlement des Caisses régionales". Elle représente aussi les 39 Caisses régionales face aux pouvoirs publiques et à Crédit Agricole SA.
+
+\subsection{Le service}
+Le service dans lequel j'ai effectué mon stage est le service Publication et Multimédia. Ce service gère tout ce qui est publié par la Fédération Nationale du Crédit Agricole. Il est composé de 8 personnes et est divisé en deux pôles, le pôle internet et le pôle ??. Chaque pôle possède un responsable, en plus du responsable de service.
+
+\subsection{Positionnement du stage dans les travaux de l'entreprise}
+Le stage se positionne comme support dans les travaux de l'entreprise. Le projet devant être livré au mois de novembre, le stage servait à finaliser le développement, ainsi que régler les possibles problèmes qui apparaitrons au début de la mise en production.
+
+\newpage
+
+\section{Travail effectué}
+\subsection{Sujet du stage}
+Le sujet du stage consistait à participer à une refonte du site internet de le Fédération Nationale du Crédit Agricole : www.creditagricole.info, en vue de sa mise en production et corriger les éventuels bogues ensuite.\par
+Le site est basé sur un système de gestion de contenu (SCG ou CMS en anglais), JCMS développé par Jalios.\par
+Le site utilisait la version 6 de JCMS, sortie en 2009, et le but du projet était de migrer le site sur le version 9 de JCMS, sortie en octobre 2014. En plus de ce changement de version, une refonte graphique était aussi prévu.\par
+Les technologies utilisées pour mener à bien ce projet fut :
+\begin{itemize}
+\item Java JEE,
+\item Javascript/JQuery,
+\item Bootstrap,
+\item less,
+\item HTML.
+\end{itemize}
+
+\subsubsection{Le site creditagricole.info}
+Le site creditagricole.info fut lancé en 2009, il fait suite à boetianet, ancien intranet. Le site est divisé en deux parties :
+\begin{itemize}
+\item une partie internet ouvert à tout le monde,
+\item une partie intranet réservé aux employés du Crédit Agricole.
+\end{itemize}
+\bigskip
+Le site internet sert de vitrines aux 39 Caisses régionales en regroupant toutes leurs actions sur le territoire sous forme d'actualité. Aussi ce site permet aussi à la Fédération du Crédit Agricole d'avoir une présence sur internet. En effet, avant 2009 il était très difficile de trouver des informations sur cette instance du Crédit Agricole.\par
+Le site internet est un donc un site éditorial, une grande partie des contenus du site sont issue des actualités des Caisses régionales, l'autre partie provient de la Fédération du Crédit Agricole qui propose des sujet de réflexion. Afin de relater toutes les informations, le site dispose de plusieurs type de contenu :
+\begin{itemize}
+\item article,
+\item dossier (un ensemble d'articles),
+\item brèves,
+\item vidéo,
+\item évènement,
+\item fiche initiative,
+\item communiqué de presse.
+\end{itemize}
+Généralement, les articles, évènements, fiches initiatives et certaines vidéo relatent l'actualité des Caisses régionales. Les dossier et une partie des vidéo sont eux issue de la FNCA et apporte des sujets de réflexion.\par
+\bigskip
+Le site intranet sert d'espace d'échange au sein du groupe Crédit Agricole. Tout employé peut crée un club, ou il pourra partager du contenu.\par
+\bigskip
+La base de ce site est donc la rédaction de contenu c'est pour cela que l'entreprise a choisi un système de gestion de contenu. L'entreprise a décidé d'utiliser un SGC français développé par Jalios : JCMS.
+
+\subsubsection{JCMS}
+Comme tout SGC, JCMS permet de faire la gestion de contenu avec gestion des droits. Publier des contenus sur un site web viens alors à la portée de tous car il suffit de déposer son contenu sur le site et JCMS s'occupe de générer une page page HTML. Un SGC est généralement découpé en deux parties : 
+\begin{itemize}
+\item la première partie, accessible à tout le monde, permet d'afficher les contenus publiés, elle est appelé front office,
+ \item l'autre partie, privé, permet d'ajouter des contenu et de paramétrer le site, c'est le back office.
+\end{itemize}\par
+Par défaut, JCMS contient un certain nombre de type de contenu. Ils sont affiché sur le site à travers de gabarit d'affichage. Un type de contenu peut disposer de plusieurs gabarit d'affichage, et il est liée au contenu et non pas au type, par exemple, deux articles peuvent avoir deux gabarits d'affichage différents.\par
+De plus JCMS propose un certain nombre de portlets, elles servent à générer une partie d'une page à partir de requêtes qui seront préalablement définit. Les portlets sont souvent utiliser pour faire une itération sur un type de contenu. Les portlets disposent elles aussi de gabarit d'affichage, mais elles ont aussi un habillage qui vient se placer autour de la portlet. Par exemple, l'habillage servir à afficher un bandeau au haut d'une portlet afin de donner un titre à celle-ci.\par
+Les portlets et les types de contenu seront intégré à un portail qui correspond à une page du site. Cependant, un portail n'est pas unique à une page, c'est-à-dire, plusieurs pages peuvent avoir le même portail.\par
+Comme vu précédemment, le site creditagricole.info nécessite un certain nombre de type de contenu qui ne sont pas forcément présent par défaut au sein de JCMS. Pour personnaliser ou ajouter des types de contenu ou des portlet, JCMS propose un développement par module, qui seront ajouté à l'application au démarrage du serveur. Les modules contiennent les types de contenu, les gabarit d'affichages, les habillages personnalisés, mais aussi les images, les styles CSS/Less, des JavaServer Pages (jsp) qui permettent d'exécuter du java au sein de contenu HTML, etc. Le module doit avoir une structure précise afin de permettre l'intégration à l'application. Dans une but d'assurer une compréhension des actions d'un module, celui-ci doit disposer d'un fichier XML qui fera le liens entre l'application et les fichiers du module, c'est lui qui servira notamment à préciser à JCMS si un fichier est un gabarit d'affichage, un habillage, ... et à quel type il est relié.\\ Ce développement par module permet à tous les site utilisant JCMS d'avoir une même base, mais aussi de partager leurs modules sur le site internet de Jalios. De là, les autres développeurs peuvent pendre les module pour ajouter des fonctionnalités à leur site facilement.\par 
+Le site internet creditagricole.info est organisé en plusieurs modules :
+\begin{itemize}
+\item FNCANewsletterPlugin : ce module contient les types de contenu, les gabarits d'affichage, les images et les styles utilisés pour la visualisation et l'envoi de lettre d'information,
+\item FNCAWebCartographiePlugin : ce module contient toutes les jps relative à la configuration et à l'affichage des cartes de Google Maps sur le site,
+\item FNCAWebGrIDsurePlugin : ce module gère toute la partie authentification en utilisant un système de motif comme mot de passe,
+\item FNCAWebModelPlugin : ce module est l'un des plus important car il contient tout les types de contenu, ainsi que leur gabarit d'affichage, nécessaire au bon fonctionnement du site,
+\item FNCAWebPlugin : ce module est le plus important, il contient tout ce qui est commun à toute les pages du site comme les styles, le menu, le logo, mais aussi des pages spécifique comme la page de connexion, la page d'accueil, etc.,
+\item FNCAWebPortletPlugin : ce module contient toutes les portlets du site,
+\item FNCAXitiPlugi : ce module contient le code à inclure pour avoir des statiques sur les visite du site creditagricole.info.
+\end{itemize}\par
+La base de donné est gérer sous forme d'XML, chaque création, modification et suppression est enregistrer et lors du démarrage de l'applicatif, celui-ci reconstruit la base de donnée à partir du XML. Cette technique permet de retrouver toute entrée à un moment donnée, par exemple elle est très pratique pour revenir à une version antérieur d'un document.\par
+
+\subsubsection{Less}
+Le less est une extension du langage CSS. Le CSS permet de définir des styles pour les éléments d'une page HTML. Le CSS est un langage statique, les notions de variables, fonctions, boucles n'existent pas en CSS. Le less permet d'apporter ces notions au CSS. Cependant, les navigateurs internet ne savent interprété que du CSS, le less est alors compiler afin de produire du CSS.
+
+\subsubsection{Mantis}
+Pour le suivi des bogues, l'entreprise utilise un outil nommé Mantis. Cet outil se présente sous la forme d'un site web, et est hébergé au sein de l'entreprise. Seul une partie du service est inscrit. Il permet de reporter des bogues ou des améliorations, sous forme de ticket. Ce ticket peut attribué à une personne et dispose de plusieurs états. L'outil permet aussi d'ajouter des commentaires et des images aux tickets afin de les rendre plus expressif.\par 
+Quand un bogue ou une amélioration était résolu, en plus de changer l'état du ticket, il fallait préciser en commentaire les fichiers qui ont été modifier afin d'avoir une trace. De plus les commits devait comporter le numéro et le titre du ticket qu'il résolvait.\par
+
+\subsection{Architecture}
+L'entreprise possède de ses propres serveurs pour héberger le site creditagricole.info. Elle dispose de 9 serveurs pour cela :
+\begin{itemize}
+\item 3 serveur de tests, dont 1 serveur sql,
+\item 6 serveur de production, dont 2 serveurs sql.
+\end{itemize}
+Tout ces serveurs sont sous Windows Server 2008 et ont Apache et Tomcat, qui sont nécéssaire au fonctionnement du site.\par
+En plus des serveurs, l'entreprise dispose de baies servant de stockage pour tout ce qui a été téléchargé sur le site.\par 
+En ce qui concerne les serveurs de tests, un des serveurs sert pour le site internet (TST2) et l'autre sert pour le site intranet (TST3).\par
+En ce qui concerne les serveurs de production le site internet et le site intranet disposent de chacun deux serveurs, un qui gère le site et un réplicat. Le réplicat sert au cas il y aura un problème avec le serveur principal. Cependant, chaque site (internet, intranet) dispose de sa propre baie afin de ne pas mélanger les documents internet avec les documents publics.\par
+Le service Publication et Multimédia avait accès à la pris en main des serveurs de tests, mais les serveurs de productions étaient réservé à la DSI.\par
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{images/archi.png} 
+\end{figure}
+
+\subsection{Cahier des charges}
+Pour ce projet, l'entreprise ne disposait pas de cahier des charges, mais disposait d'un cahier fonctionnel.\par
+Cependant, bien qu'il n'y avait pas de cahier des charges, le but et les différents points de ce projet furent définit lors de réunion au début de celui-ci. Cela permettait d'utiliser une méthodologie agile. Lors de développement de fonctionnalités, une réunion était organisé afin de définir les objectifs et ceux-ci furent contrôlés à la fin du développement.\par 
+Cette méthode avait grand avantage, la réactivité que ce soit au niveau de modification, correction ou création de fonctionnalités. Mais elle avait aussi des désavantages, certain points ne furent fixés qu'a la fin du projet et entrainait de nombreuses modifications. De plus, le cahier fonctionnel n'était pas complet, il ne disposait de maquettes uniquement deux types : le type article et le type dossier. Les autres maquettes ont du être définit par l'équipe tout au long du développement. \par 
+Une autre raison donné sur le fait de ne pas avoir de cahier des charge fut que le projet consistait en une migration, celle de JCMS de la version 6 à la 9. De ce fait le site devait garder la plupart de ses fonctionnalités tout en proposant un design remis au gout du jour.\par 
+Aussi, l'entreprise ne pouvait pas vraiment fixer de date de fin du projet au début de celui-ci, la version 9 de JCMS sur laquelle le site se basé était encore en développement lors du projet et sa date de sortie fut repoussé de 4 mois (de juin à octobre). L'entreprise ne pouvait donc pas fixé de date de fin pour ce projet, au début de celui-ci. Au mois de septembre, soit au début du stage, la date de mise en production du site internet fut fixé au 3 novembre. TODO *Quand à commencé le projet ?*\par
+
+\subsection{Compte-rendu d'activité}
+Le stage a débuté par une période de formation aux technologies utilisées par l'entreprise. JCMS étant un SGC utilisé en milieu professionnel, il était difficile d'avoir des connaissances sur ce sujet en dehors de ce milieu. Cette période de formation fut composé de :
+\begin{itemize}
+\item lecture de documentation sur JCMS afin de comprendre son fonctionnement et du développement en modules,
+\item tests sur une application JCMS vierge,
+\item apprentissage du less.
+\end{itemize} 
+La période de formation devait être la plus courte possible afin de pouvoir travailler le plus vite sur le site qui devait être en production deux mois plus tard. \par
+
+\subsubsection{Partage vers les réseaux sociaux}
+La première tâche confiée fut l'intégration de boutons de partage vers les réseaux sociaux. Ceux-ci existaient déjà dans la version précédente du site, et permettaient le partage sur Facebook ainsi que sur Twitter. Mais il manquait des balises d'identification de contenus.\par 
+Lorsque que l'on partage un contenu sur Facebook, celui-ci visite la page que l'on souhaite partager à la recherche de balise contenant des informations sur la page. A partir des informations recueillis il génère une fiche de présentation qui sera afficher sur le post de partage, ce qui est beaucoup plus parlant qu'un lien.\par
+Les balises se présentent sous la forme de balise \textit{meta} qui sont situées entre les balises \textit{head} de la page. Elles permettent de donner plusieurs informations à Facebook :
+\begin{itemize}
+\item titre (balise og:title)
+\item description (balise og:description)
+\item url (og:url)
+\item image (og:image)
+\end{itemize}
+Si une de ces balise est manquante Facebook ira chercher dans la page les informations manquantes. Ces informations sont pas pris au hasard, par exemple si la balise \textit{og:title} qui précise un titre est manquante, Facebook prendra le titre de la page, qui se trouve dans la balise \textit{title} au sein des balises \textit{head}. Il est préférable de préciser ces informations afin de contrôler ce que Facebook va afficher sur le post de l'utilisateur et éviter de donner une mauvaise image à un potentiel visiteur avant qu'il n'arrive sur le site.\par
+\bigskip
+Afin de faciliter l'intégration et avoir des statistique, il a été proposer d'utiliser AddThis. C'est un service qui permet une intégration des boutons de partage sur un site internet ou une application mobile. Ce service présente plusieurs avantage : 
+\begin{itemize}
+\item intégration sur le site facilité, car celui-ci se fait par l'ajout d'un lien vers un script ainsi qu'une balise avec un identifiant spécial (\textit{addthis\_sharing\_toolbox}) là ou l'on veux que les boutons apparaissent,
+\item une gestion des réseaux sociaux, sur lesquels seront partagés les pages, simple d'accès car tout se fait à l'aide d'une interface ou il suffit de faire glisser le réseau social voulu de la liste de tous les réseaux sociaux disponible vers celle choisit pour apparaitre sur le site,
+\item des statistiques qui donne le nombre de partage par jour ainsi que le nombre de clic sur les liens partagés.
+\end{itemize}
+Ce service a donc été intégré, après vérification des conditions d'utilisation dans un cadre professionnel.\par
+
+\subsubsection{Brèves}
+Le travail proposé était de refaire la partie concernant les brèves. Une brève est une article court ou un évènement, sans image où l'information tient en un ou deux paragraphes. Du point de vue de JCMS, cela ne correspond pas à un type de contenus mais à un contenu article ou évènement catégorisé en tant que brève.\par
+Sur l'ancien site, les brèves étaient présenté en deux pages : une page lanceur et une page où la brève était entièrement affiché. Une page lanceur est une page sur laquelle où l'on trouve une liste de contenus avec le plus souvent une pagination. Pour les brève, le lanceur consistait à afficher le titre de la brève, le début de la brève ainsi que des informations complémentaires. Le problème de ce système fut qu'il nécessitait un clic et un changement de page avant de pouvoir lire la brève.\par
+Ce qui fut proposé comme amélioration était d'avoir toutes les brèves sous forme de liste. Chaque brève est représenter par son titre et peut être ouverte en cliquant sur le celui-ci. Elle se déplie et laisse apparaitre le corps de celle-ci. L'avantage de cette solution est de pouvoir lire entièrement la brève à partir de la page lanceur et du coup en pouvoir lire plusieurs à la suite sans changer de page. Pour ce faire l'utilisation de Bootstrap a était conseillé car celui-ci disposait déjà de classes permettant ce comportement.\par
+Au cours du développement, un problème a été trouvé à cette présentation, elle ne permet pas de partager les brèves sur les réseaux sociaux. En effet, comme vu précédemment, pour être partager un contenu doit pouvoir donner des informations au travers de balises, cependant ces balises sont unique par page, par exemple on ne peut pas avoir plusieurs titre pour une même page. Or le but de cette présentation est d'avoir plusieurs brèves sur la même page.\par
+Après un premier rendu, un problème de lisibilité est apparut sur les serveurs de test. Ce premier rendu utilisait les classes par défaut de Bootstrap sans surcharge. Elles présentaient chaque brève dans un rectangle délimité par une bordure grise, à l'intérieur le titre et le corps de la brève étaient séparer par une bordure. Le titre des brèves disposait d'une couleur de fond. Sur un faible nombre de brève (l'application en locale disposait de 5 ou 6 brèves) ce problème de lisibilité n'était pas important, mais lorsqu'il y a une une vingtaine de brèves affiché, il est difficile de savoir que le corps de la brève est relier au titre précédent. Pour palier à ce problème, il a été proposer de retirer la bordure entre là brève et le titre lorsque celle-ci était ouverte ainsi que la couleur en fond.\par
+Le second rendu bien que plus claire dans la lecture n'était pas tout à fait satisfaisant. Les brèves était affichées en liste, et seul leur titre les différenciait, mais celui-ci n'était pas suffisant car il manquait une information importante, la date de publication. Il peut y avoir plusieurs brèves par jours, et ceci est facilité par leur forme courte. Sas date il était difficile de se repérer dans le flot de brèves. Elle a donc été rajouté au même niveau que le titre mais aligné sur la droit en gris.\par
+\medskip
+Cette présentation plus claire fut réutilisé pour la page des communiqués de presse. Contrairement aux brèves qui sont courtes, les communiqués de presse sont long, mais cette présentation reste acceptable. Lorsque que sur la page de lanceur des brèves il y en aura une vingtaine, sur la page de lanceur des communiqués de presse il y en aura cinq. Cela permet d'avoir plusieurs communiqué de presse sur la même page avec une facilité de navigation.\par
+\bigskip 
+La refonte de la partie brève comprenait aussi un bandeau sur la page d'accueil. Il permet d'afficher le titre de certaine brèves et de renvoyer vers celle-ci. Ces brèves son choisies, cela dépend d'une certaine catégorisation. Le bandeau affiche un titre après l'autre, de ce fait, il n'y a jamais deux brève en même temps. Ce bandeau existait sur l'ancien site, et l'on pouvait mettre pause au défilement des titres.\par 
+Sur le nouveau site il a été décidé, dans un soucis d'épuration d'enlever le fait de pouvoir mettre le défilement en pause, mais le fonctionnement resterai le même. Au niveau du développement, afin de ne pas garder de vieux code, il a été décidé de repartir de zéro. Pour l'animation du titre qui disparait pour laisser sa placer au suivant a été réalisé en javascript avec la bibliothèque jQuery.\par 
+Aussi, il a été demandé une option permettant de ne pas afficher les évènements passés. Cette option serait placé dans le back office, dans les options du module web. Pour se faire il suffisait une fois les résultats de la requête connue de tester leur date de validité. Ce test entraine une réduction du nombre de brèves affiché car il se fait en aval de la requête, mais ne pouvait pas avoir lieux en même temps que celle-ci. En effet, les requêtes en JCMS sont définie par l'utilisateur au niveau d'une interface et ce qui est développé est l'affichage de ces résultats.\par
+
+\subsubsection{Intégration sur mobile et tablette}
+L'un des objectifs principaux du projet était d'avoir un site web adaptatif, c'est à dire que l'interface doit s'adapter automatiquement à la taille de l'écran sur lequel il est visualisé. Le but d'avoir un site web adaptatif est d'éviter la multiplication des pages selon le format d'affichage, mais d'avoir une seule page. Par exemple, lorsqu'un article est affiché sur un ordinateur ou sur un mobile, c'est la même page qui doit être appelée. Cependant l'interface n'est pas la même, il se peut que des éléments soit modifiés, ajoutés ou supprimés.\par 
+Ces modifications sont le plus généralement fait en CSS à l'aide des \textit{media queries} introduit par le CSS3. Pour se faire il suffit d'avoir des propriétés de style différentes d'une même classe ou d'un même identifiant, et de préciser à l'aide des \textit{media queries} celle qui doivent être utilisées selon la taille de l'écran. D'autre modifications plus spécifiques peuvent être apporté au niveau du serveur. Cela permet de sélectionner la partie de code qui va être exécuter selon l'environnement.\par
+L'utilisation de Bootstrap permet de faciliter la création de site internet adaptatif, car celui-ci contient des classes utilisant les \textit{média queries}. De plus, les classes sont basées sur un affichage en grille, la taille d'un élément ne dépend pas d'une taille donné en pixel mais en pourcentage. La grille permet d'afficher 12 éléments par ligne. Il y a donc 12 choix de largeur pour un élément. Par exemple, un élément ayant une largeur de taille 4 et un autre de taille 8 seront placé côte à côte, alors que deux élément ayant une largeur de taille 12 seront l'un au dessous de l'autre. La force de Bootstrap réside dans le fait que l'ont préciser une largeur différente selon la taille de l'écran. Par défaut Bootstrap propose 4 résolutions d'écran :
+\begin{itemize}
+\item mobile (largeur strictement inférieure à 768 pixels),
+\item tablette (largeur supérieur ou égale à 768 pixels),
+\item écran médium (largeur supérieur ou égale à 992 pixels),
+\item écran large (largeur supérieur ou égale à 1200 pixels).
+\end{itemize}
+Les deux dernières tailles correspondent aux ordinateur (portable et fixe). Pour les mobiles, bien que leurs résolutions soit plus importante que 768 pixels, en réalité les éléments affichés à l'écran sont deux à trois fois plus défini et non pas deux à trois fois plus grand. De ce fait un mobile avec une résolution de 1920 par 1080 pixels affichera les éléments en 414 par 736 pixels avec une définition de l'ordre de 3. Mais un problème se pose en ce qui concerne les tablettes, en mode portrait elle sont reconnu comme des tablettes par Bootstrap, cependant en mode paysage elle son reconnue comme des écrans médium. Un site peut donc être vu de deux manière différente selon l'orientation dans laquelle est la tablette. Bootstrap permet donc d'adapter la taille et le placement des éléments selon la résolution de l'écran. Cependant, l'ergonomie et le choix des éléments reste à la charge du développeur.\par
+
+\subsubsection{Navigation au sein d'un dossier sur un mobile}
+Le travail proposé était de réfléchir et proposer un moyen plus simple de naviguer au sein d'un dossier sur mobile et tablette. Pour rappel, un dossier est constitué d'un ensemble d'articles. Comme chaque contenu, un dossier peut être liée à d'autre type de contenu, généralement des vidéos, dossiers ou articles. La navigation au sein du dossier, sur la version bureau, se fait à l'aide d'une liste de lien qui se trouve à gauche de l'article ouvert. Dans la même colonne, plus bas, se trouve les liens vers les contenus liés. Le problème est que sur mobile cette colonne apparait au dessus de l'article ouvert. Le visiteur en arrivant sur un dossier voit en premier lieu le menu du dossier et non pas son contenu. Il faut donc trouver un moyen de naviguer au sein d'un dossier tout en prenant compte de la taille réduite des écrans de mobile.\par
+La première solution proposé fut d'utiliser des flèches de navigation. Ces flèches seront placé en dessous de l'article ouvert, ce qui permettra au visiteur de voir en arrivant sur la page l'article du dossier. De plus, elles n'apparaitrons que si nécessaire, par exemple sur le premier article du dossier il n'y aura pas la flèche vers le précédent article, de même pour le dernier article. À cela, s'ajoute un indicateur de position dans le titre du dossier pour pouvoir se repérer, mais aussi pour indiquer au lecteur qu'il y a une suite, et que le dossier ne se résume pas à un article. Il se place en fin de titre et indique le position de l'article ouvert par rapport à tous les articles du dossier, par exemple dans un dossier contenant 5 articles, si le lecteur est en train de lire le 3ème article du dossier, à coté du titre du dossier sera affiché "(3/5)".\\
+L'avantage de cette solution était qu'elle était optimal pour les mobile, mais elle présentait plusieurs désavantages :
+\begin{itemize}
+\item pas d'accès directe à un article spécifique du dossier,
+\item pas de vision globale de l'ensemble des articles du dossier,
+\item l'interface est adapté uniquement aux mobiles et pas adapté au tablettes.
+\end{itemize}\par
+Pour palier à ces problèmes, une seconde solution fut proposé, en plus des flèches de navigation, une menu déroulant viendrai se placer entre les flèche et permettrai un accès directe à un article du dossier. La difficulté dans cette solution fut de trouver les bonnes dimensions afin que des flèches ne soit pas trop petites ou que le menu déroulant ne soit pas trop petit non plus. En ce qui concerne les tablettes, en mode portrait elles bénéficient de la même navigation que celle pour le mobile, mais elles ont en plus des indication "Article suivant" et "Article précédent" au niveau des flèches de navigation. De plus, afin de retrouver l'esprit du mode bureau sur la tablette, l'image du dossier affiché en haut des autres articles du dossier sur la version bureau, se retrouve au dessus de la liste déroulante sur la version tablette. En mode paysage, les tablettes garderai la version bureau du site, de ce fait sur tablette les dossier disposent de deux présentation différente selon l'orientation dans laquelle on tient la tablette.\par
+Cependant, cette solution ne fut pas retenu pour la version finale du site. L'interface était trop différente de ce que proposait le site en version bureau. Seulement au lieu de retourner comme au début, l'idée que le menu soit placé au dessous de l'article fut gardé, ainsi que limage pour les tablette. Au final, la navigation au sein d'un dossier se fait au travers d'une liste de lien qui se situe en dessous de l'article ouvert. Les contenus liés ne sont pas affiché ni le mobile, ni les tablettes en mode portrait.\par
+
+\subsubsection{Fil Twitter}
+Sur les maquettes de la page d'accueil, il apparaissait deux vignette côte à côte qui serviraient à afficher de la publicité ou des informations à propos des offres du Crédit Agricole. Le responsable proposa de remplacer une vignette par un fil d'actualité Twitter. Ce fil Twitter regrouperai les tweets de toutes les Caisses régionales et certaine autre entité du Crédit Agricole, mais ne remontera pas les tweets du compte de la Fédération Nationale du Crédit Agricole. En effet, la plupart des tweets de la FNCA renvoi vers le site creditagricole.info et il serait redondant de retrouver les tweets concernant les nouveaux contenus du site sur la page d'accueil. La tâche confié était d'essayer d'intégrer ce fil de tweet.\par
+Avant tout développement, il fallait se renseigner sur la manière d'intégrer un fil de tweet au sein d'une page. Pour aider l'intégration Twitter propose un site internet dédier au développeur où on trouve toute la documentation nécessaire sur les APIs et les modules de Twitter. Afin de créer un fil de tweet, il faut au préalable créer une liste de compte. Cette liste va constituer l'ensemble des comptes dont les tweets vont apparaitre dans le fil. Après avoir choisit la liste il suffit d'ajouter le code fournit dans la documentation à l'endroit où le fil Twitter va apparaitre sur la page.\par
+Au cours de l'intégration, un problème de taille s'est présenté, une vignette faisait 200 pixels de hauteur et le fil Twitter est obligatoirement composé d'un bandeau informant la nom de la liste de tweet, ce bandeau occupait quasiment toute la hauteur disponible. Un autre assemblage fut alors proposé, les deux vignettes restent, elles sont l'une au dessus de l'autre au d'être côte à côte, le fil Twitter se place à droite des vignettes et ainsi garder la largeur initiale. De cette manière le fil Twitter dispose de plus de 400 pixels de hauteur et peut donc être affiché en présentant environ 3 tweets.\par 
+
+\paragraph{}
+A deux semaine de la livraison finale, une réunion a eu lieu dans le but de vérifier l'uniformisation du site. Comme cela a été expliqué, l'entreprise ne disposait pas d'un cahier fonctionnel et d'une charte graphique complète, de ce fait, certaine pages ont été adapté ou entièrement repensé afin d'avoir une interface plus à jour. Cependant, cela ne rendait pas forcément le site uniforme. En plus des quelques détails à corrigés, la page des brève a été revu.\par
+Selon la nouvelle charte graphique, les pages contenu disposaient d'un espace afin de pouvoir lire le contenu, cet espace était organisé de la même manière : 
+\begin{itemize}
+\item le contenu sur la partie gauche ou droite de la page,
+\item les contenus liée, sur le même thème ou dans la même région sur l'autre partie de la page.
+\end{itemize}
+En dessous de cela se trouve un lanceur qui remonte du contenu récent du même type. Or la page des brève n'était organisé de cette manière, dans le but d'uniformité, la page a donc été revu. La nouvelle page était donc composé de :
+\begin{itemize}
+\item la première brève (ou la brève auquel on souhaite accéder) à gauche, ainsi que la panneau avec les contenu liées, dans la même région ou sur le même thème à droite,
+\item un lanceur vers les autres brèves ou on retrouve le système de déploiement de brèves.
+\end{itemize}
+De plus cette nouvelle présentation permet de partager à nouveau une brève sur les réseaux sociaux, comme cette présentation met en avant une brève, c'est celle-ci que l'on pourra partager. Aussi le lanceur permettra d'ouvrir une brève dans le panneau principale afin de la partager ou de voir le contenu lié.\par 
+Cependant, après réflexion lors d'une réunion, cette organisation montra ses limites, pour partager une brève autre que la première il fallait : 
+\begin{itemize}
+\item cliquer sur le titre de la brève dans le lanceur afin d'afficher son contenu,
+\item cliquer sur le lien ouvrir pour avoir la brève dans le panneau principal (cela implique un changement de page),
+\item cliquer sur les boutons de partage des réseaux sociaux. 
+\end{itemize}
+Il y avait évidemment un clique et un chargement en trop. La solution à ce problème était de ramener les boutons de partage directement dans le lanceur et afin de palier le problème du partage du bon contenu il fallait préciser lors du partage de celui-ci l'adresse de la brève ouverte sur le panneau principal. Mais la solution retenu pour le partage sur les réseaux sociaux, AddThis ne permettait pas cela. La seule solution, pour préciser une adresse à partager, fut d'implémenter nous même les boutons de partage. Le désavantage de cette solution est que la modification (ajout ou suppression) des boutons de partages sur AddThis entrainerai un développement en plus afin de répercuter cette modification sur les brèves.
+
+\paragraph{}
+Afin de pouvoir suive l'évolution des visites sur le site et avoir des rapport détaillés, le site utilise des outils de suivi : Xiti et Google Analytics. Pour suivre l'évolution des visites, ces outils utilisent des cookies sur l'ordinateur du visiteur. Depuis le 5 décembre 2013, la CNIL recommande aux sites web d'informer l'utilisateur lors d'utilisation de cookies qui servent à recueillir des informations sur celui-ci. L'entreprise a choisi de se conformer à cette recommandation avec la refonte du site.\par 
+La tâche était donc d'inclure un bandeau lors d'une visite sur le site afin de prévenir l'utilisateur du dépôt de cookies. Il a été décider de mettre un rectangle flottant en bas à droite de la page, cela permettait de rester discret. Sur mobile il prend la forme d'un bandeau. Ce développement s'est effectué en Javascript car ce langage permet une utilisation simple des cookies. Afin que le message n'apparaisse pas à chaque visite de l'utilisateur, il a été proposer d'utiliser un cookie qui retient si l'utilisateur a fermé le message, ce qui atteste de sa lecture.
+
+\paragraph{}
+Le site a été mis en ligne le 12 novembre 2014 sans problèmes. Cependant, il y a eu des retours concernant la version mobile. Elle présentait plusieurs défauts : 
+\begin{itemize}
+\item Images de vignettes dégradés et trop petite,
+\item Police dans le menu qui prend du temps à charger,
+\item Menu qui recouvre le contenu une fois ouvert,
+\item ...
+\end{itemize}
+La tâche proposé fut de revoir le site mobile afin de régler les problèmes et le rendre plus intuitif.
+
+\paragraph{}
+Pour les images des vignettes, la solution proposé fut de doubler la résolution et d'agrandir l'image. En effet, aujourd'hui de plus en plus de téléphone mobile ont des écran avec de grande résolution, et pour que le contenu ne soit pas petit le système d'exploitation double la tailles de ses éléments afin qu'ils ne soit pas plus gros sur sur un écran avec une résolution normale mais mieux définit. Le problème étant que les images n'utilisait pas ce procédé, elles étaient donc moins bien définit.\par 
+Cependant cette solution n'est pas très optimal au niveau des performances car les images chargé sont deux fois plus grands et donc plus lourde. Mais cette soluion a été retenu au prix e la bande passante.\par
+
+\paragraph{}
+En ce qui concerne le menu, la police utilisé était une police personnalisé, de ce fait le mobile devait télécharger la police et effectuer lors d'une visite sur le site creditagricole.info. Il a doc été proposé d'utiliser une police basique qui est par défaut dans tous les navigateurs afin d'optimiser les temps de chargement et de rendu.\par
+
+\paragraph{}
+Comme dit précédemment, l'entreprise dispose de plusieurs serveurs de tests, un de ces serveur sert à héberger le site de suivi des bogues : Mantis. Dans un soucis de réaffectation des serveurs ce site devait être déplacer du serveur de test 4, qui sert uniquement à Mantis, au serveur de test 2, où se trouve le site de test. Cette tâche me fut confié.\par 
+Les deux serveurs de test était sous Windows Serveur 2008, et disposait de l'application Internet Information Service(iis) qui sert de serveur web, cependant le serveur de test 4 disposait en plus de :
+\begin{itemize}
+\item PHP,
+\item MySQL.
+\end{itemize}
+Ces deux dernier étant nécessaire au fonctionnement de Mantis. Aussi, il a été demandé de documenter les manipulations afin d'avoir une documentation si une nouvelle migration devait être effectué.
+
+\end{document}
