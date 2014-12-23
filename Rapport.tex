@@ -18,6 +18,9 @@
 \setcounter{page}{0}
 \newpage
 
+\section{Introduction}
+\newpage
+
 \section{Présentation de l'entreprise}
 \subsection{Secteur d'activité}
 La Fédération Nationale du Crédit Agricole fait partie du groupe Crédit Agricole, il dispose donc des mêmes secteurs d'activités.\par
@@ -195,6 +198,9 @@ La refonte de la partie brève comprenait aussi un bandeau sur la page d'accueil
 Sur le nouveau site il a été décidé, dans un soucis d'épuration d'enlever le fait de pouvoir mettre le défilement en pause, mais le fonctionnement resterai le même. Au niveau du développement, afin de ne pas garder de vieux code, il a été décidé de repartir de zéro. Pour l'animation du titre qui disparait pour laisser sa placer au suivant a été réalisé en javascript avec la bibliothèque jQuery.\par 
 Aussi, il a été demandé une option permettant de ne pas afficher les évènements passés. Cette option serait placé dans le back office, dans les options du module web. Pour se faire il suffisait une fois les résultats de la requête connue de tester leur date de validité. Ce test entraine une réduction du nombre de brèves affiché car il se fait en aval de la requête, mais ne pouvait pas avoir lieux en même temps que celle-ci. En effet, les requêtes en JCMS sont définie par l'utilisateur au niveau d'une interface et ce qui est développé est l'affichage de ces résultats.\par
 
+\subsubsection{Fiche de présentation des Caisses régionales}
+TODO
+
 \subsubsection{Adaptation des lanceurs sur mobile et tablette}
 L'un des objectifs principaux du projet était d'avoir un site web adaptatif, c'est à dire que l'interface doit s'adapter automatiquement à la taille de l'écran sur lequel il est visualisé. Le but d'avoir un site web adaptatif est d'éviter la multiplication des pages selon le format d'affichage, mais d'avoir une seule page. Par exemple, lorsqu'un article est affiché sur un ordinateur ou sur un mobile, c'est la même page qui doit être appelée. Cependant l'interface n'est pas la même, il se peut que des éléments soit modifiés, ajoutés ou supprimés.\par 
 Ces modifications sont le plus généralement fait en CSS à l'aide des \textit{media queries} introduit par le CSS3. Pour se faire il suffit d'avoir des propriétés de style différentes d'une même classe ou d'un même identifiant, et de préciser à l'aide des \textit{media queries} celle qui doivent être utilisées selon la taille de l'écran. D'autre modifications plus spécifiques peuvent être apporté au niveau du serveur. Cela permet de sélectionner la partie de code qui va être exécuter selon l'environnement.\par
@@ -256,25 +262,47 @@ Bien que le partage était de nouveau disponible pou les brève, il était diffi
 La solution serait de pouvoir partager une brève directement depuis le lanceur. Cependant, la solution d'AddThis montre ses limites, elle ne permet pas de partager plusieurs contenu différent au sein d'une même page. Il a donc été décidé de ne pas utiliser AddThis pour les brèves qui sont dans le lanceurs mais de faire un développement spécifique. Les boutons de partage ne partagerai pas l'URL de la page actuelle mais plutôt celle ou la brève est "ouverte". Cependant en utilisant une autre solution, les avantages d'AddThis tel que la personnalisation des liens ou l'outil de statistique ne seront pas disponible.\par
 
 \subsubsection{Cookies}
-Afin de pouvoir suive l'évolution des visites sur le site et avoir divers informations concernant les visiteurs, le site utilise des outils de suivi tel que Xiti et Google Analytics. Pour collecter les données, ces outils utilisent des cookies qui permettent de stocker des informations sur le terminal de l'utilisateur. Suite à une directive de l'Union Européenne de 2009, devenue une ordonnace dans le loi Française en août 2011, et recommander par la CNIL  depuis le 5 décembre 2013, les sites internet ont pour obligation d'informer les utilisateurs lors d'utilisation de cookies dans le but de recueillir des information sur eux. L'entreprise a choisi de se conformer à cette obligation avec la refonte du site.\par 
-Le travail proposé était donc d'inclure un bandeau lors d'une visite sur le site afin de prévenir l'utilisateur du dépôt de cookies. Il a été décider de mettre un rectangle flottant en bas à droite de la page, cela permettait de rester discret. Sur mobile il prend la forme d'un bandeau. Ce développement s'est effectué en Javascript car ce langage permet une utilisation simple des cookies. Afin que le message n'apparaisse pas à chaque visite de l'utilisateur, il a été proposer d'utiliser un cookie qui retient si l'utilisateur a fermé le message, ce qui atteste de sa lecture.
-
-\paragraph{}
-Le site a été mis en ligne le 12 novembre 2014 sans problèmes. Cependant, il y a eu des retours concernant la version mobile. Elle présentait plusieurs défauts : 
+Afin de pouvoir suive l'évolution des visites sur le site et avoir divers informations concernant les visiteurs, le site utilise des outils de suivi tel que Xiti et Google Analytics. Pour collecter les données, ces outils utilisent des cookies qui permettent de stocker des informations sur le terminal de l'utilisateur. Une directive de l'Union Européenne datant de 2009, transposé par une ordonnace dans la législation française en août 2011, oblige les sites internet utilisant les cookies, dans le but de recueillir des informations sur les utilisateur, doivent les en informer. De plus depuis décembre 2013, afin de facilité son adoption, la CIL a émis une recommandation relative à la directive. L'entreprise a choisi de se conformer à cette obligation avec la refonte du site.\par 
+Le travail proposé était donc d'inclure un message informant l'utilisateur sur l'utilisation des cookies. La CNIL propose deux solutions dans leur recommandation, qui se font au travers de bandeau sur la page :
 \begin{itemize}
-\item Images de vignettes dégradés et trop petite,
-\item Police dans le menu qui prend du temps à charger,
-\item Menu qui recouvre le contenu une fois ouvert,
-\item ...
+\item la première solution consiste à simplement informer l'utilisateur de l'utilisation de cookies, et qu'il accepte l'utilisation de ceux-ci en continuant sa navigation sur le site,
+\item la seconde solution bloque l'utilisation des cookies et demande à l'utilisateur son accord avant d'en déposer. Si l'utilisateur refuse, les cookies, servant à recueillir des informations sur l'utilisateur, doivent être bloqué.
+\end{itemize}\par 
+Quelque soit la solution choisie, le massage ou le choix de l'utilisateur peut être sauvegardé, sous forme de cookie, durant un période de maximum 13 mois.\par 
+L'entreprise a décidé de mettre en place la première solution. Pour se faire, un message sera placé en bas à droite de la fenêtre, sous forme de pop-up, lors d'une première visite sur le site et restera affiché tant que l'utilisateur n'aura pas fermé la pop-up. Cette pop-up est discrète et permet au visiteur de naviguer à travers le site sans devoir la fermer.\par 
+Sur son site, la CNIL propose des exemples de code pour la gestion de l'affichage du bandeau. Ce code était en Javascript, et a pu être facilement intégré au site internet. Afin que la bandeau puisse apparaitre sur toute les pages du site, la code devait être placé à un endroit où il serait constamment appelé. Pour cela il a été placé dans une page qui sera appelé à la fin de la génération du header quelque soit la page.
+
+\subsubsection{Mise en production et premiers retours}
+Afin de préparer la mise en production du site, un serveur de pré-production fut mis en place quelques semaine avant la mise en production. Ce serveur permettait de faire les dernier test avec une base de donnée semblable à celle en production. Il a aussi notamment servi à faire des test sur la version mobile. En effet il était impossible d'accéder aux serveurs d tests depuis un mobile, cependant cela a été rendu possible avec le serveur de pré-production. Le serveur deviendra la serveur de production à la date de lancement du site. Contrairement aux serveurs de tests, l'équipe de développement n'avait pas directement accès aux serveurs et devait passer par la DSI pou déposer de nouveaux fichiers.\par 
+La date de mise en ligne du site, initialement prévu le 4 novembre 2014, a été repoussé au 12 novembre car aucune communication n'avait été prévu sur la mise en ligne du site. Le retard d'une semaine a permit de rectifier le tir et la communication autour de la nouvelle version fut en place la semaine du 4 novembre.\par
+Le site à été mis en ligne, comme prévu, le 12 novembre. Il n'y a pas eu de problèmes majeurs lors de la mise en ligne, seulement quelques identifiant qui n'ont pas été mis à jour provoquant une absence de statistiques durant le jour qui on suivit.\par 
+Il y a eu dès la mis en lignes des retours sur la version mobile :
+\begin{itemize}
+\item les vignettes dans les lanceur étaient dégradés et trop petite,
+\item la police utilisé prenait trop de temps à charger, notamment dans le menu,
+\item le menu recouvre le contenu une fois ouvert et dans le cas d'écran trop petit il ne s'affichait pas entièrement avec aucune possibilité de scroller.
 \end{itemize}
-La tâche proposé fut de revoir le site mobile afin de régler les problèmes et le rendre plus intuitif.
+Le travail proposé fut de corriger ces problèmes, afin d'améliorer la navigation sur mobile.
 
-\paragraph{}
-Pour les images des vignettes, la solution proposé fut de doubler la résolution et d'agrandir l'image. En effet, aujourd'hui de plus en plus de téléphone mobile ont des écran avec de grande résolution, et pour que le contenu ne soit pas petit le système d'exploitation double la tailles de ses éléments afin qu'ils ne soit pas plus gros sur sur un écran avec une résolution normale mais mieux définit. Le problème étant que les images n'utilisait pas ce procédé, elles étaient donc moins bien définit.\par 
-Cependant cette solution n'est pas très optimal au niveau des performances car les images chargé sont deux fois plus grands et donc plus lourde. Mais cette soluion a été retenu au prix e la bande passante.\par
+\subsubsection{Images des contenu sur le site}
+Le problème avec les images était qu'elles était de mauvaise qualité sur mobile et en général sur les miniatures. La source de ce problème est une fonctionnalité de JCMS qui permet de déposer une grande image su le site, puis il s'occupe de créer des images au bon format lorsqu'elle est appelé. Par exemple, une image de 1920 par 1080 pixels est déposé sur le site, dans une page elle est affiché en 640 par 360 pixels, lors de l'appel, JCMS va crée une image réduite en plus de celle original. Cependant, lors de cette création l'image va perdre en qualité.\par
+La perte de qualité est accentué par le fait que sur mobile, les éléments sont mieux définit et lorsque qu'une image n'est pas adapté à cette définition, elle est légèrement pixelisé. Pour palier à ce problème une solution fut proposé, demander à JCMS des images deux fois plus grande que celle qui seront affiché. Ce procédé permet d'avoir une image mieux définit, et sur les mobile elle apparait nette. Cependant, cette solution présente un défaut, comme les images sont deux fois plus grande, elles sont plus lourde mais dans de moindre proportion, cela reste donc acceptable.\par
+De plus sur mobile les images pour les aperçus dans les lanceurs étaient trop petits. Ils on donc été agrandit en passant d'une taille de 100 par 55 pixels à 130 par 74 pixels, mais comme les images son deux fois plus grande que l'espace pour les afficher, ils faisaient 260 par 148 pixels.\par 
+De même, ce procédé a été réutilisé pour le site en version bureau/tablette, mais seulement sur les lanceurs. Sur ces version ce procédé permet d'économiser un peu de bande passante, parce que les images qui sont affiché dans les lanceurs ont la même définition que celles qui sont affiché dans un contenu, il n'y a donc plus besoin de charger une nouvelle image entre le lanceur et le contenu. Pour les autres images, par exemple celle du contenu, leur taille est proche de l'original, de ce fait il n'y a pas de perte de qualité, et oc pas de nécessité à charger des images deux fois plus grande que celles qui seront affichées. De plus cela entrainerai à travailler avec de trop grande images, de l'ordre de 1200 par 650 pixels.\par
 
-\paragraph{}
-En ce qui concerne le menu, la police utilisé était une police personnalisé, de ce fait le mobile devait télécharger la police et effectuer lors d'une visite sur le site creditagricole.info. Il a doc été proposé d'utiliser une police basique qui est par défaut dans tous les navigateurs afin d'optimiser les temps de chargement et de rendu.\par
+\subsubsection{Menu sur mobile}
+Le menu pour mobile qui était en production n'était pas du tout satisfaisant.\\
+Bien que ce soit les éléments de bootstrap qui ont été utilisés, certain choix ont fait que le menu était inutilisable : 
+\begin{itemize}
+\item comme dit précédemment, la police prenait trop de temps à charger et à s'afficher. Entre le moment où le menu était ouvert et le moment où la police s'affichait il y avait au moins 5 secondes,
+\item la gestion des sous menu n'était pas optimal. Le menu du site est composé de catégories, et ces catégorie disposait d'un sous menu qui s'ouvrait lorsque l'on cliquait sur la catégorie,
+\item le scroll était impossible dans le menu, et il pouvait arrivé d'avoir un sous menu qui dépassait de l'écran,
+\item impossible de savoir si on avait cliqué sur le bon menu, car la taille du texte était petite et à part le chargement de page rien n'indiquait que la clic a bien été fait.
+\end{itemize}\par 
+Plusieurs propositions ont été faite afin de trouver une solution aux problèmes. La première chose qui fut modifier dans le menu fut la police. Le site creditagricole.info utilise une police spécial pour les titres et les menus, cette police n'est pas une police standard du web. De ce fait pour s'afficher sur le site elle est d'abord téléchargé par le navigateur et chargé à la volée. Cependant, sur mobile ce téléchargement et ce chargement à la volée prennent plus de temps, la connexion et le processeur étant plus lent sur mobile que sur un ordinateur. Plusieurs polices standards du web, elles sont reconnue par tous les navigateurs, ont été testés, et finalement la police Verdana a été retenu.\par
+Une première version fut proposé, contrairement à celle qui était en ligne, le menu était en haut de la page et non plus fixé en haut de la fenêtre. Quand le menu était ouvert, il ne passait plus au dessus de la page mais comme il est en haut pousse celle-ci. De cette manière il est possible de scroller dans le menu. Cependant, comme il n'était plus fixe le seul moyen d'avoir accès au menu était de remonter tout en haut de la page. En plus d'avoir été changé, la police a été grossie pour permettre de ne plus se trompé lors du clic. Même si la navigation au sein du menu était amélioré, la navigation dans les sous menu n'avait pas changé et le fait de devoir remonter en haut de la page pour accéder au menu était pénible.\par
+Le seconde version mettait l'accent sur la navigation dans les sous menus. Ce qui a été proposé était afficher le contenu de out les sous menu, ainsi pour arriver à un élément du sous menu il y avait moins de clic. Bien sur, la taille des sous menu n'était pas importante et la quasiment tout le menu tenait sur l'écran sans devoir scroller. De plus afin d'améliorer la visibilité, les catégories sont en gras et les éléments sont légèrement décaler vers la droite. Aussi, chaque élément est délimité par une bordure fine, comme ce qui se fait dans les application native sur mobile, et afin de bien voir la différence entre catégorie et élément du sous menu, ils auront des couleurs différentes. Une fois que l'on clique sur un élément sa couleur de fond change pour montrer à l'utilisateur qu'il a bien cliqué et où il avait cliqué.\par
+La deuxième version réglait les problèmes de navigation dans les sous menu, cependant, le menu reste en haut de la page. Le problème est que si le menu est d nouveau fixé en haut de la fenêtre, il n'est plus possible de scroller dans le menu, le fait d'être fixé empêche cela.\par
 
 \paragraph{}
 Comme dit précédemment, l'entreprise dispose de plusieurs serveurs de tests, un de ces serveur sert à héberger le site de suivi des bogues : Mantis. Dans un soucis de réaffectation des serveurs ce site devait être déplacer du serveur de test 4, qui sert uniquement à Mantis, au serveur de test 2, où se trouve le site de test. Cette tâche me fut confié.\par 
@@ -284,5 +312,8 @@ Les deux serveurs de test était sous Windows Serveur 2008, et disposait de l'ap
 \item MySQL.
 \end{itemize}
 Ces deux dernier étant nécessaire au fonctionnement de Mantis. Aussi, il a été demandé de documenter les manipulations afin d'avoir une documentation si une nouvelle migration devait être effectué.
+
+\newpage
+\section{Conclusion}
 
 \end{document}
