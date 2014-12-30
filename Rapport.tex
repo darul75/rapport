@@ -58,7 +58,7 @@ La Fédération Nationale du Crédit Agricole est une association du groupe Cré
 La Fédération Nationale du Crédit Agricole est le lieu ou les grandes orientations du groupe sont prise. Elle est l'instance de réflexion des Caisses régionales, c'est pour cela qu'elle est qualifié de "Parlement des Caisses régionales". Elle représente aussi les 39 Caisses régionales face aux pouvoirs publiques et à Crédit Agricole SA.
 
 \subsection{Le service}
-Le service dans lequel j'ai effectué mon stage est le service Publication et Multimédia. Ce service gère tout ce qui est publié par la Fédération Nationale du Crédit Agricole. Il est composé de 8 personnes et est divisé en deux pôles, le pôle internet et le pôle ??. Chaque pôle possède un responsable, en plus du responsable de service.
+La stage s'est déroulé au sein du service Publication et Multimédia. Équipe de 8 personnes, 2 pôles\par
 
 \subsection{Positionnement du stage dans les travaux de l'entreprise}
 Le stage se positionne comme support dans les travaux de l'entreprise. Le projet devant être livré au mois de novembre, le stage servait à finaliser le développement, ainsi que régler les possibles problèmes qui apparaitrons au début de la mise en production.
@@ -312,13 +312,10 @@ La mise en place du nouveau menu fut délicate. En effet, le menu en place utili
 Cette troisième version fut retenu pour une mise en ligne.
 
 \subsubsection{Migration de Mantis}
-Comme dit précédemment, l'entreprise dispose de plusieurs serveurs de tests, un de ces serveur sert à héberger le site de suivi des bogues : Mantis. Dans un soucis de réaffectation des serveurs ce site devait être déplacer du serveur de test 4, qui sert uniquement à Mantis, au serveur de test 2, où se trouve le site de test. Cette tâche me fut confié.\par 
-Les deux serveurs de test était sous Windows Serveur 2008, et disposait de l'application Internet Information Service(iis) qui sert de serveur web, cependant le serveur de test 4 disposait en plus de :
-\begin{itemize}
-\item PHP,
-\item MySQL.
-\end{itemize}
-Ces deux dernier étant nécessaire au fonctionnement de Mantis. Aussi, il a été demandé de documenter les manipulations afin d'avoir une documentation si une nouvelle migration devait être effectué.
+L'entreprise dispose de plusieurs serveurs de test pour le site creditagricole.info, mais elle dispose aussi de serveurs pour d'autre usages. L'applicatif de suivi de bogue Mantis est hébergé sur l'un de ces serveurs. Dans un soucis de réaffectation des serveurs, l'applicatif léger, qui avait un serveur dédier, sera déplacé sur le serveur de test 2 du site (TST2). Le travail proposé était d'assurer cette migration et de documenter chaque étapes, afin e pouvoir effectuer une migration dans le futur, si nécessaire.\par 
+Avant de faire la migration, il était important de vérifier que le serveur destinataire disposait des programmes nécessaire au bon fonctionnement de l'applicatif. Les deux serveurs disposait du même système d'exploitation Windows Server 2008, et tout deux disposaient du programme Internet Information Service (IIS), qui fait office de serveur web. Cependant sur le serveur de destination, il manquait PHP et MySQL qui sont nécessaire au fonctionnement de l'application. Cependant, comme le serveur de destination était un serveur de test à usage interne, il n'était pas nécessaire d'installer les versions les plus récentes de ces programmes, mais celle qui étaient compatible.\par 
+Après avoir installé les programmes nécessaire, et avant de migrer l'applicatif, il a été testé qu'un applicatif vierge pouvait fonctionner sur le serveur. Une fois le test effectué, la base de donnée pouvait être migré sur le serveur de destination. Ensuite, au lieux de re-copier tout l'applicatif du serveur source au serveur destinataire, il fut décider de garder l'applicatif qui fut installé pour les tests, et d'importer uniquement les fichiers de configurations.\par 
+Durant la migration de rapport de nouveaux bogues a été stoppé, pour évité qu'il ne soit pas migré. A la fin de celle-ci, la nouvelle adresse fut communiqué à tous les utilisateurs de l'applicatif et l'applicatif qui était sur le serveur source fut arrêter, pour prévenir de rapporter un bogue sur le mauvais serveur.\par
 
 \subsubsection{Module évènementiel}
 Avant la migration, le site était composé d'un module évènementiel. Ce module sert à mettre en avant un message par le biais d'une portlet, qui s'affiche sous forme de pop-up sur la page d'accueil. Il est utilisé pour les grandes occasions, par exemple pour les fêtes de fin d'années ou pour prévenir la mise en ligne du nouveau site, car il empêche toute navigation sur la page d'accueil tant qu'il n'est pas fermé. Une fois fermé, la portlet ne réapparait qu'après une période définie (généralement 12 heures). Ce comportement est possible grâce à l'utilisation de cookies.\par 
@@ -332,7 +329,14 @@ Pour centrer un élément, on peu utiliser le CSS, pour cela on le place au cent
 Au lieu de détecter la page d'accueil, pourquoi ne pas simplement mettre le code nécessaire sur la page d'accueil ? Cela n'est pas possible car le développement doit se faire dans un module, il doit être possible de désactiver sans devoir changer le code de la page d'accueil. Avec JCMS, il est possible d'appeler une JSP à la fin du header, afin d'ajouter des balises dans celui-ci, ou avant le footer. Cependant, il n'est pas possible d'appeler une JSP pour une certaine page. La solution proposé à ce problème était d'appeler la JSP qui génère la pop-up avant le footer et détecter dans celle-ci si la page qui était chargé était bien la page d'accueil. Pour détecter la page d'accueil il suffit de vérifier son identifiant. Cette solution n'est pas la plus optimal mais comme il est impossible détecter une page avant qu'elle soit appelé, c'était la meilleur des solutions.\par 
 \bigskip
 Après avoir vu une animation d'étoiles se déplaçant dans l'univers, il a été proposé de rapatrier le code de cette animation et de le modifier afin d'en faire un effet de neige qui tombe. L'animation était en Javascript et utilisait la balise HTML canvas. Cette balise HTML est utilisé pour avoir des rendus dynamiques d'images, elle permet d'avoir une zone de dessin.\par 
-Après quelques tests, le rendu était satisfaisant et il fut proposé d'intégrer l'animation au sein du module évènementiel. L'animation pourrai être activé ou désactivé dans les propriétés du module.
+Après quelques tests, le rendu était satisfaisant et il fut proposé d'intégrer l'animation au sein du module évènementiel. L'animation sera une option à activer dans les propriétés du module.\par 
+Un problème survint lors de test plus poussés sur différents navigateurs, l'animation n'avait pas la même fluidité sur tous les navigateurs. La neige de l'animation, les particules, était de petit rond blanc de différentes tailles. Les navigateurs ne gèrent pas le même nombre de particule à un même niveau de fluidité :
+\begin{itemize}
+\item 500 particules pour Google Chrome, Safari et Opéra
+\item 100 particules pour Internet Explorer,
+\item et 10 particules pour Firefox.
+\end{itemize}\par 
+Plusieurs optimisations ont été effectué afin d'avoir plus de particules gérer par Firefox, mais le problème était que que Firefox gère assez mal le dessin de multiples rond. Il a donc été décidé de ne pas activer l'option sous Firefox et de baisser le nombre de particules sous Internet Explorer.\par 
 
 \newpage
 \section{Conclusion}
