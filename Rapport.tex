@@ -407,20 +407,15 @@ Il y a eu dès la mis en lignes des retours sur la version mobile :
 Le travail proposé fut de corriger ces problèmes, afin d'améliorer la navigation sur mobile.
 
 \subsubsection{Images des contenu sur le site}
-Le problème avec les images était qu'elles était de mauvaise qualité sur mobile et en général sur les miniatures. La source de ce problème est une fonctionnalité de JCMS qui permet de déposer une grande image su le site, puis il s'occupe de créer des images au bon format lorsqu'elle est appelé. Par exemple, une image de 1920 par 1080 pixels est déposé sur le site, dans une page elle est affiché en 640 par 360 pixels, lors de l'appel, JCMS va crée une image réduite en plus de celle original. Cependant, lors de cette création l'image va perdre en qualité.\par
+Le problème avec les images était leurs mauvaise qualité sur mobile et en général sur les miniatures. La source de ce problème est une fonctionnalité de JCMS qui permet de déposer une grande image su le site, puis il s'occupe de créer des images au bon format lorsqu'elle est appelé. Par exemple, une image de 1920 par 1080 pixels est déposé sur le site, dans une page elle est affiché en 640 par 360 pixels, lors de l'appel, JCMS va crée une image réduite en plus de celle original. Cependant, lors de cette création l'image va perdre en qualité.\par
 \medskip
 La perte de qualité est accentué par le fait que sur mobile, les éléments sont mieux définit et lorsque qu'une image n'est pas adapté à cette définition, elle est légèrement pixelisé. Pour palier à ce problème une solution fut proposé, demander à JCMS des images deux fois plus grande que celle qui seront affiché. Ce procédé permet d'avoir une image mieux définit, et sur les mobile elle apparait nette. Cependant, cette solution présente un défaut, comme les images sont deux fois plus grande, elles sont plus lourde mais dans de moindre proportion, cela reste donc acceptable.\par
 De plus sur mobile les images pour les aperçus dans les lanceurs étaient trop petits. Ils on donc été agrandit en passant d'une taille de 100 par 55 pixels à 130 par 74 pixels, mais comme les images son deux fois plus grande que l'espace pour les afficher, ils faisaient 260 par 148 pixels.\par 
 De même, ce procédé a été réutilisé pour le site en version bureau/tablette, mais seulement sur les lanceurs. Sur ces version ce procédé permet d'économiser un peu de bande passante, parce que les images qui sont affiché dans les lanceurs ont la même définition que celles qui sont affiché dans un contenu, il n'y a donc plus besoin de charger une nouvelle image entre le lanceur et le contenu. Pour les autres images, par exemple celle du contenu, leur taille est proche de l'original, de ce fait il n'y a pas de perte de qualité, et oc pas de nécessité à charger des images deux fois plus grande que celles qui seront affichées. De plus cela entrainerai à travailler avec de trop grande images, de l'ordre de 1200 par 650 pixels.\par
 
-\begin{figure}[h!]
-\centering\includegraphics[scale=0.5]{images/retina.jpg} 
-\caption{La page des brèves tel qu'elle est actuellement sur le site}
-\end{figure}
-
 \subsubsection{Menu sur mobile}
 Le menu pour mobile qui était en production n'était pas du tout satisfaisant.\\
-Bien que ce soit les éléments de bootstrap qui ont été utilisés, certain choix ont fait que le menu était inutilisable : 
+Bien que ce soit les éléments de Bootstrap qui ont été utilisés, certain choix ont fait que le menu était inutilisable : 
 \begin{itemize}
 \item comme dit précédemment, la police prenait trop de temps à charger et à s'afficher. Entre le moment où le menu était ouvert et le moment où la police s'affichait il y avait au moins 5 secondes,
 \item la gestion des sous menu n'était pas optimal. Le menu du site est composé de catégories, et ces catégorie disposait d'un sous menu qui s'ouvrait lorsque l'on cliquait sur la catégorie,
