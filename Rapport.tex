@@ -149,9 +149,8 @@ La base de ce site est donc la rédaction de contenu et la collaboration c'est p
 Comme tout SGC, JCMS permet de faire la gestion de contenu avec gestion des droits. Publier des contenus sur un site web viens alors à la portée de tous car il suffit de déposer son contenu sur le site et JCMS s'occupe de générer une page page HTML. Un SGC est généralement découpé en deux parties : 
 \begin{itemize}
 \item la première partie, accessible à tout le monde, permet d'afficher les contenus publiés, elle est appelé front office,
- \item l'autre partie, privé, permet d'ajouter des contenu et de paramétrer le site, c'est le back office.
+\item l'autre partie, privé, permet d'ajouter des contenu et de paramétrer le site, c'est le back office.
 \end{itemize}\par
-\medskip
 Au point de vue technique, JCMS est composé d'un ensemble de portail, qui correspond à une page. Un portail c'est un assemblage de portlet, caractérisé par un gabarit de page portail, associé à l'arborescence du site. Un portail est générique et n'est pas forcément associé à une seule page.\par 
 Un portlet est un élément du portail, elles servent à générer différents composant d'une page. Il existe différents types de portlets : 
 \begin{itemize}
@@ -171,6 +170,12 @@ Il existe 2 types de gabarits : les gabarits d'affichage du contenu en pleine pa
 \end{itemize}\par 
 Les contenus et les portail peuvent être organiser de façon hiérarchique au sein de JCMS grâce aux catégories. Elles sont utilisé pour la navigation au sein du projet créditagricole.info.\par
 JCMS est organisé en espaces de travail, elles permettent de donner à certain utilisateur des droit de gestion (contribution, modification,...) sur les publications (contenu et portlet) et les catégories.\par 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.65]{images/page.png}
+\caption{Structure d'une page}
+\end{figure}
+
 \medskip
 Comme vu précédemment, le site creditagricole.info nécessite un certain nombre de type de contenu qui ne sont pas forcément présent par défaut au sein de JCMS. Pour personnaliser ou ajouter des types de contenu ou des portlet, JCMS propose un développement par module, qui seront ajouté à l'application au démarrage du serveur. Les modules contiennent les types de contenu, les gabarit d'affichages, les habillages personnalisés, mais aussi les images, les styles CSS/Less, des JavaServer Pages (jsp) qui permettent d'exécuter du java au sein de contenu HTML, etc. Le module doit avoir une structure précise afin de permettre l'intégration à l'application. Dans une but d'assurer une compréhension des actions d'un module, celui-ci doit disposer d'un fichier XML qui fera le liens entre l'application et les fichiers du module, c'est lui qui servira notamment à préciser à JCMS si un fichier est un gabarit d'affichage, un habillage, ... et à quel type il est relié.\par 
 Ce développement par module permet à tous les site utilisant JCMS d'avoir une même base, mais aussi de partager leurs modules sur le site internet de Jalios. De là, les autres développeurs peuvent pendre les module pour ajouter des fonctionnalités à leur site facilement.\par 
@@ -185,11 +190,9 @@ Le site internet creditagricole.info est organisé en plusieurs modules :
 \item FNCAXitiPlugi : ce module contient le code à inclure pour avoir des statiques sur les visite du site creditagricole.info.
 \end{itemize}\par
 La base de donné est gérer sous forme d'XML, chaque création, modification et suppression est enregistrer et lors du démarrage de l'applicatif, celui-ci reconstruit la base de donnée à partir du XML. Cette technique permet de retrouver toute entrée à un moment donnée, par exemple elle est très pratique pour revenir à une version antérieur d'un document.\par
-\medskip
-JCMS permet 
 
 \subsubsection{Less}
-Le less est une extension du langage CSS. Le CSS permet de définir des styles pour les éléments d'une page HTML. Le CSS est un langage statique, les notions de variables, fonctions, boucles n'existent pas en CSS. Le less permet d'apporter ces notions au CSS. Cependant, les navigateurs internet ne savent interprété que du CSS, le less est alors compiler afin de produire du CSS.
+Le less est une extension du langage CSS. Le CSS permet de définir des styles pour les éléments d'une page HTML. Le CSS est un langage statique, les notions de variables, fonctions et boucles n'existent pas en CSS. Le less permet d'apporter ces notions au CSS, cependant, les navigateurs internet ne savent interpréter que du CSS. Le less est donc compiler afin de produire du CSS, cette compilation se produit au démarrage du serveur ou par un administrateur, mais elle n'a pas lieu à chaque chargement d'une page.
 
 \subsubsection{Mantis}
 Pour le suivi des bogues, l'entreprise utilise un outil nommé Mantis. Cet outil se présente sous la forme d'un site web, et est hébergé au sein de l'entreprise. Seul une partie du service est inscrit. Il permet de reporter des bogues ou des améliorations, sous forme de ticket. Ce ticket peut attribué à une personne et dispose de plusieurs états. L'outil permet aussi d'ajouter des commentaires et des images aux tickets afin de les rendre plus expressif.\par 
@@ -204,21 +207,23 @@ L'entreprise possède de ses propres serveurs pour héberger le site creditagric
 Tout ces serveurs sont sous Windows Server 2008 et ont Apache et Tomcat, qui sont nécéssaire au fonctionnement du site.\par
 En plus des serveurs, l'entreprise dispose de baies servant de stockage pour tout ce qui a été téléchargé sur le site.\par 
 En ce qui concerne les serveurs de tests, un des serveurs sert pour le site internet (TST2) et l'autre sert pour le site intranet (TST3).\par
-En ce qui concerne les serveurs de production le site internet et le site intranet disposent de chacun deux serveurs, un qui gère le site et un réplicat. Le réplicat sert au cas il y aura un problème avec le serveur principal. Cependant, chaque site (internet, intranet) dispose de sa propre baie afin de ne pas mélanger les documents internet avec les documents publics.\par
+En ce qui concerne les serveurs de production le site internet et le site intranet disposent de chacun deux serveurs, un qui gère le site et un réplicat. Le réplicat sert au cas il y aura un problème avec le serveur principal. Cependant, chaque site (internet, intranet) dispose de sa propre baie de stockage. Cette baie contient le dossier "upload", qui rassemble tout ce que les utilisateurs ont envoyé sur le site (image, vidéo, ...). Afin de séparer les fichiers publiques, qui sont issue du site internet, et les fichiers privés, qui proviennent de l'intranet.\par
 Le service Publication et Multimédia avait accès à la pris en main des serveurs de tests, mais les serveurs de productions étaient réservé à la DSI.\par
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{images/archi.png} 
+\caption{Architecture d'un environnement de production}
 \end{figure}
-
+\newpage
 \subsection{Cahier des charges}
 Pour ce projet, l'entreprise ne disposait pas de cahier des charges, mais disposait d'un cahier fonctionnel.\par
-Cependant, bien qu'il n'y avait pas de cahier des charges, le but et les différents points de ce projet furent définit lors de réunion au début de celui-ci. Cela permettait d'utiliser une méthodologie agile. Lors de développement de fonctionnalités, une réunion était organisé afin de définir les objectifs et ceux-ci furent contrôlés à la fin du développement.\par 
-Cette méthode avait grand avantage, la réactivité que ce soit au niveau de modification, correction ou création de fonctionnalités. Mais elle avait aussi des désavantages, certain points ne furent fixés qu'a la fin du projet et entrainait de nombreuses modifications. De plus, le cahier fonctionnel n'était pas complet, il ne disposait de maquettes uniquement deux types : le type article et le type dossier. Les autres maquettes ont du être définit par l'équipe tout au long du développement. \par 
-Une autre raison donné sur le fait de ne pas avoir de cahier des charge fut que le projet consistait en une migration, celle de JCMS de la version 6 à la 9. De ce fait le site devait garder la plupart de ses fonctionnalités tout en proposant un design remis au gout du jour.\par 
-Aussi, l'entreprise ne pouvait pas vraiment fixer de date de fin du projet au début de celui-ci, la version 9 de JCMS sur laquelle le site se basé était encore en développement lors du projet et sa date de sortie fut repoussé de 4 mois (de juin à octobre). L'entreprise ne pouvait donc pas fixé de date de fin pour ce projet, au début de celui-ci. Au mois de septembre, soit au début du stage, la date de mise en production du site internet fut fixé au 3 novembre. TODO *Quand à commencé le projet ?DEBUT MAI*\par
-
+Cependant, bien qu'il n'y avait pas de cahier des charges, le but et les différents points de ce projet furent définit lors de réunions au début de celui-ci. Cela permettait d'utiliser une méthodologie agile. Lors de développement de fonctionnalités, une réunion était organisé afin de définir les objectifs et ceux-ci furent contrôlés à la fin du développement.\par 
+Cette méthode avait un grand avantage, la réactivité, que ce soit au niveau de modification, correction ou création de fonctionnalités. Mais elle avait aussi des désavantages, certain points ne furent fixés qu'à quelques semaines de la fin du projet. De plus, le cahier fonctionnel n'était pas complet, seul deux types de contenu avaient une maquette : le type article et le type dossier. Les autres maquettes ont du être définit par l'équipe, en s'inspirant des maquettes du cahier fonctionnel, tout au long du développement. \par 
+Le but du projet peut aussi expliquer l'absence de cahier des charges, il s'agissait d'une migration. De ce fait, la plupart de ses fonctionnalités devaient être toujours présente, tout en proposant un design remis au gout du jour. Tout ce qui était faisable sur le site avec la version 6 de JCMS devait être fonctionnel avec la version 9.\par 
+Aussi, l'entreprise ne pouvait pas fixer de date de fin du projet dès début de celui-ci, car la version 9 de JCMS sur laquelle le site se base était encore en développement. De plus, la date de sortie de JCMS 9 fut repoussé de 4 mois, initialement prévu en juin 2014, il est finalement sortie en octobre 2014. Il était doc pas possible de prévoir le date de fin du projet, au début de celui-ci, c'est à dire début mai 2014. La date de mise en production du site internet fut fixé au 3 novembre 2014, peu avant le début du stage en septembre.\par
+\newpage
 \subsection{Compte-rendu d'activité}
+\subsubsection{Apprentissage des technologies utilisées}
 Le stage a débuté par une période de formation aux technologies utilisées par l'entreprise. JCMS étant un SGC utilisé en milieu professionnel, il était difficile d'avoir des connaissances sur ce sujet en dehors de ce milieu. Cette période de formation fut composé de :
 \begin{itemize}
 \item lecture de documentation sur JCMS afin de comprendre son fonctionnement et du développement en modules,
@@ -232,10 +237,10 @@ La première tâche confiée fut l'intégration de boutons de partage vers les r
 Lorsque que l'on partage un contenu sur Facebook, celui-ci visite la page que l'on souhaite partager à la recherche de balise contenant des informations sur la page. A partir des informations recueillis il génère une fiche de présentation qui sera afficher sur le post de partage, ce qui est beaucoup plus parlant qu'un lien.\par
 Les balises se présentent sous la forme de balise \textit{meta} qui sont situées entre les balises \textit{head} de la page. Elles permettent de donner plusieurs informations à Facebook :
 \begin{itemize}
-\item titre (balise og:title)
-\item description (balise og:description)
-\item url (og:url)
-\item image (og:image)
+\item titre (balise \textit{og:title})
+\item description (balise \textit{og:description})
+\item url (\textit{og:url})
+\item image (\textit{og:image})
 \end{itemize}
 Si une de ces balise est manquante Facebook ira chercher dans la page les informations manquantes. Ces informations sont pas pris au hasard, par exemple si la balise \textit{og:title} qui précise un titre est manquante, Facebook prendra le titre de la page, qui se trouve dans la balise \textit{title} au sein des balises \textit{head}. Il est préférable de préciser ces informations afin de contrôler ce que Facebook va afficher sur le post de l'utilisateur et éviter de donner une mauvaise image à un potentiel visiteur avant qu'il n'arrive sur le site.\par
 \bigskip
@@ -244,26 +249,38 @@ Afin de faciliter l'intégration et avoir des statistique, il a été proposer d
 \item intégration sur le site facilité, car celui-ci se fait par l'ajout d'un lien vers un script ainsi qu'une balise avec un identifiant spécial (\textit{addthis\_sharing\_toolbox}) là ou l'on veux que les boutons apparaissent,
 \item une gestion des réseaux sociaux, sur lesquels seront partagés les pages, simple d'accès car tout se fait à l'aide d'une interface ou il suffit de faire glisser le réseau social voulu de la liste de tous les réseaux sociaux disponible vers celle choisit pour apparaitre sur le site,
 \item des statistiques qui donne le nombre de partage par jour ainsi que le nombre de clic sur les liens partagés.
-\end{itemize}
+\end{itemize}\par
 Ce service a donc été intégré, après vérification des conditions d'utilisation dans un cadre professionnel.\par
 
 \subsubsection{Brèves}
 Le travail proposé était de refaire la partie concernant les brèves. Une brève est une article court ou un évènement, sans image où l'information tient en un ou deux paragraphes. Du point de vue de JCMS, cela ne correspond pas à un type de contenus mais à un contenu article ou évènement catégorisé en tant que brève.\par
+\medskip
 Sur l'ancien site, les brèves étaient présenté en deux pages : une page lanceur et une page où la brève était entièrement affiché. Une page lanceur est une page sur laquelle où l'on trouve une liste de contenus avec le plus souvent une pagination. Pour les brève, le lanceur consistait à afficher le titre de la brève, le début de la brève ainsi que des informations complémentaires. Le problème de ce système fut qu'il nécessitait un clic et un changement de page avant de pouvoir lire la brève.\par
 Ce qui fut proposé comme amélioration était d'avoir toutes les brèves sous forme de liste. Chaque brève est représenter par son titre et peut être ouverte en cliquant sur le celui-ci. Elle se déplie et laisse apparaitre le corps de celle-ci. L'avantage de cette solution est de pouvoir lire entièrement la brève à partir de la page lanceur et du coup en pouvoir lire plusieurs à la suite sans changer de page. Pour ce faire l'utilisation de Bootstrap a était conseillé car celui-ci disposait déjà de classes permettant ce comportement.\par
+\medskip
 Au cours du développement, un problème a été trouvé à cette présentation, elle ne permet pas de partager les brèves sur les réseaux sociaux. En effet, comme vu précédemment, pour être partager un contenu doit pouvoir donner des informations au travers de balises, cependant ces balises sont unique par page, par exemple on ne peut pas avoir plusieurs titre pour une même page. Or le but de cette présentation est d'avoir plusieurs brèves sur la même page.\par
 Après un premier rendu, un problème de lisibilité est apparut sur les serveurs de test. Ce premier rendu utilisait les classes par défaut de Bootstrap sans surcharge. Elles présentaient chaque brève dans un rectangle délimité par une bordure grise, à l'intérieur le titre et le corps de la brève étaient séparer par une bordure. Le titre des brèves disposait d'une couleur de fond. Sur un faible nombre de brève (l'application en locale disposait de 5 ou 6 brèves) ce problème de lisibilité n'était pas important, mais lorsqu'il y a une une vingtaine de brèves affiché, il est difficile de savoir que le corps de la brève est relier au titre précédent. Pour palier à ce problème, il a été proposer de retirer la bordure entre là brève et le titre lorsque celle-ci était ouverte ainsi que la couleur en fond.\par
+\medskip
 Le second rendu bien que plus claire dans la lecture n'était pas tout à fait satisfaisant. Les brèves était affichées en liste, et seul leur titre les différenciait, mais celui-ci n'était pas suffisant car il manquait une information importante, la date de publication. Il peut y avoir plusieurs brèves par jours, et ceci est facilité par leur forme courte. Sas date il était difficile de se repérer dans le flot de brèves. Elle a donc été rajouté au même niveau que le titre mais aligné sur la droit en gris.\par
 \medskip
 Cette présentation plus claire fut réutilisé pour la page des communiqués de presse. Contrairement aux brèves qui sont courtes, les communiqués de presse sont long, mais cette présentation reste acceptable. Lorsque que sur la page de lanceur des brèves il y en aura une vingtaine, sur la page de lanceur des communiqués de presse il y en aura cinq. Cela permet d'avoir plusieurs communiqué de presse sur la même page avec une facilité de navigation.\par
+\begin{figure}[h!]
+\centering\includegraphics[scale=0.5]{images/breve_avant_apres.jpg} 
+\caption{Les brèves avant avec le lanceur et page de contenu et après}
+\end{figure}
 \bigskip 
 La refonte de la partie brève comprenait aussi un bandeau sur la page d'accueil. Il permet d'afficher le titre de certaine brèves et de renvoyer vers celle-ci. Ces brèves son choisies, cela dépend d'une certaine catégorisation. Le bandeau affiche un titre après l'autre, de ce fait, il n'y a jamais deux brève en même temps. Ce bandeau existait sur l'ancien site, et l'on pouvait mettre pause au défilement des titres.\par 
 Sur le nouveau site il a été décidé, dans un soucis d'épuration d'enlever le fait de pouvoir mettre le défilement en pause, mais le fonctionnement resterai le même. Au niveau du développement, afin de ne pas garder de vieux code, il a été décidé de repartir de zéro. Pour l'animation du titre qui disparait pour laisser sa placer au suivant a été réalisé en javascript avec la bibliothèque jQuery.\par 
 Aussi, il a été demandé une option permettant de ne pas afficher les évènements passés. Cette option serait placé dans le back office, dans les options du module web. Pour se faire il suffisait une fois les résultats de la requête connue de tester leur date de validité. Ce test entraine une réduction du nombre de brèves affiché car il se fait en aval de la requête, mais ne pouvait pas avoir lieux en même temps que celle-ci. En effet, les requêtes en JCMS sont définie par l'utilisateur au niveau d'une interface et ce qui est développé est l'affichage de ces résultats.\par
+\begin{figure}[h!]
+\centering\includegraphics[scale=0.8]{images/breve_bandeau.jpg} 
+\caption{Bandeau sur la page d'accueil}
+\end{figure}
 
 \subsubsection{Adaptation des lanceurs sur mobile et tablette}
 L'un des objectifs principaux du projet était d'avoir un site web adaptatif, c'est à dire que l'interface doit s'adapter automatiquement à la taille de l'écran sur lequel il est visualisé. Le but d'avoir un site web adaptatif est d'éviter la multiplication des pages selon le format d'affichage, mais d'avoir une seule page. Par exemple, lorsqu'un article est affiché sur un ordinateur ou sur un mobile, c'est la même page qui doit être appelée. Cependant l'interface n'est pas la même, il se peut que des éléments soit modifiés, ajoutés ou supprimés.\par 
 Ces modifications sont le plus généralement fait en CSS à l'aide des \textit{media queries} introduit par le CSS3. Pour se faire il suffit d'avoir des propriétés de style différentes d'une même classe ou d'un même identifiant, et de préciser à l'aide des \textit{media queries} celle qui doivent être utilisées selon la taille de l'écran. D'autre modifications plus spécifiques peuvent être apporté au niveau du serveur. Cela permet de sélectionner la partie de code qui va être exécuter selon l'environnement.\par
+\medskip
 L'utilisation de Bootstrap permet de faciliter la création de site internet adaptatif, car celui-ci contient des classes utilisant les \textit{média queries}. De plus, les classes sont basées sur un affichage en grille, la taille d'un élément ne dépend pas d'une taille donné en pixel mais en pourcentage. La grille permet d'afficher 12 éléments par ligne. Il y a donc 12 choix de largeur pour un élément. Par exemple, un élément ayant une largeur de taille 4 et un autre de taille 8 seront placé côte à côte, alors que deux élément ayant une largeur de taille 12 seront l'un au dessous de l'autre. La force de Bootstrap réside dans le fait que l'ont préciser une largeur différente selon la taille de l'écran. Par défaut Bootstrap propose 4 résolutions d'écran :
 \begin{itemize}
 \item mobile (largeur strictement inférieure à 768 pixels),
@@ -272,7 +289,8 @@ L'utilisation de Bootstrap permet de faciliter la création de site internet ada
 \item écran large (largeur supérieur ou égale à 1200 pixels).
 \end{itemize}
 Les deux dernières tailles correspondent aux ordinateur (portable et fixe). Pour les mobiles, bien que leurs résolutions soit plus importante que 768 pixels, en réalité les éléments affichés à l'écran sont deux à trois fois plus défini et non pas deux à trois fois plus grand. De ce fait un mobile avec une résolution de 1920 par 1080 pixels affichera les éléments en 414 par 736 pixels avec une définition de l'ordre de 3. Mais un problème se pose en ce qui concerne les tablettes, en mode portrait elle sont reconnu comme des tablettes par Bootstrap, cependant en mode paysage elle son reconnue comme des écrans médium. Un site peut donc être vu de deux manière différente selon l'orientation dans laquelle est la tablette.\par
-L'ancien site creditagricole.info avait deux versions : la version mobile, accessible à l'adresse m.creditagricole.info, et la version bureau. Sur le nouveau site, les deux versions étaient maintenu, mais accessible à la même adresse. Le départage se faisant grâce au caractère adaptatif du site. Cependant le découpage était fait de manière à ce que le site mobile soit utilisé sur les mobiles et tablette. Donc selon l'orientation de la tablette on avait un site mobile ou un site bureau. Le travail proposé était d'adapter le site bureau pour une tablette, afin que la version mobile soit réservé aux mobiles.\par
+\bigskip
+L'ancien site creditagricole.info était en deux versions : la version mobile, accessible à l'adresse m.creditagricole.info, et la version bureau. Sur le nouveau site, les deux versions étaient maintenu, mais accessible à la même adresse. Le départage se faisant grâce au caractère adaptatif du site. Cependant le découpage était fait de manière à ce que le site mobile soit utilisé sur les mobiles et tablette. Donc selon l'orientation de la tablette on avait un site mobile ou un site bureau. Le travail proposé était d'adapter le site bureau pour une tablette, afin que la version mobile soit réservé aux mobiles.\par
 Ce travail nécessitait de revoir une partie du site. En effet, la tablette ayant moins de largeur qu'un écran d'ordinateur. Toutes les pages présentant un seul contenu étaient adaptés pour un affichage sur tablette. Cependant les pages de lanceur était basé sur un modèle avec 3 colonnes, qui ne tenait pas sur un affichage tablette. La solution à cela était de les placer sur 2 colonnes sur les tablettes et 3 colonnes sur le site bureau. Mais le système de grille étant déjà en place rendait ce comportement impossible, il était basé sur :
 \begin{itemize}
 \item plusieurs lignes composées de 3 rectangles (de taille 4) chacun,
@@ -280,11 +298,17 @@ Ce travail nécessitait de revoir une partie du site. En effet, la tablette ayan
 \item l'aperçu du contenu qui était généralement composé du titre ainsi que d'un visuel, avec parfois un chapeau,
 \end{itemize}
 Cette disposition était parfaite pour afficher 3 aperçu de contenu côte à côte, mais lorsque que l'on réduisait la fenêtre pour simuler le comportement sur tablette le rendu donnait : deux contenu côte à côte avec le troisième en dessous ainsi qu'un espace blanc, et ceci sur chaque "ligne". Le nouveau système mis en place enlevait ces lignes et était basé sur le comportement par défait de Bootstrap, qui était de mettre le contenu qui ne rentre pas su la ligne suivante. Au final il ne restait qu'une seule ligne avec des rectangle de taille 4 sur la version bureau et de taille 6 sur tablette. En se basant sur le comportement par défaut de Bootstrap, sur la version bureau, les aperçu était affiché 3 par 3 et sur les tablette deux par deux. Le visiteur n'était donc plus perturbé par le changement entre la version bureau en mode paysage et la version tablette en mode portrait.\par
+\medskip
 Lors du passage de plusieurs ligne à une seule, un problème graphique apparu. Les rectangles d'aperçu se plaçaient mal. En effet, comme avant le système était basé sur plusieurs lignes, il n'était nécessaire de préciser une hauteur aux aperçu, puisque c'était la hauteur de la ligne qui était important. Celle-ci était calculé par le navigateur, en prenant la hauteur de l'aperçu le plus haut qui la compose. Mais avec une seule ligne le navigateur plaçais les blocs d'aperçu où il y avait de la place, cela entrainait des décalages avec des espaces blanc. Ce problème a été régler en précisant une hauteur pour tous les blocs d'aperçu.\par 
 \bigskip
 Après avoir adapté les lanceurs du site bureau à un usage sur tablette, le travail proposé était de les adapter aussi à une utilisation sur le site mobile. Comme pour les tablettes, Bootstrap adapte automatiquement l'affichage. Sur mobile, un lanceur est sous forme de liste où l'aperçu prend toute la largeur. Comme sur les versions bureau et tablette, on retrouve dans l'aperçu une image ainsi que le titre, cependant le chapeau a été retirer. Cette affichage permet se rapprocher d'une interface d'une application mobile native.\par
 
-\subsubsection{Navigation au sein d'un dossier sur un mobile}
+\begin{figure}[h!]
+\centering\includegraphics[scale=0.6]{images/responsive.jpg} 
+\caption{Adaptation sur bureau, tablette et mobile de l'affichage sur 3 colonnes}
+\end{figure}
+\newpage
+\subsubsection{Navigation au sein d'un dossier sur un mobile et tablette}
 Le travail proposé était de réfléchir et proposer un moyen plus simple de naviguer au sein d'un dossier sur mobile et tablette. Pour rappel, un dossier est constitué d'un ensemble d'articles. Comme chaque contenu, un dossier peut être liée à d'autre type de contenu, généralement des vidéos, dossiers ou articles. La navigation au sein du dossier, sur la version bureau, se fait à l'aide d'une liste de lien qui se trouve à gauche de l'article ouvert. Dans la même colonne, plus bas, se trouve les liens vers les contenus liés. Le problème est que sur mobile cette colonne apparait au dessus de l'article ouvert. Le visiteur en arrivant sur un dossier voit en premier lieu le menu du dossier et non pas son contenu. Il faut donc trouver un moyen de naviguer au sein d'un dossier tout en prenant compte de la taille réduite des écrans de mobile.\par
 La première solution proposé fut d'utiliser des flèches de navigation. Ces flèches seront placé en dessous de l'article ouvert, ce qui permettra au visiteur de voir en arrivant sur la page l'article du dossier. De plus, elles n'apparaitrons que si nécessaire, par exemple sur le premier article du dossier il n'y aura pas la flèche vers le précédent article, de même pour le dernier article. À cela, s'ajoute un indicateur de position dans le titre du dossier pour pouvoir se repérer, mais aussi pour indiquer au lecteur qu'il y a une suite, et que le dossier ne se résume pas à un article. Il se place en fin de titre et indique le position de l'article ouvert par rapport à tous les articles du dossier, par exemple dans un dossier contenant 5 articles, si le lecteur est en train de lire le 3ème article du dossier, à coté du titre du dossier sera affiché "(3/5)".\\
 L'avantage de cette solution était qu'elle était optimal pour les mobile, mais elle présentait plusieurs désavantages :
@@ -296,18 +320,35 @@ L'avantage de cette solution était qu'elle était optimal pour les mobile, mais
 Pour palier à ces problèmes, une seconde solution fut proposé, en plus des flèches de navigation, une menu déroulant viendrai se placer entre les flèche et permettrai un accès directe à un article du dossier. La difficulté dans cette solution fut de trouver les bonnes dimensions afin que des flèches ne soit pas trop petites ou que le menu déroulant ne soit pas trop petit non plus. En ce qui concerne les tablettes, en mode portrait elles bénéficient de la même navigation que celle pour le mobile, mais elles ont en plus des indication "Article suivant" et "Article précédent" au niveau des flèches de navigation. De plus, afin de retrouver l'esprit du mode bureau sur la tablette, l'image du dossier affiché en haut des autres articles du dossier sur la version bureau, se retrouve au dessus de la liste déroulante sur la version tablette. En mode paysage, les tablettes garderai la version bureau du site, de ce fait sur tablette les dossier disposent de deux présentation différente selon l'orientation dans laquelle on tient la tablette.\par
 Cependant, cette solution ne fut pas retenu pour la version finale du site. L'interface était trop différente de ce que proposait le site en version bureau. Seulement au lieu de retourner comme au début, l'idée que le menu soit placé au dessous de l'article fut gardé, ainsi que limage pour les tablette. Au final, la navigation au sein d'un dossier se fait au travers d'une liste de lien qui se situe en dessous de l'article ouvert. Les contenus liés ne sont pas affiché ni le mobile, ni les tablettes en mode portrait.\par
 
-\subsubsection{Fiche de présentation des Caisses régionales}
-Chaque caisse régionale dispose d'une fiche de présentation sur le site internet. Lors de la migration, cette fiche de présentation n'a pas été refaite pour être en accord avec le design du site. Le travail proposé était donc d'adapter ces fiches à l'aspect général du site.\par 
-En plus des changement de position et d'aspect, cette page a du être adapté pour une utilisation sur mobile. 
-
-\subsubsection{Carte Google Maps}
-TODO
+\begin{figure}[h!]
+\centering\includegraphics[scale=0.6]{images/dossier_mobile.jpg} 
+\caption{Dernière proposition de navigation sur mobile et tablette qui n'a pas été retenu}
+\end{figure}
+\newpage
+\subsubsection{Migration de divers pages}
+Le travail proposé était de migrer plusieurs pages, c'est à dire à les adapter à la nouvelle charte graphique et les adapter à une navigation sur mobile. De petites modifications ont été apportées à ces pages, c'est pour cela qu'elles sont regroupé en une seule partie.\par 
+\bigskip
+La première page à avoir été retravaillée fut la page de fiche de présentation d'une Caisse régionale. Chaque Caisse régionale dispose d'une fiche de présentation sur le site internet. Sur cette fiche on retrouve les coordonnées, les principales informations, ainsi que les actualités relative à la Caisse.\par 
+La tâche ne concernait pas que le site mobile mais aussi la version bureau. Lors de la migration, la page n'a pas été retravaillé. L'organisation de la page a été revu et les éléments on été adaptés à Bootstrap.\par 
+\bigskip
+Quelques portlets concernant l'affichage de cartes ont du être adapté à une navigation sur mobile. Sur la version bureau, ces portlets étaient composé d'une carte et d'une liste d'élément affiché sur la carte à gauche de celle-ci. Le but était de ne pas afficher cette liste sur mobile.\par 
+La difficulté de cette tâche a été de comprendre touts les fichiers relatif à l'implémentation de l'API de Google Maps. Les fichiers ont très peu évoluer lors de la migration et certaine configurations étaient obsolètes. Ce travail permit nettoyer un peu le code en enlever des configurations inutiles.\par
+\bigskip
+Les pages de flux RSS ont elles aussi été migrer. Bien que les flux RSS sont de moins en moins utilisés sur internet, ils sont encore très utilisé au sein de l'entreprise. Les navigateurs n'affichent pas les flux RSS de la même manière, il y a ceux qui affiche le flux dans une interface adapté, et d'autre qui l'affiche avec une feuille de style, quand elle est donné, sinon ils affiche une page XML.\par 
+Les flux RSS générer par le site ne contenait pas de feuille de style. Le tâche était donc d'associer une feuille de style aux flux.\par
 
 \subsubsection{Fil Twitter}
 Sur les maquettes de la page d'accueil, il apparaissait deux vignette côte à côte qui serviraient à afficher de la publicité ou des informations à propos des offres du Crédit Agricole. Le responsable proposa de remplacer une vignette par un fil d'actualité Twitter. Ce fil Twitter regrouperai les tweets de toutes les Caisses régionales et certaine autre entité du Crédit Agricole, mais ne remontera pas les tweets du compte de la Fédération Nationale du Crédit Agricole. En effet, la plupart des tweets de la FNCA renvoi vers le site creditagricole.info et il serait redondant de retrouver les tweets concernant les nouveaux contenus du site sur la page d'accueil. La tâche confié était d'essayer d'intégrer ce fil de tweet.\par
+\medskip
 Avant tout développement, il fallait se renseigner sur la manière d'intégrer un fil de tweet au sein d'une page. Pour aider l'intégration Twitter propose un site internet dédier au développeur où on trouve toute la documentation nécessaire sur les APIs et les modules de Twitter. Afin de créer un fil de tweet, il faut au préalable créer une liste de compte. Cette liste va constituer l'ensemble des comptes dont les tweets vont apparaitre dans le fil. Après avoir choisit la liste il suffit d'ajouter le code fournit dans la documentation à l'endroit où le fil Twitter va apparaitre sur la page.\par
-Au cours de l'intégration, un problème de taille s'est présenté, une vignette faisait 200 pixels de hauteur et le fil Twitter est obligatoirement composé d'un bandeau informant la nom de la liste de tweet, ce bandeau occupait quasiment toute la hauteur disponible. Un autre assemblage fut alors proposé, les deux vignettes restent, elles sont l'une au dessus de l'autre au d'être côte à côte, le fil Twitter se place à droite des vignettes et ainsi garder la largeur initiale. De cette manière le fil Twitter dispose de plus de 400 pixels de hauteur et peut donc être affiché en présentant environ 3 tweets.\par 
+\medskip
+Au cours de l'intégration, un problème de taille s'est présenté, une vignette faisait 200 pixels de hauteur et le fil Twitter est obligatoirement composé d'un bandeau informant la nom de la liste de tweet, ce bandeau occupait quasiment toute la hauteur disponible. Plusieurs maquettes de divers assemblage fut proposé, et une seul fut retenue. Sur la maquette retenue les deux vignettes restent, elles sont l'une au dessus de l'autre au d'être côte à côte, le fil Twitter se place à droite des vignettes et ainsi garder la largeur initiale. De cette manière le fil Twitter dispose de plus de 400 pixels de hauteur et peut donc être affiché en présentant environ 3 tweets.\par 
 
+\begin{figure}[h!]
+\centering\includegraphics[scale=0.7]{images/twitter.jpg} 
+\caption{Le fil twitter avant et après intégration}
+\end{figure}
+\newpage
 \subsubsection{Uniformisation de la page des brèves}
 A deux semaines de la livraison finale, une réunion a eu lieu dans le but de vérifier l'uniformisation du site. Comme cela a été expliqué, le cahier fonctionnel ainsi que la carte graphique étaient incomplet. De ce fait certain pages ont pu bénéficié de nouvelles fonctionnalités, cependant leur aspect n'étaient pas forcément très bien intégré à celui du site. Au cours de cette réunion, l'aspect général d'une page d'un contenu fut dressé, et elle est divisé en 3 parties :
 \begin{itemize}
@@ -316,6 +357,7 @@ A deux semaines de la livraison finale, une réunion a eu lieu dans le but de v�
 \item un lanceur vers d'autre contenu du même type qui était situé en dessous des deux parties précédentes.
 \end{itemize}\par
 La colonne listant le contenu liée est placé à droite ou à gauche du contenu, cela dépend de la catégorie du  contenu. Pour les articles, vidéos et brèves, qui sont dans la catégorie "L'actualité", la colonne est à droite du contenu, et pour les dossier et rendez-vous expert, qui sont dans la catégorie "Les analyses", la colonne est à gauche.\par
+\bigskip
 Or la page des brèves ne respectait pas cet aspect. La page était compose d'une seule des 3 parties nécessaires : la partie lanceur. De plus même si la première brève était ouverte et aurait pu correspondre à la partie contenu, mais il manquait la partie qui envoi vers d'autre contenu.\par 
 Même si un modèle persistait, il y avait deux manières d'accéder à un contenu à partir du menu : 
 \begin{itemize}
@@ -323,16 +365,22 @@ Même si un modèle persistait, il y avait deux manières d'accéder à un conte
 \item la seconde manière permet d'accéder directement à l'aspect vu précédemment. Dans ce cas l'accès au contenu est plus rapide, il est utiliser pour les vidéos. 
 \end{itemize}\par 
 En ce qui concerne la page des brèves, la seconde solution fut celle adopté. Ce qui avait motivé en premier lieu la liste en accordéon c'était l'accès rapide au brève. Mais un aspect graphique fut emprunté au modèle des pages lanceurs, l'image en fond.\par 
+\medskip
 En résumé, la page de brève serait organiser de manière à avoir une brève ouverte, avec une colonne à droite, afin de voir le contenu liée. En dessous de cette brève se trouve le lanceur en accordéon, celui-ci permet de voir les brèves mais pas leur contenu liée. Pour voir le contenu liée, il faut ouvrir la brève, ce qui va conduire remplacer la 1ère brève, ouverte, par celle-ci.\par
 De plus cette nouvelle organisation permet de partager à nouveau une brève sur les réseaux sociaux. La brève ouverte peut être partagé sur les réseaux sociaux. En effet la condition pour partager un contenu était d'avoir une page spécifique pour celui-ci. Ainsi, les balises de renseignement sur le contenu peuvent être intégrés à la page.\par 
 Bien que le partage était de nouveau disponible pou les brève, il était difficile d'accès. Pour partager une brève qui aura été lu dans le lanceur, il faudra d'abord l'ouvrir afin qu'elle devienne la brève principale et, enfin elle pourra être partager. Dans cette organisation il y avait un clic et un chargement de page en trop.\par 
 La solution serait de pouvoir partager une brève directement depuis le lanceur. Cependant, la solution d'AddThis montre ses limites, elle ne permet pas de partager plusieurs contenu différent au sein d'une même page. Il a donc été décidé de ne pas utiliser AddThis pour les brèves qui sont dans le lanceurs mais de faire un développement spécifique. Les boutons de partage ne partagerai pas l'URL de la page actuelle mais plutôt celle ou la brève est "ouverte". Cependant en utilisant une autre solution, les avantages d'AddThis tel que la personnalisation des liens ou l'outil de statistique ne seront pas disponible.\par
+\begin{figure}[h!]
+\centering\includegraphics[scale=0.5]{images/breve_final.jpg} 
+\caption{La page des brèves tel qu'elle est actuellement sur le site}
+\end{figure}
 \bigskip
 Après la mise en production du site, un bogue est apparu au niveau de cette page. Le comportement par défaut de la page était de ne pas ré-afficher la brève principale dans le lanceur en dessous. Cependant, sur le serveur de production, ce comportement n'était pas reproduit et la brève principale était affiché aussi dans le lanceur.\par 
 La partie ou la brève principale est affiché et la partie lanceurs sont dans deux JSP différentes. Pour communiquer des informations entre les deux JSP il n'est pas possible de passer par la page qui les contient, car elle est générique. La communication entre les deux JSP se faisait alors à l'aide de variables de JCMS relative à la page, et donc communes aux deux JSP.\par 
 Le problème était qu'en production, il y avait des optimisations qui était faite, comme la compression des pages HTML et l'optimisation du javascript. Après avoir activer une à une les optimisation sur le site en local, le problème a pu être isolé, il y avait de l'interférence entre l'optimisation du javascript et les variables relative à la page.\par 
 Le problème a été signalé à Jalios pour qu'il puisse le corriger dans la prochaine version de JCMS 9.\par
 
+\newpage
 \subsubsection{Cookies}
 Afin de pouvoir suive l'évolution des visites sur le site et avoir divers informations concernant les visiteurs, le site utilise des outils de suivi tel que Xiti et Google Analytics. Pour collecter les données, ces outils utilisent des cookies qui permettent de stocker des informations sur le terminal de l'utilisateur. Une directive de l'Union Européenne datant de 2009, transposé par une ordonnace dans la législation française en août 2011, oblige les sites internet utilisant les cookies, dans le but de recueillir des informations sur les utilisateur, doivent les en informer. De plus depuis décembre 2013, afin de facilité son adoption, la CIL a émis une recommandation relative à la directive. L'entreprise a choisi de se conformer à cette obligation avec la refonte du site.\par 
 Le travail proposé était donc d'inclure un message informant l'utilisateur sur l'utilisation des cookies. La CNIL propose deux solutions dans leur recommandation, qui se font au travers de bandeau sur la page :
@@ -345,7 +393,9 @@ L'entreprise a décidé de mettre en place la première solution. Pour se faire,
 Sur son site, la CNIL propose des exemples de code pour la gestion de l'affichage du bandeau. Ce code était en Javascript, et a pu être facilement intégré au site internet. Afin que la bandeau puisse apparaitre sur toute les pages du site, la code devait être placé à un endroit où il serait constamment appelé. Pour cela il a été placé dans une page qui sera appelé à la fin de la génération du header quelque soit la page.
 
 \subsubsection{Mise en production et premiers retours}
-Afin de préparer la mise en production du site, un serveur de pré-production fut mis en place quelques semaine avant la mise en production. Ce serveur permettait de faire les dernier test avec une base de donnée semblable à celle en production. Il a aussi notamment servi à faire des test sur la version mobile. En effet il était impossible d'accéder aux serveurs d tests depuis un mobile, cependant cela a été rendu possible avec le serveur de pré-production. Le serveur deviendra la serveur de production à la date de lancement du site. Contrairement aux serveurs de tests, l'équipe de développement n'avait pas directement accès aux serveurs et devait passer par la DSI pou déposer de nouveaux fichiers.\par 
+Afin de préparer la mise en production du site, un serveur de pré-production fut mis en place quelques semaine avant la mise en production. Ce serveur permettait de faire les dernier test avec une base de donnée semblable à celle en production. Il a aussi notamment servi à faire des test sur la version mobile.\par 
+En effet il était impossible d'accéder aux serveurs de tests depuis un mobile, cependant cela a été rendu possible avec le serveur de pré-production. Le serveur deviendra la serveur de production à la date de lancement du site. Contrairement aux serveurs de tests, l'équipe de développement n'avait pas directement accès aux serveurs et devait passer par la DSI pou déposer de nouveaux fichiers.\par 
+\bigskip
 La date de mise en ligne du site, initialement prévu le 4 novembre 2014, a été repoussé au 12 novembre car aucune communication n'avait été prévu sur la mise en ligne du site. Le retard d'une semaine a permit de rectifier le tir et la communication autour de la nouvelle version fut en place la semaine du 4 novembre.\par
 Le site à été mis en ligne, comme prévu, le 12 novembre. Il n'y a pas eu de problèmes majeurs lors de la mise en ligne, seulement quelques identifiant qui n'ont pas été mis à jour provoquant une absence de statistiques durant le jour qui on suivit.\par 
 Il y a eu dès la mis en lignes des retours sur la version mobile :
@@ -358,9 +408,15 @@ Le travail proposé fut de corriger ces problèmes, afin d'améliorer la navigat
 
 \subsubsection{Images des contenu sur le site}
 Le problème avec les images était qu'elles était de mauvaise qualité sur mobile et en général sur les miniatures. La source de ce problème est une fonctionnalité de JCMS qui permet de déposer une grande image su le site, puis il s'occupe de créer des images au bon format lorsqu'elle est appelé. Par exemple, une image de 1920 par 1080 pixels est déposé sur le site, dans une page elle est affiché en 640 par 360 pixels, lors de l'appel, JCMS va crée une image réduite en plus de celle original. Cependant, lors de cette création l'image va perdre en qualité.\par
+\medskip
 La perte de qualité est accentué par le fait que sur mobile, les éléments sont mieux définit et lorsque qu'une image n'est pas adapté à cette définition, elle est légèrement pixelisé. Pour palier à ce problème une solution fut proposé, demander à JCMS des images deux fois plus grande que celle qui seront affiché. Ce procédé permet d'avoir une image mieux définit, et sur les mobile elle apparait nette. Cependant, cette solution présente un défaut, comme les images sont deux fois plus grande, elles sont plus lourde mais dans de moindre proportion, cela reste donc acceptable.\par
 De plus sur mobile les images pour les aperçus dans les lanceurs étaient trop petits. Ils on donc été agrandit en passant d'une taille de 100 par 55 pixels à 130 par 74 pixels, mais comme les images son deux fois plus grande que l'espace pour les afficher, ils faisaient 260 par 148 pixels.\par 
 De même, ce procédé a été réutilisé pour le site en version bureau/tablette, mais seulement sur les lanceurs. Sur ces version ce procédé permet d'économiser un peu de bande passante, parce que les images qui sont affiché dans les lanceurs ont la même définition que celles qui sont affiché dans un contenu, il n'y a donc plus besoin de charger une nouvelle image entre le lanceur et le contenu. Pour les autres images, par exemple celle du contenu, leur taille est proche de l'original, de ce fait il n'y a pas de perte de qualité, et oc pas de nécessité à charger des images deux fois plus grande que celles qui seront affichées. De plus cela entrainerai à travailler avec de trop grande images, de l'ordre de 1200 par 650 pixels.\par
+
+\begin{figure}[h!]
+\centering\includegraphics[scale=0.5]{images/retina.jpg} 
+\caption{La page des brèves tel qu'elle est actuellement sur le site}
+\end{figure}
 
 \subsubsection{Menu sur mobile}
 Le menu pour mobile qui était en production n'était pas du tout satisfaisant.\\
@@ -415,7 +471,6 @@ Dans un premier temps, afin de ne pas trop perturber l'utilisateur, il a été d
 \newpage
 \section{Conclusion}
 
-\newpage
 \listoffigures
 
 \end{document}
