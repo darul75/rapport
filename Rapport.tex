@@ -3,13 +3,19 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{glossaries}
+\makeglossaries
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \author{Kevin Rivière}
 \title{Rapport de Stage}
 
+% Franchisation des commandes
 \renewcommand{\contentsname}{Table des matières}
 \renewcommand{\listfigurename}{Liste des figures}
+
+% Acronymes (s'utilise avec %gls{ACRONYM})
+\newacronym{TEM}{TEM}{scanning electron microscope}
 
 \begin{document}
 \maketitle
@@ -189,6 +195,11 @@ Le site internet creditagricole.info est organisé en plusieurs modules :
 \item FNCAWebPortletPlugin : ce module contient toutes les portlets du site,
 \item FNCAXitiPlugi : ce module contient le code à inclure pour avoir des statiques sur les visite du site creditagricole.info.
 \end{itemize}\par
+
+\subsubsection{Base de données}
+En informatique et plus particulièrement sur le web, la persistance des données est une fonction importante
+Il existe deux types de persistance de données : le SQL et le NoSQL. 
+TODO: deux types de persistance de données : SQL(paragraphe sur SQL Hibernate) et no SQL (XML store, empilement crud(wiki))
 La base de donné est gérer sous forme d'XML, chaque création, modification et suppression est enregistrer et lors du démarrage de l'applicatif, celui-ci reconstruit la base de donnée à partir du XML. Cette technique permet de retrouver toute entrée à un moment donnée, par exemple elle est très pratique pour revenir à une version antérieur d'un document.\par
 
 \subsubsection{Less}
@@ -199,6 +210,7 @@ Pour le suivi des bogues, l'entreprise utilise un outil nommé Mantis. Cet outil
 Quand un bogue ou une amélioration était résolu, en plus de changer l'état du ticket, il fallait préciser en commentaire les fichiers qui ont été modifier afin d'avoir une trace. De plus les commits devait comporter le numéro et le titre du ticket qu'il résolvait.\par
 
 \subsection{Architecture}
+(TODO parler des serveurs, 2 salles; NAS et SAN pour le upload)
 L'entreprise possède de ses propres serveurs pour héberger le site creditagricole.info. Elle dispose de 9 serveurs pour cela :
 \begin{itemize}
 \item 3 serveur de tests, dont 1 serveur sql,
@@ -457,6 +469,13 @@ Un problème survint lors de test plus poussés sur différents navigateurs, l'a
 \end{itemize}\par 
 Plusieurs optimisations ont été effectué afin d'avoir plus de particules gérer par Firefox, mais le problème était que que Firefox gère assez mal le dessin de multiples rond. Il a donc été décidé de ne pas activer l'option sous Firefox et de baisser le nombre de particules sous Internet Explorer.\par 
 
+\subsubsection{Flux RSS sur les écrans plasmas}
+La Fédération Nationale du Crédit Agricole possède plusieurs écran plasma, au sein de ses locaux, pour diffuser des informations au public et aux employés. Parmi les informations diffusées, on retrouve des actualités du site creditagricole.info.\par 
+Pour permettre la diffusion d'information sur les écrans plasmas, l'entreprise utilise une solution développé en interne. Elle permet de contrôler toutes les diffusions sur tous les écrans à partir d'une interface web simple. Pour cela, il faut créer des chaînes, qui contiennent l'information, par exemple une chaine avec la météo. Ces chaînes sont ensuite rassemblés dans des boucles, qui sont ensuite diffusé sur un ou plusieurs écrans. Un écran ne peut diffuser qu'une boucle.\par 
+Une chaîne sert à diffuser les actualités du site. Elle crée une animation à partir du flux RSS récupérer sur le site et un feuille de style CSS, qui est stocké au sein du logiciel. Il est possible de choisir une feuille de style personnalisé, du moment qu'elle se trouve dans un répertoire spécial. Le travail proposé consistait à mettre à jour la feuille de style en y apportant certain aspect graphique de la nouvelle version du site.\par 
+Un problème se posa au cour du développement, la version du CSS supporté par le logiciel. Le nouvel aspect du site aborde des ombres au niveaux des contours de bloc. Cependant, les ombres autour de bloc est une nouveauté apporté par le CSS3, qui n'est pas forcément disponible au sein du logiciel. La seule manière de savoir la version supporté était de tester, mais le logiciel ne permettait pas d'importer soi même les fichier CSS.\par 
+La DSI a été contacté afin de mettre en place le fichier CSS au sein de la solution, cependant l'absence de documentation sur la solution posa problème. Un rendez-vous fut prit avec les développeur de la solution, qui entre temps en avait fait un produit. Le rendez-vous aura lieu après la fin du stage.\par
+
 \subsubsection{Mise en place de Bibliothèques sur l'espace interne}
 Après la migration du site internet finie, celle de l'espace interne pouvait commencer. Pour cela, des réunions furent organisé afin de définir les grand axes de cette migration. Un des point d'évolution était la création de Bibliothèques. L'espace interne est composé d'un ensemble de clubs, et certain de ces clubs ne servent uniquement qu'a récupérer des documents au sein gestionnaire de document. L'idée était de faire évoluer ces clubs en bibliothèques, en enlevant toute leurs fonctionnalités sauf celle de partage de documents. Cela permet de bien faire la différence entre les club normaux et ceux qui servent uniquement au partage de documents.\par 
 Le travail proposé consistait à appliquer ces modifications à la version actuel de l'espace interne. Il a été décidé d'accompagner le plus possible les utilisateurs dans cette migration en apportant, le plus possible, les fonctionnalités au fur et à mesure. De ce fait, l'utilisateur ne sera pas trop perdu lors de mise en ligne du nouvel espace interne.\par 
@@ -465,7 +484,7 @@ Dans un premier temps, afin de ne pas trop perturber l'utilisateur, il a été d
 
 \newpage
 \section{Conclusion}
-
+\printglossaries
 \listoffigures
 
 \end{document}
