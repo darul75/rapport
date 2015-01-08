@@ -15,7 +15,7 @@
 \renewcommand{\listfigurename}{Liste des figures}
 
 % Acronymes (s'utilise avec %gls{ACRONYM})
-\newacronym{TEM}{TEM}{scanning electron microscope}
+\newacronym{SGBD}{SGBD}{système de gestion de base de données}
 
 \begin{document}
 \maketitle
@@ -196,8 +196,11 @@ Le site internet creditagricole.info est organisé en plusieurs modules :
 \end{itemize}\par
 
 \subsubsection{Base de données}
-En informatique et plus particulièrement sur le web, la persistance des données est une fonction importante
-Il existe deux types de persistance de données : le SQL et le NoSQL. 
+En informatique et plus particulièrement sur le web, la persistance des données est une fonction importante. Sur le web les données sont stockées dans des bases de données, qui sont gérer par des \gls{SGBD}. Il existe deux types de \gls{SGBD} : le SQL et le NoSQL.\par 
+\medskip
+Le \gls{SGBD} le plus répandu est le SQL, les données sont stockées sous forme de tableau dans des "Tables". Le SQL est un \gls{SGBD} relationnel, il est donc possible de lier des tables, afin d'éviter une redondances des données dans différentes tables, et permet une meilleur gestion des données.\par
+\medskip
+Le NoSQL, qui veut dire \textit{Not only SQL} en anglais, est un \gls{SGBD} non relationnel. Il y a plusieurs familles de NoSQL qui ont différentes bases, mais les plus connue se basent sur un système de clé/valeur.\par
 TODO: deux types de persistance de données : SQL(paragraphe sur SQL Hibernate) et no SQL (XML store, empilement crud(wiki))
 La base de donné est gérer sous forme d'XML, chaque création, modification et suppression est enregistrer et lors du démarrage de l'applicatif, celui-ci reconstruit la base de donnée à partir du XML. Cette technique permet de retrouver toute entrée à un moment donnée, par exemple elle est très pratique pour revenir à une version antérieur d'un document.\par
 
