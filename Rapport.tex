@@ -33,9 +33,8 @@
 
 \section{Présentation de l'entreprise}
 \subsection{Secteur d'activité}
-La Fédération Nationale du Crédit Agricole fait partie du groupe Crédit Agricole, il dispose donc des mêmes secteurs d'activités.\par
-Le Crédit Agricole a pour secteur d'activité le secteur financier.
-En effet, celui-ci regroupe les secteurs bancaire et assurances (bancassurance), qui sont les deux activités de l'entreprise.
+Le Crédit Agricole est un acteur majeur du secteur financier français, et plus particulièrement sur les métiers bancaire et assurances (bancassurance).
+La Fédération Nationale du Crédit Agricole fait partie du groupe Crédit Agricole, elle dispose donc des mêmes secteurs d'activités.\par
 \subsection{Fédération Nationale du Crédit Agricole}
 \begin{figure}[h!]
 \centering
@@ -113,9 +112,9 @@ Le stage se positionne comme support dans les travaux de l'entreprise. Le projet
 Le sujet du stage consistait à participer à une refonte du site internet de le Fédération Nationale du Crédit Agricole : www.creditagricole.info, en vue de sa mise en production et corriger les éventuels bogues ensuite.\par
 Le site est basé sur un système de gestion de contenu (SCG ou CMS en anglais), JCMS développé par Jalios.\par
 Le site utilisait la version 6 de JCMS, sortie en 2009, et le but du projet était de migrer le site sur le version 9 de JCMS, sortie en octobre 2014. En plus de ce changement de version, une refonte graphique était aussi prévu.\par
-Les technologies utilisées pour mener à bien ce projet fut :
+Les technologies utilisées pour mener à bien ce projet sont :
 \begin{itemize}
-\item Java JEE,
+\item Java JEE (TODO version),
 \item Javascript/JQuery,
 \item Bootstrap,
 \item less,
@@ -152,10 +151,10 @@ Le site intranet est composé de clubs, ils servent d'espace de discussion et d'
 La base de ce site est donc la rédaction de contenu et la collaboration c'est pour cela que l'entreprise a choisi un système de gestion de contenu. L'entreprise a décidé d'utiliser un SGC français développé par Jalios : JCMS.
 
 \subsubsection{JCMS}
-Comme tout SGC, JCMS permet de faire la gestion de contenu avec gestion des droits. Publier des contenus sur un site web viens alors à la portée de tous car il suffit de déposer son contenu sur le site et JCMS s'occupe de générer une page page HTML. Un SGC est généralement découpé en deux parties : 
+Comme tout SGC, JCMS permet de faire de la gestion de contenu avec gestion des droits. Publier des contenus sur un site web devient alors à la portée de tous car il suffit de déposer son contenu sur le site et JCMS s'occupe de générer une page page HTML. Un SGC est généralement découpé en deux parties : 
 \begin{itemize}
 \item la première partie, accessible à tout le monde, permet d'afficher les contenus publiés, elle est appelé front office,
-\item l'autre partie, privé, permet d'ajouter des contenu et de paramétrer le site, c'est le back office.
+\item l'autre partie, privée, permet d'ajouter des contenu et de paramétrer le site, c'est le back office.
 \end{itemize}\par
 Au point de vue technique, JCMS est composé d'un ensemble de portail, qui correspond à une page. Un portail c'est un assemblage de portlet, caractérisé par un gabarit de page portail, associé à l'arborescence du site. Un portail est générique et n'est pas forcément associé à une seule page.\par 
 Un portlet est un élément du portail, elles servent à générer différents composant d'une page. Il existe différents types de portlets : 
@@ -165,17 +164,17 @@ Un portlet est un élément du portail, elles servent à générer différents c
 \item protlets de navigation,
 \item portlets fonctionnelles.
 \end{itemize}
-L'assemblage des différents types de portlets permet de construire des gabarits de pages portail. De plus, Une portlet peut être, lui-même composé de portlets.\par 
+L'assemblage des différents types de portlets permet de construire des gabarits de pages portail. De plus, une portlet peut être, elle-même composée de portlets.\par 
 Par défaut, JCMS contient un certain nombre de type. Un type c'est la structure d'un contenu ou d'une portlet. C'est une organisation technique d'un besoin fonctionnel, un type est constitué d'un ensemble de champs (texte, lien, image, etc), par exemple un article est constitué d'un champ texte pour le titre, un autre pour le contenu et un champ image pour l'illustration.\par 
-Un type ou une protlet une fois instancié peut être publié en front office par un contributeur. On parle alors d'une publication. À cet instance, il est possible d'associer un gabarit de présentation, ce qui devient un contenu.\par
-Il existe 2 types de gabarits : les gabarits d'affichage du contenu en pleine page dans le front office en fonction du type de contenu et les gabarits de requêtes pour afficher les résultats d'une recherche. Ces gabarit sont liés à un type et sont personnalisable, il est possible d'avoir plusieurs gabarits pour un type. Il y a différents types de gabarits :
+Un type de contenu ou une portlet une fois instanciés peuvent être publiés en front office par un contributeur. On parle alors d'une publication. À cette instance, il est possible d'associer un gabarit de présentation, ce qui devient un contenu.\par
+Il existe 2 types de gabarits : les gabarits d'affichage du contenu en pleine page dans le front office en fonction du type de contenu et les gabarits de requêtes pour afficher les résultats d'une recherche. Ces gabarit sont liés à un type et sont personnalisables, il est possible d'avoir plusieurs gabarits pour un type. Il y a différents types de gabarits :
 \begin{itemize}
-\item Gabarit de présentation de contenu : il définit les norme d'affichage d'un contenu, par exemple comment afficher un article,
+\item Gabarit de présentation de contenu : il définit les normes d'affichage d'un contenu, par exemple comment afficher un article,
 \item Gabarit de portlet : ils sont développés par Jalios ou par un développeur et permettent de définir l'affichage au sein de la portlet,
 \item Gabarit de la page portail : il définit l'organisation des différentes portlets à l'intérieur d'une portlet de type portail.
 \end{itemize}\par 
-Les contenus et les portail peuvent être organiser de façon hiérarchique au sein de JCMS grâce aux catégories. Elles sont utilisé pour la navigation au sein du projet créditagricole.info.\par
-JCMS est organisé en espaces de travail, elles permettent de donner à certain utilisateur des droit de gestion (contribution, modification,...) sur les publications (contenu et portlet) et les catégories.\par 
+Les contenus et les portail peuvent être organisés de façon hiérarchique au sein de JCMS grâce aux catégories. Elles sont utilisées pour la navigation au sein du projet créditagricole.info.\par
+JCMS est organisé en espaces de travail permettant notamment de donner à certains utilisateurs des droits de gestion (contribution, modification,...) sur les publications (contenu et portlet) et les catégories.\par 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.65]{images/page.png}
@@ -183,17 +182,17 @@ JCMS est organisé en espaces de travail, elles permettent de donner à certain 
 \end{figure}
 
 \medskip
-Comme vu précédemment, le site creditagricole.info nécessite un certain nombre de type de contenu qui ne sont pas forcément présent par défaut au sein de JCMS. Pour personnaliser ou ajouter des types de contenu ou des portlet, JCMS propose un développement par module, qui seront ajouté à l'application au démarrage du serveur. Les modules contiennent les types de contenu, les gabarit d'affichages, les habillages personnalisés, mais aussi les images, les styles CSS/Less, des JavaServer Pages (jsp) qui permettent d'exécuter du java au sein de contenu HTML, etc. Le module doit avoir une structure précise afin de permettre l'intégration à l'application. Dans une but d'assurer une compréhension des actions d'un module, celui-ci doit disposer d'un fichier XML qui fera le liens entre l'application et les fichiers du module, c'est lui qui servira notamment à préciser à JCMS si un fichier est un gabarit d'affichage, un habillage, ... et à quel type il est relié.\par 
+Comme vu précédemment, le site creditagricole.info propose un certain nombre de type de contenu qui ne sont pas forcément présents par défaut au sein de JCMS. Pour personnaliser ou ajouter des types de contenu ou des portlet, JCMS propose un développement par module, qui seront ajouté à l'application au démarrage du serveur. Les modules contiennent les types de contenu, les gabarit d'affichages, les habillages personnalisés, mais aussi les images, les styles CSS/Less, des JavaServer Pages (jsp) qui permettent d'exécuter du java au sein de contenu HTML, etc. Le module doit avoir une structure précise afin de permettre l'intégration à l'application. Dans une but d'assurer une compréhension des actions d'un module, celui-ci doit disposer d'un fichier XML qui fera le liens entre l'application et les fichiers du module, c'est lui qui servira notamment à préciser à JCMS si un fichier est un gabarit d'affichage, un habillage, ... et à quel type il est relié.\par 
 Ce développement par module permet à tous les site utilisant JCMS d'avoir une même base, mais aussi de partager leurs modules sur le site internet de Jalios. De là, les autres développeurs peuvent pendre les module pour ajouter des fonctionnalités à leur site facilement.\par 
 Le site internet creditagricole.info est organisé en plusieurs modules :
 \begin{itemize}
 \item FNCANewsletterPlugin : ce module contient les types de contenu, les gabarits d'affichage, les images et les styles utilisés pour la visualisation et l'envoi de lettre d'information,
-\item FNCAWebCartographiePlugin : ce module contient toutes les jps relative à la configuration et à l'affichage des cartes de Google Maps sur le site,
-\item FNCAWebGrIDsurePlugin : ce module gère toute la partie authentification en utilisant un système de motif comme mot de passe,
+\item FNCAWebCartographiePlugin : ce module contient toutes les JSP relatives à la configuration et à l'affichage des cartes de Google Maps sur le site,
+\item FNCAWebGrIDsurePlugin : ce module gère toute la partie authentification en utilisant un système de motif comme mot de passe, et s'appuie sur un webservice.
 \item FNCAWebModelPlugin : ce module est l'un des plus important car il contient tout les types de contenu, ainsi que leur gabarit d'affichage, nécessaire au bon fonctionnement du site,
 \item FNCAWebPlugin : ce module est le plus important, il contient tout ce qui est commun à toute les pages du site comme les styles, le menu, le logo, mais aussi des pages spécifique comme la page de connexion, la page d'accueil, etc.,
 \item FNCAWebPortletPlugin : ce module contient toutes les portlets du site,
-\item FNCAXitiPlugi : ce module contient le code à inclure pour avoir des statiques sur les visite du site creditagricole.info.
+\item FNCAXitiPlugin : ce module contient le code à inclure pour avoir des statiques sur les visite du site creditagricole.info.
 \end{itemize}\par
 
 \subsubsection{Base de données}
@@ -206,7 +205,7 @@ La base de donné est gérer sous forme d'XML, chaque création, modification et
 Le less est une extension du langage CSS. Le CSS permet de définir des styles pour les éléments d'une page HTML. Le CSS est un langage statique, les notions de variables, fonctions et boucles n'existent pas en CSS. Le less permet d'apporter ces notions au CSS, cependant, les navigateurs internet ne savent interpréter que du CSS. Le less est donc compiler afin de produire du CSS, cette compilation se produit au démarrage du serveur ou par un administrateur, mais elle n'a pas lieu à chaque chargement d'une page.
 
 \subsubsection{Mantis}
-Pour le suivi des bogues, l'entreprise utilise un outil nommé Mantis. Cet outil se présente sous la forme d'un site web, et est hébergé au sein de l'entreprise. Seul une partie du service est inscrit. Il permet de reporter des bogues ou des améliorations, sous forme de ticket. Ce ticket peut attribué à une personne et dispose de plusieurs états. L'outil permet aussi d'ajouter des commentaires et des images aux tickets afin de les rendre plus expressif.\par 
+Pour le suivi des faits techniques, l'entreprise utilise l'outil OpenSource Mantis. Cet outil se présente sous la forme d'un site web hébergé au sein de l'entreprise. Seul une partie du service est inscrit. Il permet de reporter des bogues ou des améliorations, sous forme de ticket. Ce ticket peut attribué à une personne et dispose de plusieurs états. L'outil permet aussi d'ajouter des commentaires et des images aux tickets afin de les rendre plus expressif.\par 
 Quand un bogue ou une amélioration était résolu, en plus de changer l'état du ticket, il fallait préciser en commentaire les fichiers qui ont été modifier afin d'avoir une trace. De plus les commits devait comporter le numéro et le titre du ticket qu'il résolvait.\par
 
 \subsection{Architecture}
