@@ -16,6 +16,7 @@
 
 % Acronymes (s'utilise avec %gls{ACRONYM})
 \newacronym{SGBD}{SGBD}{système de gestion de base de données}
+\newacronym{JCMS}{JCMS}{Jalios Content Management System}
 
 \begin{document}
 \maketitle
@@ -103,33 +104,33 @@ La Fédération Nationale du Crédit Agricole ne sert pas uniquement de lieux o�
 La stage s'est déroulé au sein du service Publication et Multimédia. Équipe de 8 personnes, 2 pôles\par
 
 \subsection{Positionnement du stage dans les travaux de l'entreprise}
-Le stage se positionne comme support dans les travaux de l'entreprise. Le projet devant être livré au mois de novembre, le stage servait à finaliser le développement, ainsi que régler les possibles problèmes qui apparaitrons au début de la mise en production.
+Le stage se positionne comme support dans les travaux de l'entreprise. Le projet, sujet du stage, avait débuté avant celui-ci et devait être livré à la moitié du stage. L'entreprise recherchait une aide pour assurer la livraison du projet dans les temps et pour assurer le support, au cas où des problèmes apparaitrai lors de la mise en production.
 
 \newpage
 
 \section{Travail effectué}
 \subsection{Sujet du stage}
 Le sujet du stage consistait à participer à une refonte du site internet de le Fédération Nationale du Crédit Agricole : www.creditagricole.info, en vue de sa mise en production et corriger les éventuels bogues ensuite.\par
-Le site est basé sur un système de gestion de contenu (SCG ou CMS en anglais), JCMS développé par Jalios.\par
-Le site utilisait la version 6 de JCMS, sortie en 2009, et le but du projet était de migrer le site sur le version 9 de JCMS, sortie en octobre 2014. En plus de ce changement de version, une refonte graphique était aussi prévu.\par
+Le site est basé sur un système de gestion de contenu (SCG ou CMS en anglais), \gls{JCMS} développé par Jalios.\par
+Le site utilisait la version 6 de \gls{JCMS}, sortie en 2009, et le but du projet était de migrer le site sur le version 9 de \gls{JCMS}, sortie en octobre 2014. En plus de ce changement de version, une refonte graphique était aussi prévu.\par
 Les technologies utilisées pour mener à bien ce projet sont :
 \begin{itemize}
-\item Java JEE (TODO version),
+\item Java Entreprise Edition 1.6,
 \item Javascript/JQuery,
-\item Bootstrap,
-\item less,
-\item HTML.
+\item Bootstrap 3.0.1,
+\item Less,
+\item HTML 5.
 \end{itemize}
 
 \subsubsection{Le site creditagricole.info}
-Le site creditagricole.info fut lancé en 2009, il fait suite à boetianet, ancien intranet. Le site est divisé en deux parties :
+Le site creditagricole.info fut lancé en 2009, il fait suite à boetianet, précédent site interne. Le site est divisé en deux parties :
 \begin{itemize}
 \item une partie internet ouvert à tout le monde,
-\item une partie intranet réservé aux employés du Crédit Agricole.
+\item et l'espace interne, réservé aux employés du Crédit Agricole.
 \end{itemize}\par 
 \medskip
-Le site internet sert de vitrines aux 39 Caisses régionales en regroupant toutes leurs actions sur le territoire sous forme d'actualité. Aussi ce site permet aussi à la Fédération du Crédit Agricole d'avoir une présence sur internet. En effet, avant 2009 il était très difficile de trouver des informations sur cette instance du Crédit Agricole.\par
-Le site internet est un donc un site éditorial, une grande partie des contenus du site sont issue des actualités des Caisses régionales, l'autre partie provient de la Fédération du Crédit Agricole qui propose des sujet de réflexion. Afin de relater toutes les informations, le site dispose de plusieurs type de contenu :
+Le site internet sert de vitrines aux 39 Caisses régionales en regroupant toutes leurs actions sur le territoire sous forme d'actualité. Aussi ce site permet aussi à la Fédération Nationale du Crédit Agricole d'avoir une présence sur internet. En effet, avant 2009 il était très difficile de trouver des informations sur cette instance du Crédit Agricole.\par
+Le site internet est un donc un site éditorial, une grande partie des contenus du site sont issue des actualités des Caisses régionales, l'autre partie provient de la Fédération Nationale du Crédit Agricole qui propose des sujet de réflexion. Afin de relater toutes les informations, le site dispose de plusieurs type de contenu :
 \begin{itemize}
 \item article,
 \item dossier (un ensemble d'articles),
@@ -141,22 +142,22 @@ Le site internet est un donc un site éditorial, une grande partie des contenus 
 \end{itemize}\par
 Généralement, les articles, évènements, fiches initiatives et certaines vidéo relatent l'actualité des Caisses régionales. Les dossier et une partie des vidéo sont eux issue de la FNCA et apporte des sujets de réflexion.\par
 \bigskip
-Le site intranet sert d'espace d'échange au sein du groupe Crédit Agricole. Seul les employés du Crédit Agricole peuvent s'inscrire, ceux des autres banques du groupe peuvent aussi s'inscrire mais ils auront un accès limité à l'intranet.\par 
-Le site intranet est composé de clubs, ils servent d'espace de discussion et d'échange. Pour cela, il est possible de publier des brèves (court article) et des documents au sein d'un club. De plus, chaque club dispose d'un forum où les membres peuvent discuter librement. Il y a deux types de club : 
+L'espace interne sert d'espace d'échange au sein du groupe Crédit Agricole. Seul les employés du Crédit Agricole peuvent s'inscrire, ceux des autres banques du groupe peuvent aussi s'inscrire mais ils auront un accès limité à l'espace interne.\par 
+L'espace interne est composé de clubs, ils servent d'espace de discussion et d'échange. Pour cela, il est possible de publier des brèves (court article) et des documents au sein d'un club. De plus, chaque club dispose d'un forum où les membres peuvent discuter librement. Il y a deux types de club : 
 \begin{itemize}
 \item les club à accès libre, tout membre du site peut s'inscrire, ils ont généralement pour sujet un thème qui est commun à tous les employés du Crédit Agricole,
 \item les club privé, l'inscription se fait par une demande à l'administrateur du club, ils ont pour sujet des thèmes sensible, par exemple le club des dirigent.
 \end{itemize} \par 
 \bigskip
-La base de ce site est donc la rédaction de contenu et la collaboration c'est pour cela que l'entreprise a choisi un système de gestion de contenu. L'entreprise a décidé d'utiliser un SGC français développé par Jalios : JCMS.
+La base de ce site est donc la rédaction de contenu et la collaboration c'est pour cela que l'entreprise a choisi un système de gestion de contenu. L'entreprise a décidé d'utiliser un SGC français développé par Jalios : \gls{JCMS}.
 
 \subsubsection{JCMS}
-Comme tout SGC, JCMS permet de faire de la gestion de contenu avec gestion des droits. Publier des contenus sur un site web devient alors à la portée de tous car il suffit de déposer son contenu sur le site et JCMS s'occupe de générer une page page HTML. Un SGC est généralement découpé en deux parties : 
+Comme tout SGC, \gls{JCMS} permet de faire de la gestion de contenu avec gestion des droits. Publier des contenus sur un site web devient alors à la portée de tous car il suffit de déposer son contenu sur le site et \gls{JCMS} s'occupe de générer une page page HTML. Un SGC est généralement découpé en deux parties : 
 \begin{itemize}
 \item la première partie, accessible à tout le monde, permet d'afficher les contenus publiés, elle est appelé front office,
 \item l'autre partie, privée, permet d'ajouter des contenu et de paramétrer le site, c'est le back office.
 \end{itemize}\par
-Au point de vue technique, JCMS est composé d'un ensemble de portail, qui correspond à une page. Un portail c'est un assemblage de portlet, caractérisé par un gabarit de page portail, associé à l'arborescence du site. Un portail est générique et n'est pas forcément associé à une seule page.\par 
+Au point de vue technique, \gls{JCMS} est composé d'un ensemble de portail, qui correspond à une page. Un portail c'est un assemblage de portlet, caractérisé par un gabarit de page portail, associé à l'arborescence du site. Un portail est générique et n'est pas forcément associé à une seule page.\par 
 Un portlet est un élément du portail, elles servent à générer différents composant d'une page. Il existe différents types de portlets : 
 \begin{itemize}
 \item portlets de construction de page,
@@ -165,7 +166,7 @@ Un portlet est un élément du portail, elles servent à générer différents c
 \item portlets fonctionnelles.
 \end{itemize}
 L'assemblage des différents types de portlets permet de construire des gabarits de pages portail. De plus, une portlet peut être, elle-même composée de portlets.\par 
-Par défaut, JCMS contient un certain nombre de type. Un type c'est la structure d'un contenu ou d'une portlet. C'est une organisation technique d'un besoin fonctionnel, un type est constitué d'un ensemble de champs (texte, lien, image, etc), par exemple un article est constitué d'un champ texte pour le titre, un autre pour le contenu et un champ image pour l'illustration.\par 
+Par défaut, \gls{JCMS} contient un certain nombre de type. Un type c'est la structure d'un contenu ou d'une portlet. C'est une organisation technique d'un besoin fonctionnel, un type est constitué d'un ensemble de champs (texte, lien, image, etc), par exemple un article est constitué d'un champ texte pour le titre, un autre pour le contenu et un champ image pour l'illustration.\par 
 Un type de contenu ou une portlet une fois instanciés peuvent être publiés en front office par un contributeur. On parle alors d'une publication. À cette instance, il est possible d'associer un gabarit de présentation, ce qui devient un contenu.\par
 Il existe 2 types de gabarits : les gabarits d'affichage du contenu en pleine page dans le front office en fonction du type de contenu et les gabarits de requêtes pour afficher les résultats d'une recherche. Ces gabarit sont liés à un type et sont personnalisables, il est possible d'avoir plusieurs gabarits pour un type. Il y a différents types de gabarits :
 \begin{itemize}
@@ -173,8 +174,8 @@ Il existe 2 types de gabarits : les gabarits d'affichage du contenu en pleine pa
 \item Gabarit de portlet : ils sont développés par Jalios ou par un développeur et permettent de définir l'affichage au sein de la portlet,
 \item Gabarit de la page portail : il définit l'organisation des différentes portlets à l'intérieur d'une portlet de type portail.
 \end{itemize}\par 
-Les contenus et les portail peuvent être organisés de façon hiérarchique au sein de JCMS grâce aux catégories. Elles sont utilisées pour la navigation au sein du projet créditagricole.info.\par
-JCMS est organisé en espaces de travail permettant notamment de donner à certains utilisateurs des droits de gestion (contribution, modification,...) sur les publications (contenu et portlet) et les catégories.\par 
+Les contenus et les portail peuvent être organisés de façon hiérarchique au sein de \gls{JCMS} grâce aux catégories. Elles sont utilisées pour la navigation au sein du projet créditagricole.info.\par
+\gls{JCMS} est organisé en espaces de travail permettant notamment de donner à certains utilisateurs des droits de gestion (contribution, modification,...) sur les publications (contenu et portlet) et les catégories.\par 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.65]{images/page.png}
@@ -182,8 +183,8 @@ JCMS est organisé en espaces de travail permettant notamment de donner à certa
 \end{figure}
 
 \medskip
-Comme vu précédemment, le site creditagricole.info propose un certain nombre de type de contenu qui ne sont pas forcément présents par défaut au sein de JCMS. Pour personnaliser ou ajouter des types de contenu ou des portlet, JCMS propose un développement par module, qui seront ajouté à l'application au démarrage du serveur. Les modules contiennent les types de contenu, les gabarit d'affichages, les habillages personnalisés, mais aussi les images, les styles CSS/Less, des JavaServer Pages (jsp) qui permettent d'exécuter du java au sein de contenu HTML, etc. Le module doit avoir une structure précise afin de permettre l'intégration à l'application. Dans une but d'assurer une compréhension des actions d'un module, celui-ci doit disposer d'un fichier XML qui fera le liens entre l'application et les fichiers du module, c'est lui qui servira notamment à préciser à JCMS si un fichier est un gabarit d'affichage, un habillage, ... et à quel type il est relié.\par 
-Ce développement par module permet à tous les site utilisant JCMS d'avoir une même base, mais aussi de partager leurs modules sur le site internet de Jalios. De là, les autres développeurs peuvent pendre les module pour ajouter des fonctionnalités à leur site facilement.\par 
+Comme vu précédemment, le site creditagricole.info propose un certain nombre de type de contenu qui ne sont pas forcément présents par défaut au sein de \gls{JCMS}. Pour personnaliser ou ajouter des types de contenu ou des portlet, \gls{JCMS} propose un développement par module, qui seront ajouté à l'application au démarrage du serveur. Les modules contiennent les types de contenu, les gabarit d'affichages, les habillages personnalisés, mais aussi les images, les styles CSS/Less, des JavaServer Pages (jsp) qui permettent d'exécuter du java au sein de contenu HTML, etc. Le module doit avoir une structure précise afin de permettre l'intégration à l'application. Dans une but d'assurer une compréhension des actions d'un module, celui-ci doit disposer d'un fichier XML qui fera le liens entre l'application et les fichiers du module, c'est lui qui servira notamment à préciser à \gls{JCMS} si un fichier est un gabarit d'affichage, un habillage, ... et à quel type il est relié.\par 
+Ce développement par module permet à tous les site utilisant \gls{JCMS} d'avoir une même base, mais aussi de partager leurs modules sur le site internet de Jalios. De là, les autres développeurs peuvent pendre les module pour ajouter des fonctionnalités à leur site facilement.\par 
 Le site internet creditagricole.info est organisé en plusieurs modules :
 \begin{itemize}
 \item FNCANewsletterPlugin : ce module contient les types de contenu, les gabarits d'affichage, les images et les styles utilisés pour la visualisation et l'envoi de lettre d'information,
@@ -201,8 +202,8 @@ En informatique et plus particulièrement sur le web, la persistance des donnée
 Le \gls{SGBD} le plus répandu est le SQL, les données sont stockées sous forme de tableau dans des "Tables". Le SQL est un \gls{SGBD} relationnel, il est donc possible de lier des tables, afin d'éviter une redondances des données dans différentes tables, et permet une meilleur gestion des données.\par
 \medskip
 Le NoSQL, qui veut dire \textit{Not only SQL} en anglais, est un \gls{SGBD} non relationnel. Il y a plusieurs familles de NoSQL qui ont différentes bases, mais les plus connue se basent sur un système de clé/valeur.\par
-TODO: deux types de persistance de données : SQL(paragraphe sur SQL Hibernate) et no SQL (XML store, empilement crud(wiki))
-La base de donné est gérer sous forme d'XML, chaque création, modification et suppression est enregistrer et lors du démarrage de l'applicatif, celui-ci reconstruit la base de donnée à partir du XML. Cette technique permet de retrouver toute entrée à un moment donnée, par exemple elle est très pratique pour revenir à une version antérieur d'un document.\par
+\medskip
+\gls{JCMS} utilise les deux types de \gls{SGBD}, le SQL est utilisé pour stocker certaine configuration ainsi que quelques données, mais les différentes instances de types et de portlets sont stockés en NoSQL sous forme d'XML. Ce dernier, nommé "store" au sein de \gls{JCMS}, est composé d'un empilement d'opérations (créer, mettre à jour, supprimer), ce système permet de garder en mémoire tous les états de la base de données, et facilite le retour à un précédent état. Le store a facilité la migration, car un point de repère a été placé à la fin de celui-ci au début du développement, de façon à fusionner uniquement les opérations qui se trouvent après la marque.\par
 
 \subsubsection{Less}
 Le less est une extension du langage CSS. Le CSS permet de définir des styles pour les éléments d'une page HTML. Le CSS est un langage statique, les notions de variables, fonctions et boucles n'existent pas en CSS. Le less permet d'apporter ces notions au CSS, cependant, les navigateurs internet ne savent interpréter que du CSS. Le less est donc compiler afin de produire du CSS, cette compilation se produit au démarrage du serveur ou par un administrateur, mais elle n'a pas lieu à chaque chargement d'une page.
@@ -211,18 +212,19 @@ Le less est une extension du langage CSS. Le CSS permet de définir des styles p
 Pour le suivi des faits techniques, l'entreprise utilise l'outil OpenSource Mantis. Cet outil se présente sous la forme d'un site web hébergé au sein de l'entreprise. Seul une partie du service est inscrit. Il permet de reporter des bogues ou des améliorations, sous forme de ticket. Ce ticket peut attribué à une personne et dispose de plusieurs états. L'outil permet aussi d'ajouter des commentaires et des images aux tickets afin de les rendre plus expressif.\par 
 Quand un bogue ou une amélioration était résolu, en plus de changer l'état du ticket, il fallait préciser en commentaire les fichiers qui ont été modifier afin d'avoir une trace. De plus les commits devait comporter le numéro et le titre du ticket qu'il résolvait.\par
 
+\newpage
 \subsection{Architecture}
-(TODO parler des serveurs, 2 salles; NAS et SAN pour le upload)
-L'entreprise possède de ses propres serveurs pour héberger le site creditagricole.info. Elle dispose de 9 serveurs pour cela :
+L'entreprise possède de ses propres serveurs pour héberger le site creditagricole.info. Elle dispose de deux salles contenant en tout 9 serveurs :
 \begin{itemize}
-\item 3 serveur de tests, dont 1 serveur sql,
-\item 6 serveur de production, dont 2 serveurs sql.
+\item 3 serveur de tests, dont 1 serveur SQL,
+\item 6 serveur de production, dont 2 serveurs SQL.
 \end{itemize}
-Tout ces serveurs sont sous Windows Server 2008 et ont Apache et Tomcat, qui sont nécéssaire au fonctionnement du site.\par
-En plus des serveurs, l'entreprise dispose de baies servant de stockage pour tout ce qui a été téléchargé sur le site.\par 
-En ce qui concerne les serveurs de tests, un des serveurs sert pour le site internet (TST2) et l'autre sert pour le site intranet (TST3).\par
-En ce qui concerne les serveurs de production le site internet et le site intranet disposent de chacun deux serveurs, un qui gère le site et un réplicat. Le réplicat sert au cas il y aura un problème avec le serveur principal. Cependant, chaque site (internet, intranet) dispose de sa propre baie de stockage. Cette baie contient le dossier "upload", qui rassemble tout ce que les utilisateurs ont envoyé sur le site (image, vidéo, ...). Afin de séparer les fichiers publiques, qui sont issue du site internet, et les fichiers privés, qui proviennent de l'intranet.\par
-Le service Publication et Multimédia avait accès à la pris en main des serveurs de tests, mais les serveurs de productions étaient réservé à la DSI.\par
+En plus des serveurs, des baies sont disponible pour sauvegarder tous les documents, images, vidéos, etc. qui sont mis sur le site. L'entreprise utilise pour cela des NAS, cela leurs permet de bien séparer le site des documents mis en ligne par les utilisateurs. De plus, pour plus de sécurité et pour éviter des mélanger les document issue du site internet et les documents de la partie interne, ils disposent de deux baies différentes pour chaque partie du site.\par
+\medskip
+Tout les serveurs (test et production) sont sous Windows Server 2008 et ont Apache et Tomcat, qui sont nécessaire au fonctionnement du site.\par
+Les deux serveurs de tests servent à héberger une version de test de chaque partie du site. La version de test du site internet est hébergé sur le serveur de test 2 (TST2), et l'espace interne est hébergé sur le serveur de test 3 (TST3).\par
+Au niveau de la production, chaque partie du site (internet et espace interne) dispose de deux serveurs, un principal et un de secours. Le serveur de secours est appelé réplicat car il réplique toutes les modifications effectué sur le serveur principale. En cas de problème avec le serveur principal, la bascule sur le réplicat se fait automatiquement.\par
+La connexion par bureau virtuel est restreint aux serveurs de tests pour le service Publication et Multimédia.Pour déposer des fichier ou effectuer des actions sur les serveurs de production, par soucis de sécurité, il faut passer obligatoirement par la DSI, aucune connexion par bureau virtuel n'est autorisé pour les personnes n'appartenant pas à la DSI.\par
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{images/archi.png} 
@@ -233,15 +235,14 @@ Le service Publication et Multimédia avait accès à la pris en main des serveu
 Pour ce projet, l'entreprise ne disposait pas de cahier des charges, mais disposait d'un cahier fonctionnel.\par
 Cependant, bien qu'il n'y avait pas de cahier des charges, le but et les différents points de ce projet furent définit lors de réunions au début de celui-ci. Cela permettait d'utiliser une méthodologie agile. Lors de développement de fonctionnalités, une réunion était organisé afin de définir les objectifs et ceux-ci furent contrôlés à la fin du développement.\par 
 Cette méthode avait un grand avantage, la réactivité, que ce soit au niveau de modification, correction ou création de fonctionnalités. Mais elle avait aussi des désavantages, certain points ne furent fixés qu'à quelques semaines de la fin du projet. De plus, le cahier fonctionnel n'était pas complet, seul deux types de contenu avaient une maquette : le type article et le type dossier. Les autres maquettes ont du être définit par l'équipe, en s'inspirant des maquettes du cahier fonctionnel, tout au long du développement. \par 
-Le but du projet peut aussi expliquer l'absence de cahier des charges, il s'agissait d'une migration. De ce fait, la plupart de ses fonctionnalités devaient être toujours présente, tout en proposant un design remis au gout du jour. Tout ce qui était faisable sur le site avec la version 6 de JCMS devait être fonctionnel avec la version 9.\par 
-Aussi, l'entreprise ne pouvait pas fixer de date de fin du projet dès début de celui-ci, car la version 9 de JCMS sur laquelle le site se base était encore en développement. De plus, la date de sortie de JCMS 9 fut repoussé de 4 mois, initialement prévu en juin 2014, il est finalement sortie en octobre 2014. Il était doc pas possible de prévoir le date de fin du projet, au début de celui-ci, c'est à dire début mai 2014. La date de mise en production du site internet fut fixé au 3 novembre 2014, peu avant le début du stage en septembre.\par
-\newpage
+Le but du projet peut aussi expliquer l'absence de cahier des charges, il s'agissait d'une migration. De ce fait, la plupart de ses fonctionnalités devaient être toujours présente, tout en proposant un design remis au gout du jour. Tout ce qui était faisable sur le site avec la version 6 de \gls{JCMS} devait être fonctionnel avec la version 9.\par 
+Aussi, l'entreprise ne pouvait pas fixer de date de fin du projet dès début de celui-ci, car la version 9 de \gls{JCMS} sur laquelle le site se base était encore en développement. De plus, la date de sortie de \gls{JCMS} 9 fut repoussé de 4 mois, initialement prévu en juin 2014, il est finalement sortie en octobre 2014. Il était doc pas possible de prévoir le date de fin du projet, au début de celui-ci, c'est à dire début mai 2014. La date de mise en production du site internet fut fixé au 3 novembre 2014, peu avant le début du stage en septembre.\par
 \subsection{Compte-rendu d'activité}
 \subsubsection{Apprentissage des technologies utilisées}
-Le stage a débuté par une période de formation aux technologies utilisées par l'entreprise. JCMS étant un SGC utilisé en milieu professionnel, il était difficile d'avoir des connaissances sur ce sujet en dehors de ce milieu. Cette période de formation fut composé de :
+Le stage a débuté par une période de formation aux technologies utilisées par l'entreprise. \gls{JCMS} étant un SGC utilisé en milieu professionnel, il était difficile d'avoir des connaissances sur ce sujet en dehors de ce milieu. Cette période de formation fut composé de :
 \begin{itemize}
-\item lecture de documentation sur JCMS afin de comprendre son fonctionnement et du développement en modules,
-\item tests sur une application JCMS vierge,
+\item lecture de documentation sur \gls{JCMS} afin de comprendre son fonctionnement et du développement en modules,
+\item tests sur une application \gls{JCMS} vierge,
 \item apprentissage du less.
 \end{itemize} 
 La période de formation devait être la plus courte possible afin de pouvoir travailler le plus vite sur le site qui devait être en production deux mois plus tard. \par
@@ -267,7 +268,7 @@ Afin de faciliter l'intégration et avoir des statistique, il a été proposer d
 Ce service a donc été intégré, après vérification des conditions d'utilisation dans un cadre professionnel.\par
 
 \subsubsection{Brèves}
-Le travail proposé était de refaire la partie concernant les brèves. Une brève est une article court ou un évènement, sans image où l'information tient en un ou deux paragraphes. Du point de vue de JCMS, cela ne correspond pas à un type de contenus mais à un contenu article ou évènement catégorisé en tant que brève.\par
+Le travail proposé était de refaire la partie concernant les brèves. Une brève est une article court ou un évènement, sans image où l'information tient en un ou deux paragraphes. Du point de vue de \gls{JCMS}, cela ne correspond pas à un type de contenus mais à un contenu article ou évènement catégorisé en tant que brève.\par
 \medskip
 Sur l'ancien site, les brèves étaient présenté en deux pages : une page lanceur et une page où la brève était entièrement affiché. Une page lanceur est une page sur laquelle où l'on trouve une liste de contenus avec le plus souvent une pagination. Pour les brève, le lanceur consistait à afficher le titre de la brève, le début de la brève ainsi que des informations complémentaires. Le problème de ce système fut qu'il nécessitait un clic et un changement de page avant de pouvoir lire la brève.\par
 Ce qui fut proposé comme amélioration était d'avoir toutes les brèves sous forme de liste. Chaque brève est représenter par son titre et peut être ouverte en cliquant sur le celui-ci. Elle se déplie et laisse apparaitre le corps de celle-ci. L'avantage de cette solution est de pouvoir lire entièrement la brève à partir de la page lanceur et du coup en pouvoir lire plusieurs à la suite sans changer de page. Pour ce faire l'utilisation de Bootstrap a était conseillé car celui-ci disposait déjà de classes permettant ce comportement.\par
@@ -285,7 +286,7 @@ Cette présentation plus claire fut réutilisé pour la page des communiqués de
 \bigskip 
 La refonte de la partie brève comprenait aussi un bandeau sur la page d'accueil. Il permet d'afficher le titre de certaine brèves et de renvoyer vers celle-ci. Ces brèves son choisies, cela dépend d'une certaine catégorisation. Le bandeau affiche un titre après l'autre, de ce fait, il n'y a jamais deux brève en même temps. Ce bandeau existait sur l'ancien site, et l'on pouvait mettre pause au défilement des titres.\par 
 Sur le nouveau site il a été décidé, dans un soucis d'épuration d'enlever le fait de pouvoir mettre le défilement en pause, mais le fonctionnement resterai le même. Au niveau du développement, afin de ne pas garder de vieux code, il a été décidé de repartir de zéro. Pour l'animation du titre qui disparait pour laisser sa placer au suivant a été réalisé en javascript avec la bibliothèque jQuery.\par 
-Aussi, il a été demandé une option permettant de ne pas afficher les évènements passés. Cette option serait placé dans le back office, dans les options du module web. Pour se faire il suffisait une fois les résultats de la requête connue de tester leur date de validité. Ce test entraine une réduction du nombre de brèves affiché car il se fait en aval de la requête, mais ne pouvait pas avoir lieux en même temps que celle-ci. En effet, les requêtes en JCMS sont définie par l'utilisateur au niveau d'une interface et ce qui est développé est l'affichage de ces résultats.\par
+Aussi, il a été demandé une option permettant de ne pas afficher les évènements passés. Cette option serait placé dans le back office, dans les options du module web. Pour se faire il suffisait une fois les résultats de la requête connue de tester leur date de validité. Ce test entraine une réduction du nombre de brèves affiché car il se fait en aval de la requête, mais ne pouvait pas avoir lieux en même temps que celle-ci. En effet, les requêtes en \gls{JCMS} sont définie par l'utilisateur au niveau d'une interface et ce qui est développé est l'affichage de ces résultats.\par
 \begin{figure}[h!]
 \centering\includegraphics[scale=0.8]{images/breve_bandeau.jpg} 
 \caption{Bandeau sur la page d'accueil}
@@ -351,6 +352,7 @@ La difficulté de cette tâche a été de comprendre touts les fichiers relatif 
 Les pages de flux RSS ont elles aussi été migrer. Bien que les flux RSS sont de moins en moins utilisés sur internet, ils sont encore très utilisé au sein de l'entreprise. Les navigateurs n'affichent pas les flux RSS de la même manière, il y a ceux qui affiche le flux dans une interface adapté, et d'autre qui l'affiche avec une feuille de style, quand elle est donné, sinon ils affiche une page XML.\par 
 Les flux RSS générer par le site ne contenait pas de feuille de style. Le tâche était donc d'associer une feuille de style aux flux.\par
 
+\newpage
 \subsubsection{Fil Twitter}
 Sur les maquettes de la page d'accueil, il apparaissait deux vignette côte à côte qui serviraient à afficher de la publicité ou des informations à propos des offres du Crédit Agricole. Le responsable proposa de remplacer une vignette par un fil d'actualité Twitter. Ce fil Twitter regrouperai les tweets de toutes les Caisses régionales et certaine autre entité du Crédit Agricole, mais ne remontera pas les tweets du compte de la Fédération Nationale du Crédit Agricole. En effet, la plupart des tweets de la FNCA renvoi vers le site creditagricole.info et il serait redondant de retrouver les tweets concernant les nouveaux contenus du site sur la page d'accueil. La tâche confié était d'essayer d'intégrer ce fil de tweet.\par
 \medskip
@@ -390,9 +392,9 @@ La solution serait de pouvoir partager une brève directement depuis le lanceur.
 \end{figure}
 \bigskip
 Après la mise en production du site, un bogue est apparu au niveau de cette page. Le comportement par défaut de la page était de ne pas ré-afficher la brève principale dans le lanceur en dessous. Cependant, sur le serveur de production, ce comportement n'était pas reproduit et la brève principale était affiché aussi dans le lanceur.\par 
-La partie ou la brève principale est affiché et la partie lanceurs sont dans deux JSP différentes. Pour communiquer des informations entre les deux JSP il n'est pas possible de passer par la page qui les contient, car elle est générique. La communication entre les deux JSP se faisait alors à l'aide de variables de JCMS relative à la page, et donc communes aux deux JSP.\par 
+La partie ou la brève principale est affiché et la partie lanceurs sont dans deux JSP différentes. Pour communiquer des informations entre les deux JSP il n'est pas possible de passer par la page qui les contient, car elle est générique. La communication entre les deux JSP se faisait alors à l'aide de variables de \gls{JCMS} relative à la page, et donc communes aux deux JSP.\par 
 Le problème était qu'en production, il y avait des optimisations qui était faite, comme la compression des pages HTML et l'optimisation du javascript. Après avoir activer une à une les optimisation sur le site en local, le problème a pu être isolé, il y avait de l'interférence entre l'optimisation du javascript et les variables relative à la page.\par 
-Le problème a été signalé à Jalios pour qu'il puisse le corriger dans la prochaine version de JCMS 9.\par
+Le problème a été signalé à Jalios pour qu'il puisse le corriger dans la prochaine version de \gls{JCMS} 9.\par
 
 \newpage
 \subsubsection{Cookies}
@@ -421,25 +423,33 @@ Il y a eu dès la mis en lignes des retours sur la version mobile :
 Le travail proposé fut de corriger ces problèmes, afin d'améliorer la navigation sur mobile.
 
 \subsubsection{Images des contenu sur le site}
-Le problème avec les images était leurs mauvaise qualité sur mobile et en général sur les miniatures. La source de ce problème est une fonctionnalité de JCMS qui permet de déposer une grande image su le site, puis il s'occupe de créer des images au bon format lorsqu'elle est appelé. Par exemple, une image de 1920 par 1080 pixels est déposé sur le site, dans une page elle est affiché en 640 par 360 pixels, lors de l'appel, JCMS va crée une image réduite en plus de celle original. Cependant, lors de cette création l'image va perdre en qualité.\par
+Le problème avec les images était leurs mauvaise qualité sur mobile et en général sur les miniatures. La source de ce problème est une fonctionnalité de \gls{JCMS} qui permet de déposer une grande image su le site, puis il s'occupe de créer des images au bon format lorsqu'elle est appelé. Par exemple, une image de 1920 par 1080 pixels est déposé sur le site, dans une page elle est affiché en 640 par 360 pixels, lors de l'appel, \gls{JCMS} va crée une image réduite en plus de celle original. Cependant, lors de cette création l'image va perdre en qualité.\par
 \medskip
-La perte de qualité est accentué par le fait que sur mobile, les éléments sont mieux définit et lorsque qu'une image n'est pas adapté à cette définition, elle est légèrement pixelisé. Pour palier à ce problème une solution fut proposé, demander à JCMS des images deux fois plus grande que celle qui seront affiché. Ce procédé permet d'avoir une image mieux définit, et sur les mobile elle apparait nette. Cependant, cette solution présente un défaut, comme les images sont deux fois plus grande, elles sont plus lourde mais dans de moindre proportion, cela reste donc acceptable.\par
+La perte de qualité est accentué par le fait que sur mobile, les éléments sont mieux définit et lorsque qu'une image n'est pas adapté à cette définition, elle est légèrement pixelisé. Pour palier à ce problème une solution fut proposé, demander à \gls{JCMS} des images deux fois plus grande que celle qui seront affiché. Ce procédé permet d'avoir une image mieux définit, et sur les mobile elle apparait nette. Cependant, cette solution présente un défaut, comme les images sont deux fois plus grande, elles sont plus lourde mais dans de moindre proportion, cela reste donc acceptable.\par
 De plus sur mobile les images pour les aperçus dans les lanceurs étaient trop petits. Ils on donc été agrandit en passant d'une taille de 100 par 55 pixels à 130 par 74 pixels, mais comme les images son deux fois plus grande que l'espace pour les afficher, ils faisaient 260 par 148 pixels.\par 
 De même, ce procédé a été réutilisé pour le site en version bureau/tablette, mais seulement sur les lanceurs. Sur ces version ce procédé permet d'économiser un peu de bande passante, parce que les images qui sont affiché dans les lanceurs ont la même définition que celles qui sont affiché dans un contenu, il n'y a donc plus besoin de charger une nouvelle image entre le lanceur et le contenu. Pour les autres images, par exemple celle du contenu, leur taille est proche de l'original, de ce fait il n'y a pas de perte de qualité, et oc pas de nécessité à charger des images deux fois plus grande que celles qui seront affichées. De plus cela entrainerai à travailler avec de trop grande images, de l'ordre de 1200 par 650 pixels.\par
 
 \subsubsection{Menu sur mobile}
-Le menu pour mobile qui était en production n'était pas du tout satisfaisant.\\
-Bien que ce soit les éléments de Bootstrap qui ont été utilisés, certain choix ont fait que le menu était inutilisable : 
+Bien qu'il avait un bon rendu en local, le menu sur mobile était inutilisable en production. Ce problème avait un importance haute, du fait qu'il nuisait à la navigation sur le site mobile. Même si ce sont les éléments de Bootstrap qui ont été utilisés, certain choix ont fait que le menu était inutilisable : 
 \begin{itemize}
-\item comme dit précédemment, la police prenait trop de temps à charger et à s'afficher. Entre le moment où le menu était ouvert et le moment où la police s'affichait il y avait au moins 5 secondes,
+\item comme dit précédemment, la police prenait trop de temps à charger et à s'afficher. Entre le moment où le menu était ouvert et le moment où la police s'affichait il y avait un délais d'au moins 5 secondes,
 \item la gestion des sous menu n'était pas optimal. Le menu du site est composé de catégories, et ces catégorie disposait d'un sous menu qui s'ouvrait lorsque l'on cliquait sur la catégorie,
 \item le scroll était impossible dans le menu, et il pouvait arrivé d'avoir un sous menu qui dépassait de l'écran,
 \item impossible de savoir si on avait cliqué sur le bon menu, car la taille du texte était petite et à part le chargement de page rien n'indiquait que la clic a bien été fait.
 \end{itemize}\par 
+
+\begin{figure}[h!]
+\centering\includegraphics[scale=0.5]{images/menu_mbug.jpg} 
+\caption{La page des brèves tel qu'elle est actuellement sur le site}
+\end{figure}
+
 Plusieurs propositions ont été faite afin de trouver une solution aux problèmes. La première chose qui fut modifier dans le menu fut la police. Le site creditagricole.info utilise une police spécial pour les titres et les menus, cette police n'est pas une police standard du web. De ce fait pour s'afficher sur le site elle est d'abord téléchargé par le navigateur et chargé à la volée. Cependant, sur mobile ce téléchargement et ce chargement à la volée prennent plus de temps, la connexion et le processeur étant plus lent sur mobile que sur un ordinateur. Plusieurs polices standards du web, elles sont reconnue par tous les navigateurs, ont été testés, et finalement la police Verdana a été retenu.\par
+\medskip
 Une première version fut proposé. Contrairement à celle qui était en ligne, la barre de navigation, qui donne accès au menu, était en haut de la page et non plus fixé en haut de la fenêtre. Quand le menu était ouvert, il ne chevauchais plus la page mais comme il est en haut pousse celle-ci. De cette manière il est possible de scroller dans le menu. Cependant, comme il n'était plus fixe le seul moyen d'avoir accès au menu était de remonter tout en haut de la page. En plus d'avoir été changé, la police a été grossie pour permettre de ne plus se trompé lors du clic. Même si la navigation au sein du menu était amélioré, la navigation dans les sous menu n'avait pas changé et le fait de devoir remonter en haut de la page pour accéder au menu était pénible.\par
+\medskip
 Le seconde version mettait l'accent sur la navigation dans les sous menus. Ce qui a été proposé était afficher le contenu de out les sous menu, ainsi pour arriver à un élément du sous menu il y avait moins de clic. Bien sur, la taille des sous menu n'était pas importante et la quasiment tout le menu tenait sur l'écran sans devoir scroller. De plus afin d'améliorer la visibilité, les catégories sont en gras et les éléments sont légèrement décaler vers la droite. Aussi, chaque élément est délimité par une bordure fine, comme ce qui se fait dans les application native sur mobile, et afin de bien voir la différence entre catégorie et élément du sous menu, ils auront des couleurs différentes. Une fois que l'on clique sur un élément sa couleur de fond change pour montrer à l'utilisateur qu'il a bien cliqué et où il avait cliqué.\par
 La deuxième version réglait les problèmes de navigation dans les sous menu, cependant, la barre de menu reste en haut de la page. Le problème est que si la barre de menu est de nouveau fixé en haut de la fenêtre, il n'est plus possible de scroller dans le menu. Le menu faisant partie de la barre de navigation, il se retrouverai lui aussi fixé.\par
+\medskip
 La troisième version a essayé d'apporter une solution à ce problème. Pour cela il fallait dissocier la barre de menu du menu lui même, de ce fait il sera possible de scroller dans la menu. Cependant, avec le système en place, le menu qui s'ouvre en accordéon, un rendu avec un menu qui scroll ne serai pas ergonomique. Il fut proposé de mettre en place un menu, sous forme de panneaux, qui ne prendrai pas toute la largeur. Ce type de menu est utilisé dans la plupart des applications mobiles natives.\par
 La mise en place du nouveau menu fut délicate. En effet, le menu en place utilisait les classes de Bootstrap. Il fallait donc garder le comportement par défaut de Bootstrap pour le version bureau, et forcer un autre comportement sur mobile. Le premier rendu était proche du comportement d'un menu d'une application native, celui-ci s'ouvrait en poussant la page vers la droite. Cependant, il présentait un défaut majeur, une fois ouvert la partie de la page, décalé à droite, qui devait être caché parce quelle était hors de l'écran tait toujours accessible par un scroll horizontal. Pour palier ce problème un second rendu fut proposé avec le menu qui en s'ouvrant ne pousse plus page mais la chevauche. La largeur de la page ne change pas une fois le menu ouvert.\par 
 Cette troisième version fut retenu pour une mise en ligne.
@@ -452,14 +462,14 @@ Durant la migration de rapport de nouveaux bogues a été stoppé, pour évité 
 
 \subsubsection{Module évènementiel}
 Avant la migration, le site était composé d'un module évènementiel. Ce module sert à mettre en avant un message par le biais d'une portlet, qui s'affiche sous forme de pop-up sur la page d'accueil. Il est utilisé pour les grandes occasions, par exemple pour les fêtes de fin d'années ou pour prévenir la mise en ligne du nouveau site, car il empêche toute navigation sur la page d'accueil tant qu'il n'est pas fermé. Une fois fermé, la portlet ne réapparait qu'après une période définie (généralement 12 heures). Ce comportement est possible grâce à l'utilisation de cookies.\par 
-Le module avait été développé pour l'ancienne version du site et fonctionnait avec JCMS 6. Le travail proposé fut d'adapter ce module pour le nouveau site, donc pour JCMS 9. Afin de ne pas faire trainer de vieux morceaux de code, et au vu de la simplicité du module, il fut décidé de re-développer entièrement le module.\par 
+Le module avait été développé pour l'ancienne version du site et fonctionnait avec \gls{JCMS} 6. Le travail proposé fut d'adapter ce module pour le nouveau site, donc pour \gls{JCMS} 9. Afin de ne pas faire trainer de vieux morceaux de code, et au vu de la simplicité du module, il fut décidé de re-développer entièrement le module.\par 
 Le développement fut rapide du fait de sa similarité avec le bandeau informant l'utilisation de cookies. Cependant, deux questions se posèrent : 
 \begin{itemize}
 \item Comment centrer la portlet, même après un redimensionnement de la page ?
 \item Commet détecter la page d'accueil ?
 \end{itemize}\par
 Pour centrer un élément, on peu utiliser le CSS, pour cela on le place au centre de la page moins la moitié de sa longueur et se largeur. Le problème ici est que la taille de la portlet n'est pas connue, cela peut être une image, une vidéo ou même un texte. La solution de ce problème était dans l'utilisation du Javascript, grâce à lui, il est possible de récupérer la taille d'un élément sur la page et de définir une nouvelle position pour cet élément.\par 
-Au lieu de détecter la page d'accueil, pourquoi ne pas simplement mettre le code nécessaire sur la page d'accueil ? Cela n'est pas possible car le développement doit se faire dans un module, il doit être possible de désactiver sans devoir changer le code de la page d'accueil. Avec JCMS, il est possible d'appeler une JSP à la fin du header, afin d'ajouter des balises dans celui-ci, ou avant le footer. Cependant, il n'est pas possible d'appeler une JSP pour une certaine page. La solution proposé à ce problème était d'appeler la JSP qui génère la pop-up avant le footer et détecter dans celle-ci si la page qui était chargé était bien la page d'accueil. Pour détecter la page d'accueil il suffit de vérifier son identifiant. Cette solution n'est pas la plus optimal mais comme il est impossible détecter une page avant qu'elle soit appelé, c'était la meilleur des solutions.\par 
+Au lieu de détecter la page d'accueil, pourquoi ne pas simplement mettre le code nécessaire sur la page d'accueil ? Cela n'est pas possible car le développement doit se faire dans un module, il doit être possible de désactiver sans devoir changer le code de la page d'accueil. Avec \gls{JCMS}, il est possible d'appeler une JSP à la fin du header, afin d'ajouter des balises dans celui-ci, ou avant le footer. Cependant, il n'est pas possible d'appeler une JSP pour une certaine page. La solution proposé à ce problème était d'appeler la JSP qui génère la pop-up avant le footer et détecter dans celle-ci si la page qui était chargé était bien la page d'accueil. Pour détecter la page d'accueil il suffit de vérifier son identifiant. Cette solution n'est pas la plus optimal mais comme il est impossible détecter une page avant qu'elle soit appelé, c'était la meilleur des solutions.\par 
 \bigskip
 Après avoir vu une animation d'étoiles se déplaçant dans l'univers, il a été proposé de rapatrier le code de cette animation et de le modifier afin d'en faire un effet de neige qui tombe. L'animation était en Javascript et utilisait la balise HTML canvas. Cette balise HTML est utilisé pour avoir des rendus dynamiques d'images, elle permet d'avoir une zone de dessin.\par 
 Après quelques tests, le rendu était satisfaisant et il fut proposé d'intégrer l'animation au sein du module évènementiel. L'animation sera une option à activer dans les propriétés du module.\par 
@@ -471,6 +481,12 @@ Un problème survint lors de test plus poussés sur différents navigateurs, l'a
 \end{itemize}\par 
 Plusieurs optimisations ont été effectué afin d'avoir plus de particules gérer par Firefox, mais le problème était que que Firefox gère assez mal le dessin de multiples rond. Il a donc été décidé de ne pas activer l'option sous Firefox et de baisser le nombre de particules sous Internet Explorer.\par 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{images/evenementiel.jpg}
+\caption{Plugin évènementiel sur le site avec l'effet neige}
+\end{figure}
+
 \subsubsection{Flux RSS sur les écrans plasmas}
 La Fédération Nationale du Crédit Agricole possède plusieurs écran plasma, au sein de ses locaux, pour diffuser des informations au public et aux employés. Parmi les informations diffusées, on retrouve des actualités du site creditagricole.info.\par 
 Pour permettre la diffusion d'information sur les écrans plasmas, l'entreprise utilise une solution développé en interne. Elle permet de contrôler toutes les diffusions sur tous les écrans à partir d'une interface web simple. Pour cela, il faut créer des chaînes, qui contiennent l'information, par exemple une chaine avec la météo. Ces chaînes sont ensuite rassemblés dans des boucles, qui sont ensuite diffusé sur un ou plusieurs écrans. Un écran ne peut diffuser qu'une boucle.\par 
@@ -481,7 +497,7 @@ La DSI a été contacté afin de mettre en place le fichier CSS au sein de la so
 \subsubsection{Mise en place de Bibliothèques sur l'espace interne}
 Après la migration du site internet finie, celle de l'espace interne pouvait commencer. Pour cela, des réunions furent organisé afin de définir les grand axes de cette migration. Un des point d'évolution était la création de Bibliothèques. L'espace interne est composé d'un ensemble de clubs, et certain de ces clubs ne servent uniquement qu'a récupérer des documents au sein gestionnaire de document. L'idée était de faire évoluer ces clubs en bibliothèques, en enlevant toute leurs fonctionnalités sauf celle de partage de documents. Cela permet de bien faire la différence entre les club normaux et ceux qui servent uniquement au partage de documents.\par 
 Le travail proposé consistait à appliquer ces modifications à la version actuel de l'espace interne. Il a été décidé d'accompagner le plus possible les utilisateurs dans cette migration en apportant, le plus possible, les fonctionnalités au fur et à mesure. De ce fait, l'utilisateur ne sera pas trop perdu lors de mise en ligne du nouvel espace interne.\par 
-La tâche était de crée un nouveau type d'espace de travail, bibliothèque, et de créer un onglet "Bibliothèques" dans le menu. La difficulté de ce travail était de travailler avec la version 6 de JCMS, lors de la migration du site internet il n'y avait pas eu besoin de travailler avec une version 6. Il y avait peu de différences technique entre la version 6 et la version 9 de JCMS, contrairement à l'aspect, où il y avait de nombreuses différences. De plus le site internet n'utilise pas du tout les espaces de travail, alors que c'est l'essence même de l'espace interne.\par 
+La tâche était de crée un nouveau type d'espace de travail, bibliothèque, et de créer un onglet "Bibliothèques" dans le menu. La difficulté de ce travail était de travailler avec la version 6 de \gls{JCMS}, lors de la migration du site internet il n'y avait pas eu besoin de travailler avec une version 6. Il y avait peu de différences technique entre la version 6 et la version 9 de \gls{JCMS}, contrairement à l'aspect, où il y avait de nombreuses différences. De plus le site internet n'utilise pas du tout les espaces de travail, alors que c'est l'essence même de l'espace interne.\par 
 Dans un premier temps, afin de ne pas trop perturber l'utilisateur, il a été demandé pour les bibliothèques que ça soit un club qui s'ouvre directement sur la page de partage de documents, au lieu de la page d'actualité. De plus, la page regroupant les club regroupera aussi les bibliothèque sans distinction entre les deux types. Un fois qu'un membre s'inscrit à une bibliothèque, au lieu de l'ajouter au menu club, il ira dans le menu bibliothèque.\par
 
 \newpage
