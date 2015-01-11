@@ -17,6 +17,7 @@
 % Acronymes (s'utilise avec %gls{ACRONYM})
 \newacronym{SGBD}{SGBD}{système de gestion de base de données}
 \newacronym{JCMS}{JCMS}{Jalios Content Management System}
+\newacronym{SVN}{SVN}{Subversion}
 
 \begin{document}
 \maketitle
@@ -30,6 +31,17 @@
 \newpage
 
 \section{Introduction}
+Le stage s'est déroulé au sein du service Publication et Multimédia de la Fédération Nationale du Crédit Agricole, et dont le sujet est le suivant :\par 
+\medskip
+Au sein du département publications et multimédia de la Fédération Nationale du Crédit Agricole, vous intégrez une équipe de 6 personnes en charge des sites internet. Dans le cadre de la migration technique prévue des espaces internet et extranet qui reposent sur la solution JCMS (Jalios), des aménagements fonctionnels et une refonte graphique sont prévus.\par
+Vous serez donc amené à intervenir en tant qu’intégrateur web principalement sur la couche présentation mais également initié aux subtilités de notre CMS (technologies Java J2E).\par
+Vous devrez traduire les nouvelles spécifications d’interface et les implémenter au moyen des technologies Javascript, HTML et CSS, et tenir compte des contraintes liés aux différents supports : Tablettes, Mobile, Web.\par 
+Vous serez sous la responsabilité d’un chef de projet et d’un développeur senior.\par 
+\medskip
+J'ai choisit ce stage parce qu'il proposait de travailler sur des technologies web. L'école ne nous propose pas d'approfondir nos connaissances dans le web, lors du tronc commun. De plus, le sujet du stage est dans la continuité du programme de l'école, parce que nous avions terminé la première année d'ingénieur avec un projet d'application web en Java.\par 
+\medskip
+Ce stage devrait me permettre de développer mes connaissances dans le monde du web. 
+
 \newpage
 
 \section{Présentation de l'entreprise}
@@ -209,7 +221,7 @@ Le NoSQL, qui veut dire \textit{Not only SQL} en anglais, est un \gls{SGBD} non 
 Le less est une extension du langage CSS. Le CSS permet de définir des styles pour les éléments d'une page HTML. Le CSS est un langage statique, les notions de variables, fonctions et boucles n'existent pas en CSS. Le less permet d'apporter ces notions au CSS, cependant, les navigateurs internet ne savent interpréter que du CSS. Le less est donc compiler afin de produire du CSS, cette compilation se produit au démarrage du serveur ou par un administrateur, mais elle n'a pas lieu à chaque chargement d'une page.\par 
 
 \subsubsection{Bootstrap}
-Bootstrap est un \textit{framework} HTML, CSS et Javascript. Il permet de 
+Bootstrap est un ensemble d'outils, développé par Twitter, utile lors de développement de site web. Il est composé d'un ensemble de code HTML, CSS et Javascript qui permettent de mettre en page un site web facilement, et d'y ajouter quelques fonctionnalité dynamiques comme un carrousel ou un système d'onglet. Toutes les feuilles de styles sont faite en Less, et il est possible de les surcharger pour plus de personnalisation. Pour les fonctionnalités Javascript, Bootstrap utilise la bibliothèque JQuery, qui n'est pas comprit dans ce dernier, il faut donc l'inclure à part.
 
 \subsubsection{Mantis}
 Pour le suivi des faits techniques, l'entreprise utilise l'outil OpenSource Mantis. Cet outil se présente sous la forme d'un site web hébergé au sein de l'entreprise. Seul une partie du service est inscrit. Il permet de reporter des bogues ou des améliorations, sous forme de ticket. Ce ticket peut être ensuite attribué à une personne et dispose de plusieurs états. L'outil permet aussi d'ajouter des commentaires et des images aux tickets afin de les rendre plus expressif.\par 
@@ -228,6 +240,8 @@ Tout les serveurs (test et production) sont sous OS Windows Server 2008. Sur cha
 Les deux serveurs de tests servent à héberger une version de test de chaque partie du site. La version de test du site internet est hébergé sur le serveur de test 2 (TST2), et l'espace interne est hébergé sur le serveur de test 3 (TST3).\par
 Au niveau de la production, chaque partie du site (internet et espace interne) dispose de deux serveurs, un principal et un de secours. Le serveur de secours est appelé réplicat car il réplique toutes les modifications effectuées sur le serveur principal. En cas de problème avec le serveur principal, la bascule sur le réplicat se fait automatiquement.\par
 La connexion par bureau virtuel est restreint aux serveurs de tests pour le service Publication et Multimédia. Pour déposer des fichiers ou effectuer des actions sur les serveurs de production, par soucis de sécurité, il faut passer obligatoirement par la DSI, aucune connexion par bureau virtuel n'est autorisé pour les personnes n'appartenant pas à la DSI.\par
+\medskip
+En plus des serveurs de test, l'entreprise dispose d'un serveur sous OS Linux contenant un outil  d'intégration continue, Jenkins. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.3]{images/archi.png} 
@@ -248,9 +262,8 @@ Le stage a débuté par une période de formation aux technologies utilisées pa
 \item tests sur une application \gls{JCMS} vierge,
 \item apprentissage du less.
 \end{itemize}\par 
-Pour le développement l'entreprise utilise l'IDE Eclipse
+Pour le développement l'entreprise utilise l'IDE Eclipse, il est conseillé par Jalios qui fournit un outil pour le développement modulaire. En effet, chaque module est considérer comme un projet, et sont au même niveau que l'application web \gls{JCMS}. Cependant, \gls{JCMS} ne peut pas récupérer les modules en dehors de l'application, et la seul manière de les inclure est de passer par l'interface web une fois l'application lancée. Pour éviter cette manipulation à chaque modification d'un module, Jalios propose un outil qui permet de synchroniser les fichiers d'un module entre sa version au sein de \gls{JCMS} et sa version en tant que projet.\par
 La période de formation devait être la plus courte possible afin de pouvoir travailler le plus vite sur le site qui devait être en production deux mois plus tard. \par
-TODO: eclipse IDE, sublimeText, JCMSTools
 
 \subsubsection{Partage vers les réseaux sociaux}
 La première tâche confiée fut l'intégration de boutons de partage vers les réseaux sociaux. Ceux-ci existaient déjà dans la version précédente du site, et permettaient le partage sur Facebook ainsi que sur Twitter. Mais il manquait des balises d'identification de contenus.\par 
@@ -365,7 +378,19 @@ La difficulté de cette tâche a été de comprendre touts les fichiers relatif 
 Les pages de flux RSS ont elles aussi été migrer. Bien que les flux RSS sont de moins en moins utilisés sur internet, ils sont encore très utilisé au sein de l'entreprise. Les navigateurs n'affichent pas les flux RSS de la même manière, il y a ceux qui affiche le flux dans une interface adapté, et d'autre qui l'affiche avec une feuille de style, quand elle est donné, sinon ils affiche une page XML.\par 
 Les flux RSS générer par le site ne contenait pas de feuille de style. Le tâche était donc d'associer une feuille de style aux flux.\par
 
-\subsubsection{Jenkins Test}
+\subsubsection{Test d'intégration continue avec Jenkins}
+Jenkins est un outil Open Source d'intégration continue. Il a été écrit en Java, et permet de faire fonctionner une application web, \gls{JCMS}, sur un serveur Appache Tomcat. Il est interfacé avec  \gls{SVN}, un système de gestion de version afin de pouvoir récupérer automatiquement les dernières modifications des modules.\par 
+Jenkins vérifie la compilation et la bonne intégration d'un module au sein de \gls{JCMS} de la manière suivant :
+\begin{itemize}
+\item récupération de la dernière version du module grâce à \gls{SVN},
+\item récupération des dépendances du module. Ce sont généralement des module développé par Jalios (exemple : le module google map),
+\item compilation du module à l'aide d'un fichier Ant,
+\item lancement du module au sein d'une application web \gls{JCMS} vierge, afin d'effectuer des tests,
+\item arrêt de la précédente application web et lancement dans une nouvelle vierge.
+\item arrêt de la précédente application web.
+\end{itemize}\par 
+Une fois le module vérifié, Jenkins met a disposition le module compilé, qui pourra être importé en production. De plus Jenkins a été configuré de façon à ce qu'il fournisse une application web \gls{JCMS} complète, avec tous les modules de l'entreprise. Cette fonctionnalité a pour but de facilité le déploiement de \gls{JCMS} dans un environnement, par exemple en production.\par 
+\medskip
 Partie sur Jenkins, artefact = module, schema
 
 \newpage
