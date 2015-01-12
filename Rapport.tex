@@ -32,16 +32,29 @@
 \newpage
 
 \section{Introduction}
-Le stage s'est déroulé au sein du service Publication et Multimédia de la Fédération Nationale du Crédit Agricole, et dont le sujet est le suivant :\par 
+Dans le cadre de mes études en école d'ingénieur à l'EPITA, un stage devait être effectuer en entreprise afin de valider les acquis de la première année du cycle ingénieur. Le stage devait être un stage de développement. Mes recherches se sont basées sur deux grand thèmes différents : 
+\begin{itemize}
+\item le développement d'applications en C/C++ ou en Java,
+\item le développement d'application web en PHP ou en Java.
+\end{itemize}\par
+Ayant fait du développement de petits projets durant la première année d'ingénieur, je voulais vraiment travailler sur un gros projet. De plus, les technologies du web ne me sont inconnue, j'avais déjà créer un site web, pour mon compte personnel, avant mon entrée à EPITA.\par 
+\medskip
+La principale attente que j'avais de ce stage était de développer mes connaissances, peu importe le langage. Aussi, l'un des critères important dans mes recherches était d'avoir un maître de stage disponible et m'aidant sur mes problèmes, c'est pour cela que mes recherches se sont concentrées sur les grands entreprises, et on pas sur les start-up.\par
+Durant mes recherches, je me suis rendu compte qu'il y avait peu d'offre de stage dans le développement d'application en C/C++ ou en Java, la plupart des offres portaient sur le développement de site web. \par 
+\medskip
+Deux offres de stage ont retenu mon attention, la première se déroulait chez Hachette Livre et avait comme sujet le développement d'applications ludo-éducatives mobile. La seconde se déroulait à la Fédération Nationale du Crédit Agricole et avait comme sujet le développement d'un site internet.\par 
+\medskip
+La première offre semblai intéressante car elle m'aurait permis de développer mes connaissances dans le mobile. De plus, les connaissances requises portait sur le C/C++, le développement orienté objet et l'utilisation de patrons de conception. Cependant, après un premier entretient, on m'a expliqué que le développement se faisait en Javascript ou en C\# avec le moteur de rendu \textit{Unity}.\par 
+\medskip
+La seconde offre était tout aussi intéressante, car en plus de pouvoir travailler avec de nouvelles technologies du web, il été question de travailler sur un site qui devait être adapté aux mobiles, tablettes et ordinateurs. De plus le stage se positionnait parfaitement dans la continuité du programme suivit à l'école, en effet, l'application web était développé en Java, comme dernier projet de l'année.\par 
+\medskip
+J'ai donc choisit la seconde offre, et j'ai effectué mon stage à la Fédération Nationale du Crédit Agricole, au sein du service Publication et Multimédia. Le sujet complet de ce stage est le suivant :\par 
 \medskip
 Au sein du département publications et multimédia de la Fédération Nationale du Crédit Agricole, vous intégrez une équipe de 6 personnes en charge des sites internet. Dans le cadre de la migration technique prévue des espaces internet et extranet qui reposent sur la solution JCMS (Jalios), des aménagements fonctionnels et une refonte graphique sont prévus.\par
-Vous serez donc amené à intervenir en tant qu’intégrateur web principalement sur la couche présentation mais également initié aux subtilités de notre CMS (technologies Java J2E).\par
-Vous devrez traduire les nouvelles spécifications d’interface et les implémenter au moyen des technologies Javascript, HTML et CSS, et tenir compte des contraintes liés aux différents supports : Tablettes, Mobile, Web.\par 
-Vous serez sous la responsabilité d’un chef de projet et d’un développeur senior.\par 
+Vous serez donc amené à intervenir en tant qu'intégrateur web principalement sur la couche présentation mais également initié aux subtilités de notre CMS (technologies Java J2E).\par
+Vous devrez traduire les nouvelles spécifications d'interface et les implémenter au moyen des technologies Javascript, HTML et CSS, et tenir compte des contraintes liés aux différents supports : Tablettes, Mobile, Web.\par 
+Vous serez sous la responsabilité d'un chef de projet et d'un développeur senior.\par 
 \medskip
-J'ai choisit ce stage parce qu'il proposait de travailler sur des technologies web. L'école ne nous propose pas d'approfondir nos connaissances dans le web, lors du tronc commun. De plus, le sujet du stage est dans la continuité du programme de l'école, parce que nous avions terminé la première année d'ingénieur avec un projet d'application web en Java.\par 
-\medskip
-Ce stage devrait me permettre de développer mes connaissances dans le monde du web. 
 
 \newpage
 
@@ -53,7 +66,7 @@ La Fédération Nationale du Crédit Agricole fait partie du groupe Crédit Agri
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{images/logo_fnca.jpg}
-\caption{Logo du Crédit Agricole}
+\caption{\label{logo}Logo du Crédit Agricole} % (figure \ref{logo})
 \end{figure}
 La Fédération Nationale du Crédit Agricole est une entité du groupe Crédit Agricole.\par
 Afin de bien comprendre le rôle et le positionnement de la Fédération Nationale du Crédit Agricole, il est nécessaire d'expliquer ce qu'est le Crédit Agricole.
@@ -248,6 +261,27 @@ En plus des serveurs de test, l'entreprise dispose d'un serveur sous OS Linux co
 \includegraphics[scale=0.3]{images/archi.png} 
 \caption{Architecture d'un environnement de production}
 \end{figure}
+
+\subsubsection{Plateforme d'intégration continu}
+Pour les test d'intégration continue, l'entreprise a mis en place un serveur contenant une plateforme d'intégration continue, \gls{JADE}, développée par Jalios. \gls{JADE} permet de produire automatiquement des livrables, détecter les problèmes rapidement et centraliser les informations. \gls{JADE} est livré sous forme de machine virtuelle par Jalios et les composants suivants y sont pré-installé : 
+\begin{itemize}
+\item Jenkins, un outil Open Source d'intégration continue écrit en Java
+\item \gls{SVN},
+\item des scripts permettant de produire des modules et des applications.
+\end{itemize}
+\gls{JADE} exécute les scripts de tests et compilations périodiquement sur chaque module. Pour le projet creditagricole.info, un module est exécuté toute les demi-heures. Ces scripts permettent de générer des modules compilés, qui pourront être intégré au sein d'une application \gls{JCMS}. Une fois tous les modules compilé, \gls{JADE} génère une application \gls{JCMS} avec les modules directement intégré, et ceci pour facilité le déploiement.\par
+Les scripts fournit au sein de \gls{JADE} sont composé des actions suivantes : 
+\begin{itemize}
+\item téléchargement de la dernière version du module grâce à \gls{SVN},
+\item téléchargement des fichiers de configuration et du store de référence,
+\item copie des modules de Jalios et de l'application \gls{JCMS} vierge,
+\item décompression de \gls{JCMS} et déploiement des modules,
+\item préparation du démarrage d'une instance de Tomcat sur un port libre, déterminé automatiquement,
+\item démarrage de \gls{JCMS} via Tomcat afin de vérifier que les classes du module sont bien compilées
+\item deuxième redémarrage de \gls{JCMS} pour effectuer les tests unitaires,
+\item construction du livrable.
+\end{itemize}\par 
+
 \newpage
 \subsection{Cahier des charges}
 Pour ce projet, l'entreprise ne disposait pas de cahier des charges, mais disposait d'un cahier fonctionnel réalisé par une web agency (BETC).\par
@@ -382,20 +416,9 @@ Les pages de flux RSS ont elles aussi été migrées. Bien que les flux RSS sont
 Les flux RSS générés par le site ne contenaient pas de feuille de style. Le tâche était donc d'associer une feuille de style aux flux.\par
 
 \subsubsection{Tests d'intégration continu}
-Pour les test d'intégration continue, l'entreprise a mis en place un serveur contenant une plateforme d'intégration continue, \gls{JADE}, développée par Jalios. \gls{JADE} permet
-Jenkins est un outil Open Source d'intégration continue. Il a été écrit en Java, et permet de faire fonctionner une application web, \gls{JCMS}, sur un serveur Appache Tomcat. Il est interfacé avec  \gls{SVN}, un système de gestion de version afin de pouvoir récupérer automatiquement les dernières modifications des modules.\par 
-Jenkins vérifie la compilation et la bonne intégration d'un module au sein de \gls{JCMS} de la manière suivant :
-\begin{itemize}
-\item récupération de la dernière version du module grâce à \gls{SVN},
-\item récupération des dépendances du module. Ce sont généralement des module développé par Jalios (exemple : le module google map),
-\item compilation du module à l'aide d'un fichier Ant,
-\item lancement du module au sein d'une application web \gls{JCMS} vierge, afin d'effectuer des tests,
-\item arrêt de la précédente application web et lancement dans une nouvelle vierge.
-\item arrêt de la précédente application web.
-\end{itemize}\par 
-Une fois le module vérifié, Jenkins met a disposition le module compilé, qui pourra être importé en production. De plus Jenkins a été configuré de façon à ce qu'il fournisse une application web \gls{JCMS} complète, avec tous les modules de l'entreprise. Cette fonctionnalité a pour but de facilité le déploiement de \gls{JCMS} dans un environnement, par exemple en production.\par 
-\medskip
-Partie sur Jenkins, artefact = module, schema
+L'entreprise disposait de \gls{JADE} comme plateforme d'intégration. Elle permet d'effectuer les tests de chaque module, cependant les modules ne contenaient aucun fichier de test. La plupart d'entre eux n'en n'avaient pas besoin car il ne contenait pas de classes. Le seul module qui contenait une classe était le module FNCAPlugin, qui était \textit{FNCAUtils}. Le travail proposé était donc de faire une classe afin de tester les fonction de la classe \textit{FNCAUtils}.\par
+Pour faire une classe de test, Jalios met a disposition une classe, \textit{JcmsTestCase}, dont il faut hériter. Cette classe permet de mettre en place un environnement de test, avec un store et des configurations spéciales. De ce fait, il est possible de lancer les tests directement depuis Eclipse, qui se chargera de démarrer l'application \gls{JCMS}.\par
+Toutes les fonctions de la classe \textit{FNCAUtils} ne pouvaient pas être testées. En effet, certaines fonction était spécifique à un élément, qui ne pouvait pas être recrée simplement dans un environnement de test.\par 
 
 \newpage
 \subsubsection{Fil Twitter}
@@ -566,6 +589,7 @@ Le travail proposé consistait à appliquer ces modifications à la version actu
 La tâche était de crée un nouveau type d'espace de travail, bibliothèque, et de créer un onglet "Bibliothèques" dans le menu. La difficulté de ce travail était de travailler avec la version 6 de \gls{JCMS}, lors de la migration du site internet il n'y avait pas eu besoin de travailler avec une version 6. Il y avait peu de différences technique entre la version 6 et la version 9 de \gls{JCMS}, contrairement à l'aspect, où il y avait de nombreuses différences. De plus le site internet n'utilise pas du tout les espaces de travail, alors que c'est l'essence même de l'espace interne.\par 
 Dans un premier temps, afin de ne pas trop perturber l'utilisateur, il a été demandé pour les bibliothèques que ça soit un club qui s'ouvre directement sur la page de partage de documents, au lieu de la page d'actualité. De plus, la page regroupant les club regroupera aussi les bibliothèque sans distinction entre les deux types. Un fois qu'un membre s'inscrit à une bibliothèque, au lieu de l'ajouter au menu club, il ira dans le menu bibliothèque.\par
 
+\subsection{Interprétation et critique des résultats}
 \newpage
 \section{Conclusion}
 \printglossaries
