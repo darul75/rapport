@@ -164,7 +164,7 @@ Les technologies utilisées pour mener à bien ce projet sont :
 \item Java Entreprise Edition 1.6,
 \item Javascript/JQuery,
 \item Bootstrap 3.0.1,
-\item Less,
+\item Less/CSS,
 \item HTML 5.
 \end{itemize}
 
@@ -442,9 +442,9 @@ Les pages de flux RSS ont également été migrées. Bien que les flux RSS sont 
 Les flux RSS générés par le site ne contenaient pas de feuille de style. Le tâche était donc d'associer une feuille de style aux flux.\par
 
 \subsubsection{Tests d'intégration continu}
-L'entreprise disposait de \gls{JADE} comme plateforme d'intégration. Elle permet d'effectuer les tests de chaque module, cependant les modules ne contenaient aucun fichier de test. La plupart d'entre eux n'en n'avaient pas besoin car il ne contenait pas de classes. Le seul module qui contenait une classe était le module FNCAPlugin, qui était \textit{FNCAUtils}. Le travail proposé était donc de faire une classe afin de tester les fonction de la classe \textit{FNCAUtils}.\par
-Pour faire une classe de test, Jalios met a disposition une classe, \textit{JcmsTestCase}, dont il faut hériter. Cette classe permet de mettre en place un environnement de test, avec un store et des configurations spéciales. De ce fait, il est possible de lancer les tests directement depuis Eclipse, qui se chargera de démarrer l'application \gls{JCMS}.\par
-Toutes les fonctions de la classe \textit{FNCAUtils} ne pouvaient pas être testées. En effet, certaines fonctions étaient spécifiques à un élément, qui ne pouvait pas être recrée simplement dans un environnement de test.\par 
+L'entreprise disposait de \gls{JADE} comme plateforme d'intégration. Elle permet d'effectuer les tests de chaque module, cependant les modules ne contenaient aucun fichier de test. La plupart d'entre eux n'en n'avaient pas besoin car il ne contenait pas de classes. Le travail proposé était donc de produire des tests des fonctions des différentes classes des modules développé par l'entreprise.\par
+En Java et avec \gls{JCMS}, la production de test passe par la création de classes qui contiennent des méthodes qui testent les méthodes d'autres classes. Pour faire une classe de test, Jalios met a disposition une classe, \textit{JcmsTestCase}, dont il faut hériter. Cette classe permet de mettre en place un environnement de test, avec un store et des configurations spéciales. De ce fait, il est possible de lancer les tests directement depuis Eclipse, qui se chargera de démarrer l'application \gls{JCMS}.\par
+Cependant, il n'était pas possible de tester toutes les méthodes d'une classe. En effet, certaines fonctions étaient spécifiques à un élément, qui ne pouvait pas être recrée simplement dans un environnement de test.\par 
 
 \newpage
 \subsubsection{Fil Twitter}
@@ -610,16 +610,32 @@ Un problème se posa au cour du développement, la version du CSS supporté par 
 La DSI a été contacté afin de mettre en place le fichier CSS au sein de la solution, cependant l'absence de documentation sur la solution posa problème. Un rendez-vous fut prit avec les développeur de la solution, qui entre temps en avait fait un produit. Le rendez-vous aura lieu après la fin du stage.\par
 
 \subsubsection{Mise en place de Bibliothèques sur l'espace interne}
-Après la migration du site internet finie, celle de l'espace interne pouvait commencer. Pour cela, des réunions furent organisées afin de définir les grand axes de cette migration. Un des point d'évolution était la création de Bibliothèques. L'espace interne est composé d'un ensemble de clubs, et certains de ces clubs ne servent uniquement qu'à récupérer des documents au sein gestionnaire de document. L'idée était de faire évoluer ces clubs en bibliothèques, en enlevant toutes leurs fonctionnalités sauf celle de partage de documents. Cela permet de bien faire la différence entre les club normaux et ceux qui servent uniquement au partage de documents.\par 
+Après la migration du site internet, l'entreprise avait prévu de migrer aussi l'espace interne. Comme le site internet était migré et que les problèmes de démarrages ont été corrigés, la migration de l'espace interne pouvait être lancé. Pour cela, des réunions furent organisées afin de définir les grand axes de cette migration. Un des point d'évolution était la création de Bibliothèques. L'espace interne est composé d'un ensemble de clubs, et certains de ces clubs ne servent uniquement qu'à récupérer des documents au sein gestionnaire de document. L'idée était de faire évoluer ces clubs en bibliothèques, en enlevant toutes leurs fonctionnalités sauf celle de partage de documents. Cela permet de bien faire la différence entre les club normaux et ceux qui servent uniquement au partage de documents.\par 
 Le travail proposé consistait à appliquer ces modifications à la version actuelle de l'espace interne. Il a été décidé d'accompagner le plus possible les utilisateurs dans cette migration en apportant, le plus possible, les fonctionnalités au fur et à mesure. De ce fait, l'utilisateur ne sera pas trop perdu lors de mise en ligne du nouvel espace interne.\par 
-La tâche était de créée un nouveau type d'espace de travail, bibliothèque, et de créer un onglet "Bibliothèques" dans le menu. La difficulté de ce travail était de travailler avec la version 6 de \gls{JCMS}, lors de la migration du site internet il n'y avait pas eu besoin de travailler avec une version 6. Il y avait peu de différences techniques entre la version 6 et la version 9 de \gls{JCMS}, contrairement à l'aspect, où il y avait de nombreuses différences. De plus le site internet n'utilise pas du tout les espaces de travail, alors que c'est l'essence même de l'espace interne.\par 
+La tâche était de créer un nouveau type d'espace de travail, bibliothèque, et de créer un onglet "Bibliothèques" dans le menu. La difficulté de ce travail était de travailler avec la version 6 de \gls{JCMS}, lors de la migration du site internet il n'y avait pas eu besoin de travailler avec une version 6. Il y avait peu de différences techniques entre la version 6 et la version 9 de \gls{JCMS}, contrairement à l'aspect, où il y avait de nombreuses différences. De plus le site internet n'utilise pas du tout les espaces de travail, alors que c'est l'essence même de l'espace interne.\par 
 Dans un premier temps, afin de ne pas trop perturber l'utilisateur, il a été demandé pour les bibliothèques que ça soit un club qui s'ouvre directement sur la page de partage de documents, au lieu de la page d'actualité. De plus, la page regroupant les club regroupera aussi les bibliothèque sans distinction entre les deux types. Un fois qu'un membre s'inscrit à une bibliothèque, au lieu de l'ajouter au menu club, il ira dans le menu bibliothèque.\par
 
 \subsubsection{Nettoyage de l'espace interne en préparation à la migration}
+Avant la migration du site internet, le site internet et l'espace interne formait un seul et même projet. Ils partageaient la même application \gls{JCMS} et certaine partie du code était communes aux deux sites. Avant de migrer les deux site sous \gls{JCMS} 9, il était nécessaire de les séparer. La scission a permit plus de sécurité en passant l'espace interne en \textit{HTTPS}.\par 
+Lors de la scission, l'espace interne a garder la plupart des pages mobile du site internet. Le travail proposé était de supprimer ces références à la version mobile du site internet. Cependant, comme certaine parties du code était partager entre les deux sites, ce travail ne consistait pas à simplement supprimer les fichier des version mobile, mais aussi à adapter certaine pages et méthodes pour enlever leur dépendance aux élément du site mobile.\par 
+Comme pour les bibliothèque la difficulté ici était de travailler avec une version 6 de \gls{JCMS}. De plus, une fois les modifications faites, il était difficile de tester si tout fonctionnais au vu de la multitude de page et de fonctions disponible.\par
 
+\newpage
 \subsection{Interprétation et critique des résultats}
+Dans son ensemble le site internet mis en ligne respecte le cahier fonctionnel émit par l'agence web BETC. Cependant, quelques ajustements ont dû être fait car le cahier fonctionnel n'était pas complet. Ces ajustements pour être de l'ordre de l'adaptation, par exemple pour les contenus vidéo, mais aussi de l'ordre de la création, par exemple pour les brèves. Aussi certaines maquettes n'ont pas été respecté, du fait de l'intégration de nouvelles fonctionnalités, comme par exemple le module Twitter. Lors de la mise en ligne aucun problème majeur n'a été détecté, les autres problèmes, notamment concernant le menu sur mobile, ont été corrigés rapidement.\par 
+\medskip
+Au niveau fonctionnel, le site correspondait parfaitement aux attentes, cependant au niveau du code, il n'a pas pu être optimisé par faute de délai très court. Par exemple le code CSS produit aurait pu être optimisé, il y a de nombreuses règles redondante au sein d'un même fichier, sans compter les règles inutilisées. Aussi une fois le site livré, nous nous sommes rendu compte que l'organisation n'était optimal, en effet, il aurait été plus intéressant de faire les règles générales pour le mobile et les \textit{media queries} pour la version bureau. Les règles CSS aurait pu aussi être regroupé par fichier, non pas par rapport au module auquel il appartient mais selon la version du site auquel il appartient (mobile, bureau, tablette).\par
+\medskip
+Le manque d'un cahier des charges posa quelques problèmes, tous les points concernant le projet ne furent pas fixés à l'avance. Par exemple la page des brèves a été modifié de nombreuses fois avant d'avoir un rendu satisfaisant.\par 
+De plus, la recherche d'information concernant une fonctionnalité était compliqué, car en l'absence de cahier des charges et avec un cahier fonctionnel non complet, la plupart des points qui on été fixés étaient regroupé dans un classeur. Ce classeurs contenait des échanges de mails, des comptes rendus de réunions et des maquettes, ils étaient organisé par date. Il était donc difficile d'avoir une  vue d'ensemble sur le projet. Ce point aurait pu être corrigé en tenant à jour un document rangé par fonctionnalité et non pas par date.\par 
+
 \newpage
 \section{Conclusion}
+Le stage s'est déroulé à la Fédération Nationale du Crédit Agricole au sein du service Publication et Multimédia. Il avait comme sujet le travail sur une migration d'un site internet, www.creditagricole.info, dans le but de le mettre en ligne, et assurer une partie du support. Le sujet tournait autour d'une problématique, avoir une interface cohérente et adapté, que ce soit sur bureau, tablette ou mobile.\par 
+Le site est basé sur un système de gestion de contenu (SGC), \gls{JCMS}. Le but du projet était de migrer le site de la version 6 de \gls{JCMS} à la version 9. Pour cela les technologies utilisées étaient le Java, Le Javascript et JQuery, Bootstrap, le Less et le CSS, et enfin l'HTML 5.\par 
+Pour ce projet, l'entreprise ne disposait pas de cahier des charges, mais d'un cahier fonctionnel et une charte graphique réalisés par une agence web BETC.\par
+Le projet a débuté fin avril 2014 et le site a été mis en production le 12 novembre 2014. Le stage ayant début le 8 septembre durant la seconde moitié du projet, il a donc fallut rapidement se familiariser avec le projet.\par 
+\newpage
 \printglossaries
 \listoffigures
 
