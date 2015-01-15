@@ -3,6 +3,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage[]{pgfgantt}
+\usepackage{rotating}
 \usepackage{glossaries}
 \makeglossaries
 \usepackage{graphicx}
@@ -74,29 +76,23 @@ Mes principales attentes concernant le stage à la Fédération Nationale du Cr�
 
 \section{Présentation de l'entreprise}
 \subsection{Secteur d'activité}
-Le Crédit Agricole est le  premier financeur de l'économie française et l'un des tout premier acteurs bancaire en Europe. Fort de ses fondements coopératifs et mutualistes, de ses 150000 collaborateurs le Crédit Agricole est une banque utile et responsable, au service de ses 49 millions de clients et 8 millions de sociétaires.\par 
-Le Crédit Agricole est consitué des Caisses locales, des Caisses régionales, de la Fédération Nationale du Crédit Agricole et de Crédit Agricole SA.\par
-\subsection{Fédération Nationale du Crédit Agricole}
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{images/logo_fnca.jpg}
-\caption{\label{logo}Logo du Crédit Agricole} % (figure \ref{logo})
-\end{figure}
-La Fédération Nationale du Crédit Agricole est une entité du groupe Crédit Agricole.\par
-Afin de bien comprendre le rôle et le positionnement de la Fédération Nationale du Crédit Agricole, il est nécessaire d'expliquer ce qu'est le Crédit Agricole.
-\subsubsection{Le Crédit Agricole}
-Le Crédit Agricole est un groupe bancaire coopératif et mutualiste. Une banque coopérative est une société dont le capital est détenu sous forme de parts sociales, par ses sociétaires, qui sont également les utilisateurs des services bancaires.\par
-Le mutualisme c'est une doctrine économique basée sur la mise en commun d'expériences et de moyens en vue d'offrir à ses bénéficiaires les meilleurs services aux meilleurs coûts. Les trois valeurs mutualistes qui font partie intégrante du Crédit Agricole sont :
+Le groupe Crédit Agricole est le  premier financeur de l'économie française et l'un des tout premier acteurs bancaire en Europe. Fort de ses fondements coopératifs et mutualistes, de ses 150000 collaborateurs le groupe Crédit Agricole est une banque utile et responsable, au service de ses 49 millions de clients.\par 
+Le Crédit Agricole est constitué des Caisses locales, des Caisses régionales, de la Fédération Nationale du Crédit Agricole et de Crédit Agricole SA.\par
+\bigskip
+En France, le Crédit Agricole c'est :
 \begin{itemize}
-\item la responsabilité,
-\item la solidarité,
-\item et la proximité.
-\end{itemize}
-\medskip
-Un sociétaire est une personne ayant des parts sociales, non coté en bourse, représentant une partie du capital de la Caisse locale. Il est impliqué dans la gestion de sa Caisse locale en participant à l'Assemblée générale annuel et aux votes dont il dispose d'une voix quelque soit la quantité de ses parts. Depuis le mois de novembre 2014, le Crédit Agricole a franchi la barre des 8 millions de clients sociétaires.\par
-\medskip
-Au niveau des chiffres, le Crédit Agricole avec ses 39 Caisses régionales dispose de 21 millions de clients particuliers. C'est aussi la banque de 9 agriculteurs sur 10 en France.\par 
-Le Crédit Agricole est composé de 2509 Caisses locales, qui sont regroupées en 39 Caisses régionales, il dispose d'un réseau de plus de 7000 agences et plus de 11000 distributeurs et guichets automatiques de billets (DAB/GAB).\par 
+\item 21 millions de clients particuliers avec ses 39 Caisses régionales,
+\item 1 français sur 3 est client du Crédit Agricole,
+\item la banque de 9 agriculteur sur 10,
+\item 7000 agences et 11000 distributeurs.
+\end{itemize}\par
+Le Crédit Agricole est composé de 2477 Caisses locales, qui sont regroupées en 39 Caisses régionales.\par
+
+\subsection{Le groupe Crédit Agricole}
+Afin de bien comprendre le rôle et le positionnement de la Fédération Nationale du Crédit Agricole, il est nécessaire d'expliquer ce qu'est le Crédit Agricole.\par
+Ce groupe est complexe par son organisation, la multiplicité de ses filiales et de ses implantations.
+Laissons de côté Crédit Agricole SA et ses filiales (LCL, Amundi, Eurofactor, Prédica, Pacifica, Sofinco...) et concentrons-nous sur la banque universelle de proximité avec les Caisses régionales.
+On parle de banque universelle car tous les besoins sont couverts : gestion de compte, crédit immobilier, crédit à la consommation, épargne, prévoyance... et on parle de banque de proximité car le Crédit Agricole est présent partout en France au travers de ses 39 Caisses régionales et 7000 agences. \par
 
 \subsubsection{Historique}
 \begin{tabular}{lp{15.5cm}}
@@ -120,15 +116,25 @@ Le Crédit Agricole est composé de 2509 Caisses locales, qui sont regroupées e
 \textbf{2009} & Lancement de BforBank, banque en ligne spécialiste de l'épargne.\medskip \\
 \end{tabular}\par
 
-\newpage
-\subsubsection{Organisation}
-Le Crédit Agricole s'est construit de façon décentralisé. Ce sont les 2509 Caisses locales, formant le socle du Crédit Agricole, qui détiennent l'essentiel du capital des 39 Caisses régionales à travers 8 millions de sociétaires. Ces sociétaires désignent 32000 administrateur pour les représenter.\par
-\medskip
-Les Caisses régionales du Crédit Agricole contrôlent majoritairement le Capital de Crédit Agricole SA, filiale des Caisses régionale et est la banque central. Elle garantie l'unité financière et veille au bon fonctionnement du réseau Crédit Agricole. De plus Crédit Agricole SA gère aussi les filiales spécialisées du Crédit Agricole.\par 
-Le Crédit Agricole SA est aussi chargé de concevoir les produits et services proposés dans les agences bancaire, afin permettre le développement des Caisses régionales.\par
-Crédit Agricole SA acquière 25\% du capital des Caisses régionales sous forme de CCA (certificat coopératif d'associés), sans droit de vote.\par 
-\medskip
-La Fédération Nationale du Crédit Agricole est l'instance d'information, de dialogue et d'expression des Caisses régionales.
+\subsubsection{Les Caisses régionales de Crédit Agricole}
+En France, le Crédit Agricole s'est fondé sur un modèle décentralisé. Un client est avant tout client d'une Caisse régionale avant d'être client du Crédit Agricole. Ainsi on est client de la Caisse régionale de Crédit Agricole de la Réunion, de celle de Centre Loire, de celle de Nord de France... \par 
+Ces 39 Caisses régionales sont des banques coopératives et mutualistes.\par 
+Une \textbf{banque coopérative} est une société dont le capital est détenu sous forme de parts sociales, par ses sociétaires, qui sont aussi ses clients.\par
+Un client sociétaire est une personne ayant des parts sociales, non cotées en bourse, représentant une partie du capital de la Caisse locale. Il est impliqué dans la gestion de sa Caisse locale en participant à l'Assemblée générale annuelle et aux votes - il dispose d'une voix quelque soit la quantité de ses parts. Depuis le mois de novembre 2014, le Crédit Agricole a franchi la barre des 8 millions de clients sociétaires, qui ont désigé 31000 administrateurs pour les représenter dans 2477 Caisses locales.\par
+\par 
+Le \textbf{mutualisme} c'est une doctrine économique basée sur la mise en commun d'expériences et de moyens en vue d'offrir à ses bénéficiaires les meilleurs services aux meilleurs coûts. Les trois valeurs mutualistes qui font partie intégrante du Crédit Agricole sont :
+\begin{itemize}
+\item la responsabilité,
+\item la solidarité,
+\item et la proximité.
+\end{itemize}
+Un exemple de mise en pratique de ces valeurs est le soutient par les Caisses régionales, chaque année, de 10000 projets d'intérêt général pour un montant global de 25 millions d'euros. Ces projets qui participent au développement local portés par les caisses locales.\par 
+Les 39 Caisses régionales sont des \textbf{entités juridiquement autonomes}, dirigées par un duo président (élu)/directeur général (cadre dirigeant). Elles font partie d'un Groupe et il existe deux "outils" de coordination et de gouvernance : \par 
+\begin{itemize}
+\item Crédit Agricole SA est l'organe central du groupe. Elle garantit l'unité financière et veille au bon fonctionnement du réseau Crédit Agricole. Crédit Agricole SA est aussi chargé de concevoir les produits et services proposés dans les agences bancaire, afin permettre le développement des Caisses régionales.
+\item La Fédération Nationale du Crédit Agricole est l'instance de réflexion des Caisses régionales, où les dirigeants se rencontrent mensuellement sur les grandes questions de stratégie et de gouvernance.
+\end{itemize}
+\par
 
 \begin{figure}[h!]
 \centering
@@ -138,6 +144,13 @@ La Fédération Nationale du Crédit Agricole est l'instance d'information, de d
 
 \newpage
 \subsubsection{Fédération Nationale du Crédit Agricole}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{images/logo_fnca.jpg}
+\caption{\label{logo}Logo du Crédit Agricole} % (figure \ref{logo})
+\end{figure}
+
 La Fédération Nationale du Crédit Agricole a 3 grandes fonctions au sein du groupe : 
 \begin{itemize}
 \item orienter,
@@ -165,6 +178,15 @@ L'équipe est composée de 8 personnes scindé en deux pôles :
 \item un pôle \textit{print}, s'occupant du CAMAG
 \item et un pôle web, s'occupant du site creditagricole.info
 \end{itemize}
+L'équipe du pôle web, dans lequel le stage s'est déroulé, est composé de :
+\begin{itemize}
+\item un développeur,
+\item un chef de projet,
+\item un secrétaire de rédaction,
+\item un graphiste,
+\item un responsable de trafic,
+\item un responsable du pôle.
+\end{itemize} 
 
 \subsection{Positionnement du stage dans les travaux de l'entreprise}
 Le stage se positionne comme support dans les travaux de l'entreprise. Le projet, sujet du stage, avait débuté avant celui-ci et devait être livré à la moitié du stage. L'entreprise recherchait une aide pour assurer la livraison du projet dans les temps et pour assurer le support, au cas où des problèmes apparaitraient lors de la mise en production.
@@ -331,6 +353,33 @@ Cette méthode avait un grand avantage, la réactivité, que ce soit au niveau d
 \medskip
 Aussi, la date de fin du projet a changé au cours de celui-ci, il était initialement prévu de se terminer début octobre. L'une des raison de changement était le changement de version de \gls{JCMS}, le site devait être développé avec \gls{JCMS} 8, parce que la version 9 de \gls{JCMS} n'était pas encore sortie au début du projet. De plus, la date de sortie de \gls{JCMS} 9, initialement prévu à fin juin 2014, fut repoussé à début octobre 2014. Le développement du site a commencé avec la version 8 de \gls{JCMS}, et ce n'est qu'une fois la date de sortie de \gls{JCMS} 9 fixé que l'entreprise a effectué le changement. Le site a donc subi deux migrations, une de la version 6 à la version 8 de \gls{JCMS} et une de la version 8 à la version 9 de \gls{JCMS}. Peu après ce changement début septembre, la date de fin du projet fut fixée à début novembre 2014.\par
 
+\begin{sideways}
+\begin{ganttchart}[hgrid, vgrid]{1}{32}
+\gantttitle{Avril}{4}
+\gantttitle{Mai}{4}
+\gantttitle{Juin}{4}
+\gantttitle{Juillet}{4}
+\gantttitle{Août}{4}
+\gantttitle{Septembre}{4}
+\gantttitle{Octobre}{4}
+\gantttitle{Novembre}{4}\\
+\gantttitlelist{1,10,20,30,1,10,20,31,1,10,20,30,1,10,20,31,1,10,20,31,1,10,20,30,1,10,20,31,1,10,20,30}{1} \\
+\ganttbar{Etude impacte de la nouvelle version}{3}{4} \\
+\ganttmilestone{Réunion avec Jalios}{3}\\
+\ganttbar{Lancement refonte graphique}{5}{9}\\
+\ganttbar{Développement avec JCMS 8}{5}{13}\\
+\ganttlinkedbar{Recette et tests}{14}{19}\\
+\ganttmilestone{Livraison BETC}{14}\\
+\ganttbar{Intégration graphique}{15}{22}\\
+\ganttmilestone{Installation JCMS 9 béta}{20}\\
+\ganttbar{Développement JCMS 9}{21}{25}\\
+\ganttmilestone{Mise en place d'un serveur de pré-prod}{24}\\
+\ganttbar{Recette et tests}{26}{28}\\
+\ganttmilestone{Déploient en production}{28}\\
+\ganttbar{Correctifs}{29}{31}
+\end{ganttchart}
+\end{sideways}
+
 \newpage
 \subsection{Compte-rendu d'activité}
 \subsubsection{Apprentissage des technologies utilisées}
@@ -458,6 +507,7 @@ La difficulté de cette tâche a été de comprendre tous les fichiers relatifs 
 Les pages de flux RSS ont également été migrées. Bien que les flux RSS sont de moins en moins utilisés sur internet, ils sont encore très utilisés au sein de l'entreprise. Les navigateurs n'affichent pas les flux RSS de la même manière, il y a ceux qui affiche le flux dans une interface adaptée, et d'autre qui l'affiche avec une feuille de style, quand elle est donnée, sinon ils affichent une page XML.\par 
 Les flux RSS générés par le site ne contenaient pas de feuille de style. La tâche était donc d'associer une feuille de style aux flux.\par
 
+\newpage
 \subsubsection{Tests d'intégration continu}
 L'entreprise disposait de \gls{JADE} comme plateforme d'intégration. Elle permet d'effectuer les tests de chaque module, cependant les modules ne contenaient aucun fichier de test. La plupart d'entre eux n'en n'avaient pas besoin car il ne contenait pas de classes. Le travail proposé était donc de produire des tests des fonctions des différentes classes des modules développé par l'entreprise.\par
 En Java et avec \gls{JCMS}, la production de test passe par la création de classes qui contiennent des méthodes qui testent les méthodes d'autres classes. Pour faire une classe de test, Jalios met a disposition une classe, \textit{JcmsTestCase}, dont il faut hériter. Cette classe permet de mettre en place un environnement de test, avec un store et des configurations spéciales. De ce fait, il est possible de lancer les tests directement depuis Eclipse, qui se chargera de démarrer l'application \gls{JCMS}.\par
@@ -518,7 +568,7 @@ La solution serait de pouvoir partager une brève directement depuis le lanceur.
 \caption{La page des brèves telle qu'elle est actuellement sur le site}
 \end{figure}
 
-\bigskip
+\newpage
 Après la mise en production du site, un bogue est apparu au niveau de cette page. Le comportement par défaut de la page était de ne pas réafficher la brève principale dans le lanceur en dessous. Cependant, sur le serveur de production, ce comportement n'était pas reproduit et la brève principale était affichée aussi dans le lanceur.\par 
 La partie où la brève principale est affichée et la partie lanceur sont dans deux JSP différentes. Pour communiquer des informations entre les deux JSP il n'est pas possible de passer par la page qui les contient, car elle est générique. La communication entre les deux JSP se faisait alors à l'aide de variables de \gls{JCMS} relative à la page, et donc communes aux deux JSP.\par 
 Le problème était qu'en production, il y avait des optimisations qui étaient faites, comme la compression des pages HTML et l'optimisation du JavaScript. Après avoir activé une à une les optimisations sur le site en local, le problème a pu être isolé, il y avait de l'interférence entre l'optimisation du JavaScript et les variables relatives à la page.\par 
@@ -558,6 +608,7 @@ La perte de qualité est accentuée par le fait que sur mobile, les éléments s
 De plus sur mobile les images pour les aperçus dans les lanceurs étaient trop petites. Elles ont donc été agrandies en passant d'une taille de 100 par 55 pixels à 130 par 74 pixels, mais comme les images sont deux fois plus grandes que l'espace pour les afficher, ils faisaient 260 par 148 pixels.\par 
 De même, ce procédé a été réutilisé pour le site en version bureau/tablette, mais seulement sur les lanceurs. Sur ces versions ce procédé permet d'économiser un peu de bande passante, parce que les images qui sont affichées dans les lanceurs ont la même définition que celles qui sont affichées dans un contenu, il n'y a donc plus besoin de charger une nouvelle image entre le lanceur et le contenu. Pour les autres images, par exemple celle du contenu, leur taille est proche de l'original, de ce fait il n'y a pas de perte de qualité, et donc pas de nécessité à charger des images deux fois plus grandes que celles qui seront affichées. De plus cela conduirait à travailler avec de trop grandes images, de l'ordre de 1200 par 650 pixels.\par
 
+\newpage
 \subsubsection{Menu sur mobile}
 Bien qu'il avait un bon rendu en local, le menu sur mobile était inutilisable en production. Ce problème avait un niveau d'importance haute, du fait qu'il nuisait à la navigation sur le site mobile. Même si ce sont les éléments de Bootstrap qui ont été utilisés, certain choix ont fait que le menu était inutilisable : 
 \begin{itemize}
@@ -588,6 +639,7 @@ Cette troisième version fut retenue pour une mise en ligne.
 \caption{Le menu mobile final}
 \end{figure}
 
+\newpage
 \subsubsection{Icône pour mobile}
 Les systèmes d'exploitation mobiles permettent de mettre un lien vers un site internet directement sur l'écran l'accueil, sous forme d'icône. Il a donc été proposé de rajouter le code nécessaire pour avoir une icône personnalisée. Après avoir parcouru la documentation mise à disposition par Apple et Google, l'ajout d'une icône personnalisée se fait à l'aide d'une balise \textit{meta} qui se situe dans le \textit{header}. Pour une intégration parfaite sur iOS, il faudra 4 tailles d'icône :
 \begin{itemize}
@@ -604,6 +656,7 @@ Avant de faire la migration, il était important de vérifier que le serveur des
 Après avoir installé les programmes nécessaires, et avant de migrer l'applicatif, il a été testé qu'un applicatif vierge pouvait fonctionner sur le serveur. Une fois le test effectué, la base de données pouvait être migrée sur le serveur de destination. Ensuite, au lieu de recopier tout l'applicatif du serveur source au serveur destinataire, il fut décidé de garder l'applicatif installé pour les tests, et d'importer uniquement les fichiers de configuration.\par 
 Durant la migration, le rapport de nouveaux bogues a été stoppé, pour éviter qu'ils ne soient pas migrés. A la fin de la migration la nouvelle adresse fut communiquée à tous les utilisateurs, et l'applicatif qui était sur le serveur source fut arrêté, pour prévenir de rapporter un bogue sur le mauvais serveur.\par
 
+\newpage
 \subsubsection{Module évènementiel}
 Avant la migration, le site était composé d'un module évènementiel. Ce module sert à mettre en avant un message par le biais d'une portlet, qui s'affiche sous forme de pop-up sur la page d'accueil. Il est utilisé pour les grandes occasions, par exemple pour les fêtes de fin d'année ou pour prévenir la mise en ligne du nouveau site, car il empêche toute navigation sur la page d'accueil tant qu'il n'est pas fermé. Une fois fermé, la portlet ne réapparait qu'après une période définie (généralement 12 heures). Ce comportement est possible grâce à l'utilisation de cookies.\par 
 Le module avait été développé pour l'ancienne version du site et fonctionnait avec \gls{JCMS} 6. Le travail proposé fut d'adapter ce module pour le nouveau site, donc pour \gls{JCMS} 9. Afin de ne pas faire trainer de vieux morceaux de code, et au vu de la simplicité du module, il fut décidé de re-développer entièrement le module.\par 
@@ -662,15 +715,47 @@ Au niveau fonctionnel, le site correspondait parfaitement aux attentes, cependan
 Le manque d'un cahier des charges posa quelques problèmes, tous les points concernant le projet ne furent pas fixés à l'avance. Par exemple la page des brèves a été modifiée de nombreuses fois avant d'avoir un rendu satisfaisant.\par 
 De plus, la recherche d'information concernant une fonctionnalité était compliqué, car en l'absence de cahier des charges et avec un cahier fonctionnel non complet, la plupart des points qui on été fixés étaient regroupé dans un classeur. Ce classeur contenait des échanges de mails, des comptes rendus de réunions et des maquettes, ils étaient organisé par date. Il était donc difficile d'avoir une  vue d'ensemble sur le projet. Ce point aurait pu être corrigé en tenant à jour un document rangé par fonctionnalité et non pas par date.\par 
 
+\begin{sideways}
+\begin{ganttchart}[hgrid, vgrid]{1}{34}
+\gantttitle{Septembre}{6}
+\gantttitle{Octobre}{8}
+\gantttitle{Novembre}{8}
+\gantttitle{Décembre}{8}
+\gantttitle{Janvier}{4}\\
+\gantttitlelist{8,20,30,1,10,20,31,1,10,20,30,1,10,20,31,1,10}{2} \\
+\ganttbar{Etude impacte de la nouvelle version}{3}{4} \\
+\ganttmilestone{Réunion avec Jalios}{3}\\
+\ganttbar{Lancement refonte graphique}{5}{9}\\
+\ganttbar{Développement avec JCMS 8}{5}{13}\\
+\ganttlinkedbar{Recette et tests}{14}{19}\\
+\ganttmilestone{Livraison BETC}{14}\\
+\ganttbar{Intégration graphique}{15}{22}\\
+\ganttmilestone{Installation JCMS 9 béta}{20}\\
+\ganttbar{Développement JCMS 9}{21}{25}\\
+\ganttmilestone{Mise en place d'un serveur de pré-prod}{24}\\
+\ganttbar{Recette et tests}{26}{28}\\
+\ganttmilestone{Déploient en production}{28}\\
+\ganttbar{Correctifs}{29}{31}
+\end{ganttchart}
+\end{sideways}
+
 \newpage
 \section{Conclusion}
-Le stage s'est déroulé à la Fédération Nationale du Crédit Agricole au sein du service Publication et Multimédia. Il avait comme sujet le travail sur une migration d'un site internet, www.creditagricole.info, dans le but de le mettre en ligne, et assurer une partie du support. Le sujet tournait autour d'une problématique, avoir une interface cohérente et adapté, que ce soit sur bureau, tablette ou mobile.\par 
+Le stage s'est déroulé à la Fédération Nationale du Crédit Agricole au sein du service Publication et Multimédia. Il avait comme sujet la migration d'un site internet, www.creditagricole.info, dans le but de le mettre en ligne, et assurer une partie du support. Le sujet tournait autour d'une problématique, avoir une interface cohérente et adapté, que ce soit sur bureau, tablette ou mobile.\par 
 Le site est basé sur un système de gestion de contenu (SGC), \gls{JCMS}. Le but du projet était de migrer le site de la version 6 de \gls{JCMS} à la version 9. Pour cela les technologies utilisées étaient le Java, Le Javascript et JQuery, Bootstrap, le Less et le CSS, et enfin l'HTML 5.\par 
 Pour ce projet, l'entreprise ne disposait pas de cahier des charges, mais d'un cahier fonctionnel et une charte graphique réalisés par une agence web BETC. L'absence de cahier des charges s'explique en partie par le fait que le but du projet était de migrer le site et non pas d'ajouter de nouvelles fonctionnalités.\par
 Le projet a débuté fin avril 2014 et le site a été mis en production le 12 novembre 2014. Le stage ayant débuté le 8 septembre durant la seconde moitié du projet, il a donc fallut rapidement se familiariser avec le projet.\par 
 \medskip
-Au niveau du travail qui m'a été confié, on retrouve des adaptations de pages, tel que les fiches de présentation des Caisses régionales, mais aussi de module tels que le module évènementiel. En plus de cela, il y a des pages qui ont dû être entièrement repensées, comme la page présentant les brèves, qui a subi de nombreuses transformations avant d'avoir un rendu satisfaisant.\par 
-Toutes ces pages devaient aussi tenir compte de la problématique d'affichage sur mobile, tablette et bureau. D'ailleurs le menu sur mobile a aussi connu de nombreux changement avant d'avoir un rendu satisfaisant.\par
+Après avoir été formé sur les technologies utilisées pour ce projet, j'ai pu apporter ma contribution en migrant certaines pages. Ces migrations étaient généralement accompagnées par une refonte graphique de la page, ainsi que son adaptation à un usage sur tablette et mobile.\par 
+De nouvelles fonctionnalités ont aussi été ajoutées, comme le fil Twitter ou le bandeau pour l'utilisation des cookies, ce dernier étant pour se conformer à la loi.\par 
+Le mobile a aussi eu une place importante dans ce stage. Il y a eu de nombreuses réflexions sur le menu sur mobile qui a changer plusieurs fois d'aspect avant d'être satisfaisant. Des idées ont été proposées afin d'avoir une meilleur intégration sur mobile, bien que la plupart ont été validées, certaines, comme la navigation au sein d'un dossier, n'ont pas été validées.\par
+Le site a été mis en ligne le 12 novembre 2014, sans problèmes majeur. Il y a eu quelques retours sur des problèmes, qui ont été corrigés rapidement.\par 
+\medskip
+Une fois le projet fini, l'entreprise est passé sur un second projet, la migration de l'espace interne, un extranet coopératif, constitué de clubs. En vue de la migration, il m'a été demandé de nettoyer le code et mettre en place un type de club, les bibliothèques. \par 
+D'autre tâches, comme la migration d'une application web m'ont été confié.\par
+\medskip
+Pour conclure, je suis satisfait de ce stage de fin de tronc commun. Au sein de l'entreprise j'ai intégré une équipe dynamique, ce qui nous a permis de bien terminer ce projet, et sur le plan personnel, d'acquérir de bonnes méthodes de travail.\par 
+Ce stage m'a permis de développer mes connaissances dans les langages web (HTML, CSS et Javascript) et sur la \textit{framework} Bootstrap, mais aussi de découvrir de nouvelles technologies (Less). Durant ce stage j'ai aussi été sensibilisé à l'univers mobile, et à l'importance d'avoir un site internet adapté à ces terminaux.\par 
 \newpage
 \printglossaries
 \listoffigures
