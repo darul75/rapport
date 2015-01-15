@@ -6,30 +6,31 @@
 \usepackage[]{pgfgantt}
 \usepackage{rotating}
 \usepackage{glossaries}
+\usepackage{appendix}
 \makeglossaries
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \author{Kevin Rivière}
 \title{Rapport de Stage}
-\date{}
+\date{Fédération Nationale du Crédit Agricole\\ 8 septembre 2014 - 16 janvier 2015}
 
 % Franchisation des commandes
 \renewcommand{\contentsname}{Table des matières}
-\renewcommand{\listfigurename}{Table des figures}
-\renewcommand{\glossaryname}{Glossaire}
+\renewcommand{\listfigurename}{}
+\renewcommand{\glossaryname}{}
 
 % Acronymes (s'utilise avec %gls{ACRONYM})
 \newacronym{SGBD}{SGBD}{Système de Gestion de Base de Données}
 \newacronym{JCMS}{JCMS}{Jalios Content Management System}
 \newacronym{SVN}{SVN}{Subversion}
 \newacronym{JADE}{JADE}{JAlios Delivery Engine}
+\newacronym{HTML}{HTML}{Hypertext Markup Language}
+\newacronym{CSS}{CSS}{Cascading Style Sheets}
+\newacronym{PHP}{PHP}{PHP Hypertext Preprocessor}
 
 \begin{document}
 \maketitle
-\begin{center}
-Fédération Nationale du Crédit Agricole\\
-8 septembre 2014 - 16 janvier 2015
-\end{center}
+Ce stage de 4 mois s'est déroulé à la Fédération Nationale du Crédit Agricole au service Publications et Multimédia. Le sujet du stage concerne la migration d'un applicatif web, avec une refonte graphique, tout en tenant compte des contraintes liées aux différents supports (bureau et mobile).
 \thispagestyle{empty}
 \setcounter{page}{0}
 \newpage
@@ -43,7 +44,7 @@ Fédération Nationale du Crédit Agricole\\
 Dans le cadre de mes études en école d'ingénieur à l'EPITA, un stage devait être effectué en entreprise afin de valider les acquis de la première année du cycle ingénieur. Le stage devait être un stage de développement. Mes recherches se sont basées sur deux grand thèmes différents : 
 \begin{itemize}
 \item le développement d'applications en C/C++ ou en Java,
-\item le développement d'application web en PHP ou en Java.
+\item le développement d'application web en \gls{PHP} ou en Java.
 \end{itemize}\par
 Ayant fait du développement de petits projets durant la première année d'ingénieur, je voulais vraiment travailler sur un gros projet. De plus, les technologies du web ne me sont pas inconnues, j'avais déjà créé un site web, pour mon compte personnel, avant mon entrée à EPITA.\par 
 \medskip
@@ -60,12 +61,12 @@ J'ai donc choisi la seconde offre, et j'ai effectué mon stage à la Fédératio
 \medskip
 Au sein du département publications et multimédia de la Fédération Nationale du Crédit Agricole, vous intégrez une équipe de 6 personnes en charge des sites internet. Dans le cadre de la migration technique prévue des espaces internet et extranet qui reposent sur la solution JCMS (Jalios), des aménagements fonctionnels et une refonte graphique sont prévus.\par
 Vous serez donc amené à intervenir en tant qu'intégrateur web principalement sur la couche présentation mais également initié aux subtilités de notre CMS (technologies Java J2E).\par
-Vous devrez traduire les nouvelles spécifications d'interface et les implémenter au moyen des technologies Javascript, HTML et CSS, et tenir compte des contraintes liés aux différents supports : Tablettes, Mobile, Web.\par 
+Vous devrez traduire les nouvelles spécifications d'interface et les implémenter au moyen des technologies Javascript, \gls{HTML} et \gls{CSS}, et tenir compte des contraintes liés aux différents supports : Tablettes, Mobile, Web.\par 
 Vous serez sous la responsabilité d'un chef de projet et d'un développeur senior.\par 
 \medskip
 Mes principales attentes concernant le stage à la Fédération Nationale du Crédit Agricole son les suivantes :
 \begin{itemize}
-\item développer mes connaissances sur les dernières versions des langages web : HTML 5 et  CSS 3, mais aussi en Javascript,
+\item développer mes connaissances sur les dernières versions des langages web : \gls{HTML} 5 et  \gls{CSS} 3, mais aussi en Javascript,
 \item travailler sur la problématique d'avoir un seul site adapté à une utilisation mobile, tablette et bureau,
 \item travailler sur l'intégration de Bootstrap au sein d'un site,
 \item appliquer et approfondir les notions de gestion de projet vu au cours de la première année du cycle ingénieur,
@@ -203,8 +204,8 @@ Les technologies utilisées pour mener à bien ce projet sont :
 \item Java Entreprise Edition 1.6,
 \item Javascript/JQuery,
 \item Bootstrap 3.0.1,
-\item Less/CSS,
-\item HTML 5.
+\item Less/\gls{CSS},
+\item \gls{HTML} 5.
 \end{itemize}
 
 \subsubsection{Le site creditagricole.info}
@@ -237,7 +238,7 @@ L'espace interne est composé de clubs, ils servent d'espace de discussion et d'
 La base de ce site est donc la rédaction de contenu et la collaboration c'est pour cela que l'entreprise a choisi un système de gestion de contenu. L'entreprise a décidé d'utiliser un SGC français développé par Jalios : \gls{JCMS}.
 
 \subsubsection{JCMS}
-Comme tout SGC, \gls{JCMS} permet de faire de la gestion de contenu avec gestion des droits. Publier des contenus sur un site web devient alors à la portée de tous car il suffit de déposer son contenu sur le site et \gls{JCMS} s'occupe de générer une page page HTML. Un SGC est généralement découpé en deux parties : 
+Comme tout SGC, \gls{JCMS} permet de faire de la gestion de contenu avec gestion des droits. Publier des contenus sur un site web devient alors à la portée de tous car il suffit de déposer son contenu sur le site et \gls{JCMS} s'occupe de générer une page page \gls{HTML}. Un SGC est généralement découpé en deux parties : 
 \begin{itemize}
 \item la première partie, accessible à tout le monde, permet d'afficher les contenus publiés, elle est appelé front office,
 \item l'autre partie, privée, permet d'ajouter des contenus et de paramétrer / structurer le site, c'est le back office.
@@ -268,7 +269,7 @@ Les contenus et les portails peuvent être organisés de façon hiérarchique au
 \end{figure}
 
 \medskip
-Comme vu précédemment, le site creditagricole.info propose un certain nombre de types de contenus qui ne sont pas forcément présents par défaut au sein de \gls{JCMS}. Pour personnaliser ou ajouter des types de contenu ou des portlets, \gls{JCMS} propose un développement par module, qui seront ajoutés à l'application au démarrage du serveur. Les modules contiennent les types de contenu, les gabarits d'affichage, les habillages personnalisés, mais aussi les images, les styles CSS/Less, des Java Server Pages (jsp) qui permettent d'exécuter du java au sein de contenu HTML, etc. Le module doit avoir une structure précise afin de permettre l'intégration à l'application. Dans une but d'assurer une compréhension des actions d'un module, celui-ci doit disposer d'un fichier XML qui fera les liens entre l'application et les fichiers du module, c'est lui qui servira notamment à préciser à \gls{JCMS} si un fichier est un gabarit d'affichage, un habillage, ... et à quel type il est relié.\par 
+Comme vu précédemment, le site creditagricole.info propose un certain nombre de types de contenus qui ne sont pas forcément présents par défaut au sein de \gls{JCMS}. Pour personnaliser ou ajouter des types de contenu ou des portlets, \gls{JCMS} propose un développement par module, qui seront ajoutés à l'application au démarrage du serveur. Les modules contiennent les types de contenu, les gabarits d'affichage, les habillages personnalisés, mais aussi les images, les styles \gls{CSS}/Less, des Java Server Pages (jsp) qui permettent d'exécuter du java au sein de contenu \gls{HTML}, etc. Le module doit avoir une structure précise afin de permettre l'intégration à l'application. Dans une but d'assurer une compréhension des actions d'un module, celui-ci doit disposer d'un fichier XML qui fera les liens entre l'application et les fichiers du module, c'est lui qui servira notamment à préciser à \gls{JCMS} si un fichier est un gabarit d'affichage, un habillage, ... et à quel type il est relié.\par 
 Ce développement par module permet à tous les sites utilisant \gls{JCMS} d'avoir une même base, mais aussi de partager leurs modules sur le site communautaire de Jalios. De là, les autres développeurs peuvent pendre les modules pour ajouter des fonctionnalités à leur site facilement.\par 
 Le site internet creditagricole.info est organisé en plusieurs modules :
 \begin{itemize}
@@ -291,10 +292,10 @@ Le NoSQL, qui veut dire \textit{Not only SQL} en anglais, est un \gls{SGBD} non 
 \gls{JCMS} utilise les deux types de \gls{SGBD}, le SQL est utilisé pour stocker certaines configuration ainsi que quelques données, mais les différentes instances de types et de portlets sont stockées en NoSQL sous forme d'XML. Ce dernier, nommé "store" au sein de \gls{JCMS}, est composé d'un empilement d'opérations (créer, mettre à jour, supprimer), ce système permet de garder en mémoire tous les états de la base de données, et facilite le retour à un état précédent. Le store a facilité la migration, car un point de repère a été placé à la fin de celui-ci au début du développement, de façon à fusionner uniquement les opérations qui se trouvent après la marque.\par
 
 \subsubsection{Less}
-Le less est une extension du langage CSS. Le CSS permet de définir des styles pour les éléments d'une page HTML. Le CSS est un langage statique, les notions de variables, fonctions et boucles n'existent pas en CSS. Le less permet d'apporter ces notions au CSS, cependant, les navigateurs internet ne savent interpréter que du CSS. Le less est donc compilé afin de produire du CSS, cette compilation se produit au démarrage du serveur ou par un administrateur, mais elle n'a pas lieu à chaque chargement d'une page.\par 
+Le less est une extension du langage \gls{CSS}. Le \gls{CSS} permet de définir des styles pour les éléments d'une page \gls{HTML}. Le \gls{CSS} est un langage statique, les notions de variables, fonctions et boucles n'existent pas en \gls{CSS}. Le less permet d'apporter ces notions au \gls{CSS}, cependant, les navigateurs internet ne savent interpréter que du \gls{CSS}. Le less est donc compilé afin de produire du \gls{CSS}, cette compilation se produit au démarrage du serveur ou par un administrateur, mais elle n'a pas lieu à chaque chargement d'une page.\par 
 
 \subsubsection{Bootstrap}
-Bootstrap est un ensemble d'outils, développé par Twitter, utile lors de développement de site web. Il est composé d'un ensemble de code HTML, CSS et Javascript qui permettent de mettre en page un site web facilement, et d'y ajouter quelques fonctionnalités dynamiques comme un carrousel ou un système d'onglet. Toutes les feuilles de styles sont instrumentées en Less, et il est possible de les surcharger pour plus de personnalisation. Pour les fonctionnalités Javascript, Bootstrap utilise la bibliothèque JQuery, qui n'est pas comprit dans ce dernier, il faut donc l'inclure à part.
+Bootstrap est un ensemble d'outils, développé par Twitter, utile lors de développement de site web. Il est composé d'un ensemble de code \gls{HTML}, \gls{CSS} et Javascript qui permettent de mettre en page un site web facilement, et d'y ajouter quelques fonctionnalités dynamiques comme un carrousel ou un système d'onglet. Toutes les feuilles de styles sont instrumentées en Less, et il est possible de les surcharger pour plus de personnalisation. Pour les fonctionnalités Javascript, Bootstrap utilise la bibliothèque JQuery, qui n'est pas comprit dans ce dernier, il faut donc l'inclure à part.
 
 \subsubsection{Mantis}
 Pour le suivi des faits techniques, l'entreprise utilise l'outil OpenSource Mantis. Cet outil se présente sous la forme d'un site web hébergé au sein de l'entreprise. Seule une partie du service est inscrit. Il permet de reporter des bogues ou des améliorations, sous forme de ticket. Ce ticket peut être ensuite attribué à une personne et dispose de plusieurs états. L'outil permet aussi d'ajouter des commentaires et des images aux tickets afin de les rendre plus expressifs.\par 
@@ -340,6 +341,12 @@ Les scripts fournit au sein de \gls{JADE} sont composé des actions suivantes :
 \item deuxième redémarrage de \gls{JCMS} pour effectuer les tests unitaires,
 \item construction du livrable.
 \end{itemize}\par 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{images/jade.png} 
+\caption{Exécution d'un module au sein de Jade}
+\end{figure}
 
 \newpage
 \subsection{Cahier des charges et planning}
@@ -432,10 +439,10 @@ Cette présentation plus claire fut réutilisée pour la page des communiqués d
 \end{figure}
 \bigskip 
 La refonte de la partie brève comprenait aussi un bandeau sur la page d'accueil. Il permet d'afficher le titre de certaines brèves et de renvoyer vers celle-ci. Ces brèves sont choisies, cela dépend d'une certaine catégorisation. Le bandeau affiche un titre après l'autre, de ce fait, il n'y a jamais deux brèves en même temps. Ce bandeau existait sur l'ancien site, et l'on pouvait mettre pause au défilement des titres.\par 
-Sur le nouveau site il a été décidé, dans un souci d'épuration et de simplification, d'enlever les contrôles (jouer, pause) sur le défilement, mais de garder le défilement. Au niveau du développement, afin de ne pas garder de vieux code, il a été décidé de repartir de zéro. L'animation du titre qui disparait pour laisser sa placer au suivant nécessite de modifier le code HTML de la page après sa génération par le serveur. La modification d'un code HTML après sa génération est possible grâce à une interface, le DOM, qui est implémenté au sein du Javascript. De plus afin de faciliter l'utilisation du Javascript, la bibliothèque jQuery a été utilisée.\par 
+Sur le nouveau site il a été décidé, dans un souci d'épuration et de simplification, d'enlever les contrôles (jouer, pause) sur le défilement, mais de garder le défilement. Au niveau du développement, afin de ne pas garder de vieux code, il a été décidé de repartir de zéro. L'animation du titre qui disparait pour laisser sa placer au suivant nécessite de modifier le code \gls{HTML} de la page après sa génération par le serveur. La modification d'un code \gls{HTML} après sa génération est possible grâce à une interface, le DOM, qui est implémenté au sein du Javascript. De plus afin de faciliter l'utilisation du Javascript, la bibliothèque jQuery a été utilisée.\par 
 La méthode mise en place pour permettre cette animation consistait à :
 \begin{itemize}
-\item charger tous les titres des brèves à afficher dans le code HTML, ils sont tous cachés sauf la première, avec une propriété CSS, et ils disposent d'un identifiant unique,
+\item charger tous les titres des brèves à afficher dans le code \gls{HTML}, ils sont tous cachés sauf la première, avec une propriété \gls{CSS}, et ils disposent d'un identifiant unique,
 \item le nombre de brèves à afficher est sauvegardé,
 \item une fois la page chargée par le navigateur, il exécute la fonction en Javascript qui itère en boucle sur tous les titres, avec un intervalle de 5 secondes.
 \end{itemize}
@@ -447,7 +454,7 @@ Aussi, il a été demandé une option permettant de ne pas afficher les évènem
 
 \subsubsection{Adaptation des lanceurs sur mobile et tablette}
 L'un des objectifs principaux du projet était d'avoir un site web adaptatif, c'est à dire que l'interface doit s'adapter automatiquement à la taille de l'écran sur lequel il est visualisé. Le but d'avoir un site web adaptatif est d'éviter la multiplication des pages selon le format d'affichage, mais d'avoir une seule page. Par exemple, lorsqu'un article est affiché sur un ordinateur ou sur un mobile, c'est la même page qui doit être appelée. Cependant l'interface n'est pas la même, il se peut que des éléments soit modifiés, ajoutés ou supprimés.\par 
-Ces modifications sont le plus généralement décrites en CSS à l'aide de \textit{media queries} introduites par le CSS3. Pour se faire il suffit d'avoir des propriétés de style différentes d'une même classe ou d'un même identifiant, et de préciser à l'aide des \textit{media queries} celles qui doivent être utilisées selon la taille de l'écran. D'autres modifications plus spécifiques peuvent être apportées au niveau du serveur. Cela permet de sélectionner la partie de code qui va être exécutée selon l'environnement.\par
+Ces modifications sont le plus généralement décrites en \gls{CSS} à l'aide de \textit{media queries} introduites par le \gls{CSS}3. Pour se faire il suffit d'avoir des propriétés de style différentes d'une même classe ou d'un même identifiant, et de préciser à l'aide des \textit{media queries} celles qui doivent être utilisées selon la taille de l'écran. D'autres modifications plus spécifiques peuvent être apportées au niveau du serveur. Cela permet de sélectionner la partie de code qui va être exécutée selon l'environnement.\par
 \medskip
 L'utilisation de Bootstrap permet de faciliter la création de site internet adaptatif, car celui-ci contient des classes utilisant les \textit{média queries}. De plus, les classes sont basées sur un affichage en grille, la taille d'un élément ne dépend pas d'une taille donné en pixel mais en pourcentage. La grille permet d'afficher 12 éléments par ligne. Il y a donc 12 choix de largeur pour un élément. Par exemple, un élément ayant une largeur de taille 4 et un autre de taille 8 seront placés côte à côte, alors que deux éléments ayant une largeur de taille 12 seront l'un au-dessous de l'autre. La force de Bootstrap réside dans le fait que l'on peut préciser une largeur différente selon la taille de l'écran. Par défaut Bootstrap propose 4 résolutions d'écran :
 \begin{itemize}
@@ -571,7 +578,7 @@ La solution serait de pouvoir partager une brève directement depuis le lanceur.
 \newpage
 Après la mise en production du site, un bogue est apparu au niveau de cette page. Le comportement par défaut de la page était de ne pas réafficher la brève principale dans le lanceur en dessous. Cependant, sur le serveur de production, ce comportement n'était pas reproduit et la brève principale était affichée aussi dans le lanceur.\par 
 La partie où la brève principale est affichée et la partie lanceur sont dans deux JSP différentes. Pour communiquer des informations entre les deux JSP il n'est pas possible de passer par la page qui les contient, car elle est générique. La communication entre les deux JSP se faisait alors à l'aide de variables de \gls{JCMS} relative à la page, et donc communes aux deux JSP.\par 
-Le problème était qu'en production, il y avait des optimisations qui étaient faites, comme la compression des pages HTML et l'optimisation du JavaScript. Après avoir activé une à une les optimisations sur le site en local, le problème a pu être isolé, il y avait de l'interférence entre l'optimisation du JavaScript et les variables relatives à la page.\par 
+Le problème était qu'en production, il y avait des optimisations qui étaient faites, comme la compression des pages \gls{HTML} et l'optimisation du JavaScript. Après avoir activé une à une les optimisations sur le site en local, le problème a pu être isolé, il y avait de l'interférence entre l'optimisation du JavaScript et les variables relatives à la page.\par 
 Le problème a été signalé à Jalios pour qu'il puisse le corriger dans la prochaine version de \gls{JCMS} 9.\par
 
 \newpage
@@ -652,7 +659,7 @@ Android est compatible avec la solution d'Apple et ne requiert pas de développe
 
 \subsubsection{Migration de Mantis}
 L'entreprise dispose de plusieurs serveurs de test pour le site creditagricole.info, mais elle dispose aussi de serveurs pour d'autres usages. L'applicatif de suivi de bogue Mantis est hébergé sur l'un de ces serveurs. Dans un souci de réaffectation des serveurs, l'applicatif léger, qui avait un serveur dédié, sera déplacé sur le serveur de test 2 du site (TST2). Le travail proposé était d'assurer cette migration et de documenter chaque étape, afin de pouvoir effectuer une migration dans le futur, si nécessaire.\par 
-Avant de faire la migration, il était important de vérifier que le serveur destinataire disposait des programmes nécessaires au bon fonctionnement de l'applicatif. Les deux serveurs disposaient du même système d'exploitation Windows Server 2008, et tous deux disposaient du programme Internet Information Service (IIS), qui fait office de serveur web. Cependant sur le serveur de destination, il manquait PHP et MySQL qui sont nécessaires au fonctionnement de l'application. Cependant, comme le serveur de destination était un serveur de test à usage interne, il n'était pas nécessaire d'installer les versions les plus récentes de ces programmes, mais celles qui étaient compatibles.\par 
+Avant de faire la migration, il était important de vérifier que le serveur destinataire disposait des programmes nécessaires au bon fonctionnement de l'applicatif. Les deux serveurs disposaient du même système d'exploitation Windows Server 2008, et tous deux disposaient du programme Internet Information Service (IIS), qui fait office de serveur web. Cependant sur le serveur de destination, il manquait \gls{PHP} et MySQL qui sont nécessaires au fonctionnement de l'application. Cependant, comme le serveur de destination était un serveur de test à usage interne, il n'était pas nécessaire d'installer les versions les plus récentes de ces programmes, mais celles qui étaient compatibles.\par 
 Après avoir installé les programmes nécessaires, et avant de migrer l'applicatif, il a été testé qu'un applicatif vierge pouvait fonctionner sur le serveur. Une fois le test effectué, la base de données pouvait être migrée sur le serveur de destination. Ensuite, au lieu de recopier tout l'applicatif du serveur source au serveur destinataire, il fut décidé de garder l'applicatif installé pour les tests, et d'importer uniquement les fichiers de configuration.\par 
 Durant la migration, le rapport de nouveaux bogues a été stoppé, pour éviter qu'ils ne soient pas migrés. A la fin de la migration la nouvelle adresse fut communiquée à tous les utilisateurs, et l'applicatif qui était sur le serveur source fut arrêté, pour prévenir de rapporter un bogue sur le mauvais serveur.\par
 
@@ -665,10 +672,10 @@ Le développement fut rapide du fait de sa similarité avec le bandeau informant
 \item Comment centrer la portlet, même après un redimensionnement de la page ?
 \item Comment détecter la page d'accueil ?
 \end{itemize}\par
-Pour centrer un élément, on peut utiliser le CSS, pour cela on le place au centre de la page moins la moitié de sa longueur et sa largeur. Le problème ici est que la taille de la portlet n'est pas connue, cela peut être une image, une vidéo ou même un texte. La solution de ce problème était dans l'utilisation du Javascript, grâce à lui, il est possible de récupérer la taille d'un élément sur la page et de définir une nouvelle position pour cet élément.\par 
+Pour centrer un élément, on peut utiliser le \gls{CSS}, pour cela on le place au centre de la page moins la moitié de sa longueur et sa largeur. Le problème ici est que la taille de la portlet n'est pas connue, cela peut être une image, une vidéo ou même un texte. La solution de ce problème était dans l'utilisation du Javascript, grâce à lui, il est possible de récupérer la taille d'un élément sur la page et de définir une nouvelle position pour cet élément.\par 
 Au lieu de détecter la page d'accueil, pourquoi ne pas simplement mettre le code nécessaire sur la page d'accueil ? Cela n'est pas possible car le développement doit se faire dans un module, il doit être possible de désactiver sans devoir changer le code de la page d'accueil. Avec \gls{JCMS}, il est possible d'appeler une JSP à la fin du header, afin d'ajouter des balises dans celui-ci, ou avant le footer. Cependant, il n'est pas possible d'appeler une JSP pour une certaine page. La solution proposée à ce problème était d'appeler la JSP qui génère la pop-up avant le footer et détecter dans celle-ci si la page qui était chargée était bien la page d'accueil. Pour détecter la page d'accueil il suffit de vérifier son identifiant. Cette solution n'est pas la plus optimale mais comme il est impossible détecter une page avant qu'elle soit appelée, c'était la meilleure des solutions.\par 
 \bigskip
-Après avoir vu une animation d'étoiles se déplaçant dans l'univers, il a été proposé de rapatrier le code de cette animation et de le modifier afin d'en faire un effet de neige qui tombe. L'animation était en Javascript et utilisait la balise HTML canvas. Cette balise HTML est utilisée pour avoir des rendus dynamiques d'images, elle permet d'avoir une zone de dessin.\par 
+Après avoir vu une animation d'étoiles se déplaçant dans l'univers, il a été proposé de rapatrier le code de cette animation et de le modifier afin d'en faire un effet de neige qui tombe. L'animation était en Javascript et utilisait la balise \gls{HTML} canvas. Cette balise \gls{HTML} est utilisée pour avoir des rendus dynamiques d'images, elle permet d'avoir une zone de dessin.\par 
 L'effet est un ensemble de ronds blancs, des particules, de différentes tailles. Chaque particule a une vitesse de chute qui lui est assignée à sa création, de manière aléatoire. De plus, les particules effectuent des déplacements horizontaux, qui sont aussi aléatoire. Lorsqu'une particule touche un des côtés (gauche ou droit) de la fenêtre sa trajectoire est inversée horizontalement. Une fois arrivée en bas de la fenêtre, sa position verticale est remise à zéro.\par
 Après quelques tests, le rendu était satisfaisant et il fut proposé d'intégrer l'animation au sein du module évènementiel. L'animation sera une option à activer dans les propriétés du module.\par 
 Un problème survint lors de test plus poussés : l'animation n'avait pas la même fluidité sur tous les navigateurs. La neige de l'animation, les particules, était constituée de petits ronds blancs de différentes tailles. Les navigateurs ne gèrent pas le même nombre de particules à un même niveau de fluidité :
@@ -679,7 +686,7 @@ Un problème survint lors de test plus poussés : l'animation n'avait pas la mê
 \end{itemize}\par 
 Plusieurs optimisations ont été effectuées afin d'avoir plus de particules gérées par Firefox, mais le problème était que  Firefox gère assez mal le dessin de multiples ronds. Il a donc été décidé de ne pas activer l'option sous Firefox et de baisser le nombre de particules sous Internet Explorer.\par 
 \medskip
-Il a aussi été demandé de supprimer toute dépendance à la bibliothèque JQuery pour l'effet neige. En effet, elle n'est pas utilisée pour gérer la génération et les déplacements des particules, elle servait uniquement à repérer la balise canvas dans le document HTML. De cette manière, l'effet neige pourra être utilisé sur d'autre projet qui ne dispose pas de JQuery, car le chargement d'une bibliothèque demande des ressources, mais surtout de la bande passante.\par
+Il a aussi été demandé de supprimer toute dépendance à la bibliothèque JQuery pour l'effet neige. En effet, elle n'est pas utilisée pour gérer la génération et les déplacements des particules, elle servait uniquement à repérer la balise canvas dans le document \gls{HTML}. De cette manière, l'effet neige pourra être utilisé sur d'autre projet qui ne dispose pas de JQuery, car le chargement d'une bibliothèque demande des ressources, mais surtout de la bande passante.\par
 
 
 \begin{figure}[h!]
@@ -691,9 +698,9 @@ Il a aussi été demandé de supprimer toute dépendance à la bibliothèque JQu
 \subsubsection{Flux RSS sur les écrans plasmas}
 La Fédération Nationale du Crédit Agricole possède plusieurs écrans plasma, au sein de ses locaux, pour diffuser des informations au public et aux employés. Parmi les informations diffusées, on retrouve des actualités du site creditagricole.info.\par 
 Pour permettre la diffusion d'information sur les écrans plasmas, l'entreprise utilise une solution développée issue d'une Caisse régionale. Elle permet de contrôler toutes les diffusions sur tous les écrans à partir d'une interface web simple. Pour cela, il faut créer des chaînes, qui contiennent l'information, par exemple une chaine avec la météo. Ces chaînes sont ensuite rassemblées dans des boucles, qui sont ensuite diffusées sur un ou plusieurs écrans. Un écran ne peut diffuser qu'une boucle.\par 
-Une chaîne sert à diffuser les actualités du site. Elle crée une animation à partir du flux RSS récupéré sur le site et une feuille de style CSS, qui est stockée au sein du logiciel. Il est possible de choisir une feuille de style personnalisée, du moment qu'elle se trouve dans un répertoire spécial. Le travail proposé consistait à mettre à jour la feuille de style en y apportant une cohérence graphique avec la nouvelle version du site.\par 
-Un problème se posa lors de l’implémentation et la version du CSS supportée par le logiciel. Le nouvel aspect du site intègre des ombres au niveau des contours de bloc, ce qui est une nouveauté apportée par le CSS3, qui n'est pas forcément disponible au sein du logiciel. La seule manière de savoir la version supportée était de tester, mais le logiciel ne permettait pas d'importer soi-même les fichiers CSS.\par 
-La DSI a été contactée afin de mettre en place le fichier CSS au sein de la solution, cependant l'absence de documentation sur la solution posa problème. Un rendez-vous fut pris avec les développeurs de la solution, qui entre temps en avait fait un produit. Le rendez-vous aura lieu après la fin du stage.\par
+Une chaîne sert à diffuser les actualités du site. Elle crée une animation à partir du flux RSS récupéré sur le site et une feuille de style \gls{CSS}, qui est stockée au sein du logiciel. Il est possible de choisir une feuille de style personnalisée, du moment qu'elle se trouve dans un répertoire spécial. Le travail proposé consistait à mettre à jour la feuille de style en y apportant une cohérence graphique avec la nouvelle version du site.\par 
+Un problème se posa lors de l’implémentation et la version du \gls{CSS} supportée par le logiciel. Le nouvel aspect du site intègre des ombres au niveau des contours de bloc, ce qui est une nouveauté apportée par le \gls{CSS}3, qui n'est pas forcément disponible au sein du logiciel. La seule manière de savoir la version supportée était de tester, mais le logiciel ne permettait pas d'importer soi-même les fichiers \gls{CSS}.\par 
+La DSI a été contactée afin de mettre en place le fichier \gls{CSS} au sein de la solution, cependant l'absence de documentation sur la solution posa problème. Un rendez-vous fut pris avec les développeurs de la solution, qui entre temps en avait fait un produit. Le rendez-vous aura lieu après la fin du stage.\par
 
 \subsubsection{Mise en place de Bibliothèques sur l'espace interne}
 Après la migration du site internet, l'entreprise avait prévu de migrer aussi l'espace interne. Comme le site internet était migré et que les problèmes de démarrages ont été corrigés, la migration de l'espace interne pouvait être lancée. Pour cela, des réunions furent organisées afin de définir les grands axes de cette migration. Un des points d'évolution était la création de Bibliothèques. L'espace interne est composé d'un ensemble de clubs, et certain de ces clubs ne servent uniquement qu'à diffuser des documents au sein gestionnaire de document. L'idée était de faire évoluer ces clubs en bibliothèques, en enlevant toute leurs fonctionnalités sauf celle de partage de documents. Cela permet de bien faire la différence entre les clubs normaux et ceux qui servent uniquement au partage de documents.\par 
@@ -708,41 +715,42 @@ Comme pour les bibliothèque la difficulté ici était de travailler avec une ve
 
 \newpage
 \subsection{Interprétation et critique des résultats}
-Dans son ensemble le site internet mis en ligne respecte le cahier fonctionnel émit par l'agence web BETC. Cependant, quelques ajustements ont dû être faits car le cahier fonctionnel n'était pas complet. Ces ajustements pour être de l'ordre de l'adaptation, par exemple pour les contenus vidéo, mais aussi de l'ordre de la création, par exemple pour les brèves. Aussi certaines maquettes n'ont pas été respectées, du fait de l'intégration de nouvelles fonctionnalités, comme par exemple le module Twitter. Lors de la mise en ligne aucun problème majeur n'a été détecté, les autres problèmes, notamment concernant le menu sur mobile, ont été corrigés rapidement.\par 
+Dans son ensemble le site internet mis en ligne respecte le cahier fonctionnel émit par l'agence web BETC. Cependant, quelques ajustements ont dû être faits, tout en respectant la charte graphique, car le cahier fonctionnel n'était pas complet. Ces ajustements pour être de l'ordre de l'adaptation, par exemple pour les contenus vidéo, mais aussi de l'ordre de la création, par exemple pour les brèves. Aussi certaines maquettes n'ont pas été respectées, du fait de l'intégration de nouvelles fonctionnalités, comme par exemple le module Twitter. Lors de la mise en ligne aucun problème majeur n'a été détecté, les autres problèmes, notamment concernant le menu sur mobile, ont été corrigés rapidement.\par 
 \medskip
-Au niveau fonctionnel, le site correspondait parfaitement aux attentes, cependant au niveau du code, il n'a pas pu être optimisé par faute de délai très court. Par exemple le code CSS produit aurait pu être optimisé, il y a de nombreuses règles redondantes au sein d'un même fichier, sans compter les règles inutilisées. Aussi une fois le site livré, nous nous sommes rendu compte que l'organisation n'était optimale, en effet, il aurait été plus intéressant de faire les règles générales pour le mobile et les \textit{media queries} pour la version bureau. Les règles CSS aurait pu aussi être regroupées par fichier, non pas par rapport au module auquel il appartient mais selon la version du site auquel il appartient (mobile, bureau, tablette).\par
+Au niveau fonctionnel, le site correspondait parfaitement aux attentes, cependant au niveau du code, il n'a pas pu être optimisé par faute de délai très court. Par exemple le code \gls{CSS} produit aurait pu être optimisé, il y a de nombreuses règles redondantes au sein d'un même fichier, sans compter les règles inutilisées. Aussi une fois le site livré, nous nous sommes rendu compte que l'organisation n'était optimale, en effet, il aurait été plus intéressant de faire les règles générales pour le mobile et les \textit{media queries} pour la version bureau. Les règles \gls{CSS} aurait pu aussi être regroupées par fichier, non pas par rapport au module auquel il appartient mais selon la version du site auquel il appartient (mobile, bureau, tablette).\par
 \medskip
 Le manque d'un cahier des charges posa quelques problèmes, tous les points concernant le projet ne furent pas fixés à l'avance. Par exemple la page des brèves a été modifiée de nombreuses fois avant d'avoir un rendu satisfaisant.\par 
 De plus, la recherche d'information concernant une fonctionnalité était compliqué, car en l'absence de cahier des charges et avec un cahier fonctionnel non complet, la plupart des points qui on été fixés étaient regroupé dans un classeur. Ce classeur contenait des échanges de mails, des comptes rendus de réunions et des maquettes, ils étaient organisé par date. Il était donc difficile d'avoir une  vue d'ensemble sur le projet. Ce point aurait pu être corrigé en tenant à jour un document rangé par fonctionnalité et non pas par date.\par 
 
 \begin{sideways}
 \begin{ganttchart}[hgrid, vgrid]{1}{34}
-\gantttitle{Septembre}{6}
+\gantttitle{Septembre}{7}
 \gantttitle{Octobre}{8}
-\gantttitle{Novembre}{8}
-\gantttitle{Décembre}{8}
-\gantttitle{Janvier}{4}\\
-\gantttitlelist{8,20,30,1,10,20,31,1,10,20,30,1,10,20,31,1,10}{2} \\
-\ganttbar{Etude impacte de la nouvelle version}{3}{4} \\
-\ganttmilestone{Réunion avec Jalios}{3}\\
-\ganttbar{Lancement refonte graphique}{5}{9}\\
-\ganttbar{Développement avec JCMS 8}{5}{13}\\
-\ganttlinkedbar{Recette et tests}{14}{19}\\
-\ganttmilestone{Livraison BETC}{14}\\
-\ganttbar{Intégration graphique}{15}{22}\\
-\ganttmilestone{Installation JCMS 9 béta}{20}\\
-\ganttbar{Développement JCMS 9}{21}{25}\\
-\ganttmilestone{Mise en place d'un serveur de pré-prod}{24}\\
-\ganttbar{Recette et tests}{26}{28}\\
-\ganttmilestone{Déploient en production}{28}\\
-\ganttbar{Correctifs}{29}{31}
+\gantttitle{Novembre}{9}
+\gantttitle{Décembre}{9}
+\gantttitle{Janvier}{5}\\
+\gantttitlelist{8,15,22,29,6,13,20,27,3,10,17,24,1,8,15,22,29,5,12}{2} \\
+\ganttbar{Apprentissage}{1}{2} \\
+\ganttbar{Partage sur les réseaux sociaux}{3}{4}\\
+\ganttbar{Brèves}{3}{6}\\
+\ganttbar{Lanceurs mobiles et tablettes}{7}{8}\\
+\ganttbar{Test d'intégration}{8}{10}\\
+\ganttbar{Fil Twitter}{10}{12}\\
+\ganttbar{Retravail sur les brèves}{12}{14}\\
+\ganttbar{Cookies}{14}{15}\\
+\ganttbar{Images sur le site}{21}{24}\\
+\ganttbar{Menu sur mobile}{21}{28}\\
+\ganttbar{Icone pour mobile}{29}{30}\\
+\ganttbar{Migration de Mantis}{30}{31}\\
+\ganttbar{Module évènementiel}{28}{29}\\
+\ganttbar{Bibliothèque et nettoyage espace interne}{30}{34}
 \end{ganttchart}
 \end{sideways}
 
 \newpage
 \section{Conclusion}
 Le stage s'est déroulé à la Fédération Nationale du Crédit Agricole au sein du service Publication et Multimédia. Il avait comme sujet la migration d'un site internet, www.creditagricole.info, dans le but de le mettre en ligne, et assurer une partie du support. Le sujet tournait autour d'une problématique, avoir une interface cohérente et adapté, que ce soit sur bureau, tablette ou mobile.\par 
-Le site est basé sur un système de gestion de contenu (SGC), \gls{JCMS}. Le but du projet était de migrer le site de la version 6 de \gls{JCMS} à la version 9. Pour cela les technologies utilisées étaient le Java, Le Javascript et JQuery, Bootstrap, le Less et le CSS, et enfin l'HTML 5.\par 
+Le site est basé sur un système de gestion de contenu (SGC), \gls{JCMS}. Le but du projet était de migrer le site de la version 6 de \gls{JCMS} à la version 9. Pour cela les technologies utilisées étaient le Java, Le Javascript et JQuery, Bootstrap, le Less et le \gls{CSS}, et enfin l'\gls{HTML} 5.\par 
 Pour ce projet, l'entreprise ne disposait pas de cahier des charges, mais d'un cahier fonctionnel et une charte graphique réalisés par une agence web BETC. L'absence de cahier des charges s'explique en partie par le fait que le but du projet était de migrer le site et non pas d'ajouter de nouvelles fonctionnalités.\par
 Le projet a débuté fin avril 2014 et le site a été mis en production le 12 novembre 2014. Le stage ayant débuté le 8 septembre durant la seconde moitié du projet, il a donc fallut rapidement se familiariser avec le projet.\par 
 \medskip
@@ -755,9 +763,12 @@ Une fois le projet fini, l'entreprise est passé sur un second projet, la migrat
 D'autre tâches, comme la migration d'une application web m'ont été confié.\par
 \medskip
 Pour conclure, je suis satisfait de ce stage de fin de tronc commun. Au sein de l'entreprise j'ai intégré une équipe dynamique, ce qui nous a permis de bien terminer ce projet, et sur le plan personnel, d'acquérir de bonnes méthodes de travail.\par 
-Ce stage m'a permis de développer mes connaissances dans les langages web (HTML, CSS et Javascript) et sur la \textit{framework} Bootstrap, mais aussi de découvrir de nouvelles technologies (Less). Durant ce stage j'ai aussi été sensibilisé à l'univers mobile, et à l'importance d'avoir un site internet adapté à ces terminaux.\par 
+Ce stage m'a permis de développer mes connaissances dans les langages web (\gls{HTML}, \gls{CSS} et Javascript) et sur la \textit{framework} Bootstrap, mais aussi de découvrir de nouvelles technologies (Less). Durant ce stage j'ai aussi été sensibilisé à l'univers mobile, et à l'importance d'avoir un site internet adapté à ces terminaux.\par 
 \newpage
+\section{Glossaire}
 \printglossaries
+
+\section{Table des figures}
 \listoffigures
 
 \end{document}
