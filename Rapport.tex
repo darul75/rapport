@@ -353,7 +353,7 @@ Les scripts fournit au sein de \gls{JADE} sont composé des actions suivantes :
 Pour ce projet, l'entreprise ne disposait pas de cahier des charges précis, mais disposait d'un cahier fonctionnel réalisé par une agence web (BETC). En effet, le but du projet était une migration de la partie internet du site de \gls{JCMS} 6 à \gls{JCMS} 9, tout en simplifiant le site et en mettant son interface à jour. Les fonctionnalités disponibles sur l'ancienne version du site devaient toujours être disponible sur la nouvelle version.\par
 \medskip
 Malgré l’absence d’un réel cahier des charges, le cadre et les différents points furent définis lors de réunions au début du projet fin avril 2014. L'entreprise a fait appel à une agence web, BETC, pour produire un cahier fonctionnel. Le fait de passer par une agence permet d'avoir une vision externe sur le projet, et aussi d'avoir une charte graphique en lien avec les tendances du moment sur le web.\par 
-Après a eu lieu une période de réunions entre l'agence web et l'entreprise, durant laquelle il y eu un échange entre les maquettes fonctionnel d'abord, puis les maquettes graphiques. Cette période pris fin avec la livraison du cahier fonctionnel le 16 juillet 2014. Ce cahier était composé de maquettes fonctionnel du site et d'une charte graphique. Cependant, celui-ci n'était pas complet, seul deux type de contenu avaient une maquette : le type article et le type dossier. Pour les autres pages, c'est l'entreprise qui s'est chargé de les faire.\par
+Après a eu lieu une période de réunions entre l'agence web et l'entreprise, durant laquelle il y eu un échange entre les maquettes fonctionnel d'abord, puis les maquettes graphiques (Cf. annexes page I). Cette période pris fin avec la livraison du cahier fonctionnel (Cf extrait annexes page II) le 16 juillet 2014. Ce cahier était composé de maquettes fonctionnel du site et d'une charte graphique. Cependant, celui-ci n'était pas complet, seul deux type de contenu avaient une maquette : le type article et le type dossier. Pour les autres pages, c'est l'entreprise qui s'est chargé de les faire.\par
 \medskip
 La méthodologie agile fut utilisée lors de ce projet, ce qui permet de développer et valider des fonctionnalités chaque semaine. Cela s'est traduit par des réunions où les objectifs et différents points de migration d'une fonctionnalité étaient abordés, puis le développement (migration) de cette fonctionnalité pouvait commencer. Une fois le développement fini, les objectifs étaient vérifiés afin de valider la migration de la fonctionnalité.\par 
 Cette méthode avait un grand avantage, la réactivité, que ce soit au niveau de modification, correction ou création de fonctionnalités. Mais elle avait aussi des désavantages, certain points ne furent fixés qu'à quelques semaines de la fin du projet.\par 
@@ -658,7 +658,7 @@ Les systèmes d'exploitation mobiles permettent de mettre un lien vers un site i
 Android est compatible avec la solution d'Apple et ne requiert pas de développement supplémentaire.
 
 \subsubsection{Migration de Mantis}
-L'entreprise dispose de plusieurs serveurs de test pour le site creditagricole.info, mais elle dispose aussi de serveurs pour d'autres usages. L'applicatif de suivi de bogue Mantis est hébergé sur l'un de ces serveurs. Dans un souci de réaffectation des serveurs, l'applicatif léger, qui avait un serveur dédié, sera déplacé sur le serveur de test 2 du site (TST2). Le travail proposé était d'assurer cette migration et de documenter chaque étape, afin de pouvoir effectuer une migration dans le futur, si nécessaire.\par 
+L'entreprise dispose de plusieurs serveurs de test pour le site creditagricole.info, mais elle dispose aussi de serveurs pour d'autres usages. L'applicatif de suivi de bogue Mantis est hébergé sur l'un de ces serveurs. Dans un souci de réaffectation des serveurs, l'applicatif léger, qui avait un serveur dédié, sera déplacé sur le serveur de test 2 du site (TST2). Le travail proposé était d'assurer cette migration et de documenter chaque étape (Cf annexes pages V), afin de pouvoir effectuer une migration dans le futur, si nécessaire.\par 
 Avant de faire la migration, il était important de vérifier que le serveur destinataire disposait des programmes nécessaires au bon fonctionnement de l'applicatif. Les deux serveurs disposaient du même système d'exploitation Windows Server 2008, et tous deux disposaient du programme Internet Information Service (IIS), qui fait office de serveur web. Cependant sur le serveur de destination, il manquait \gls{PHP} et MySQL qui sont nécessaires au fonctionnement de l'application. Cependant, comme le serveur de destination était un serveur de test à usage interne, il n'était pas nécessaire d'installer les versions les plus récentes de ces programmes, mais celles qui étaient compatibles.\par 
 Après avoir installé les programmes nécessaires, et avant de migrer l'applicatif, il a été testé qu'un applicatif vierge pouvait fonctionner sur le serveur. Une fois le test effectué, la base de données pouvait être migrée sur le serveur de destination. Ensuite, au lieu de recopier tout l'applicatif du serveur source au serveur destinataire, il fut décidé de garder l'applicatif installé pour les tests, et d'importer uniquement les fichiers de configuration.\par 
 Durant la migration, le rapport de nouveaux bogues a été stoppé, pour éviter qu'ils ne soient pas migrés. A la fin de la migration la nouvelle adresse fut communiquée à tous les utilisateurs, et l'applicatif qui était sur le serveur source fut arrêté, pour prévenir de rapporter un bogue sur le mauvais serveur.\par
@@ -715,37 +715,44 @@ Comme pour les bibliothèque la difficulté ici était de travailler avec une ve
 
 \newpage
 \subsection{Interprétation et critique des résultats}
-Dans son ensemble le site internet mis en ligne respecte le cahier fonctionnel émit par l'agence web BETC. Cependant, quelques ajustements ont dû être faits, tout en respectant la charte graphique, car le cahier fonctionnel n'était pas complet. Ces ajustements pour être de l'ordre de l'adaptation, par exemple pour les contenus vidéo, mais aussi de l'ordre de la création, par exemple pour les brèves. Aussi certaines maquettes n'ont pas été respectées, du fait de l'intégration de nouvelles fonctionnalités, comme par exemple le module Twitter. Lors de la mise en ligne aucun problème majeur n'a été détecté, les autres problèmes, notamment concernant le menu sur mobile, ont été corrigés rapidement.\par 
+Dans son ensemble le site internet mis en ligne respecte le cahier fonctionnel émit par l'agence web BETC. Cependant, quelques ajustements ont dû être faits, tout en respectant la charte graphique, car le cahier fonctionnel n'était pas complet. Ces ajustements pour être de l'ordre de l'adaptation, par exemple pour les contenus vidéo, mais aussi de l'ordre de la création, par exemple pour les brèves. Aussi certaines maquettes n'ont pas été respectées, du fait de l'intégration de nouvelles fonctionnalités, comme par exemple pour la page d'accueil (Cf annexes page IX) avec le module Twitter. \par
+Concernant le site mobile, aucune maquette n'avait été prévu dans le cahier fonctionnel. Il a été décidé d'adapter le plus de portlet à un usage mobile, tout en donnant à la version mobile du site un aspect d'application native (Cf annexes page XI). Les mots d'ordre de la version mobile ont été rapidité, facilité d'utilisation et lisibilité.\par
+Lors de la mise en ligne aucun problème majeur n'a été détecté, les autres problèmes, notamment concernant le menu sur mobile, ont été corrigés rapidement.\par 
+
 \medskip
 Au niveau fonctionnel, le site correspondait parfaitement aux attentes, cependant au niveau du code, il n'a pas pu être optimisé par faute de délai très court. Par exemple le code \gls{CSS} produit aurait pu être optimisé, il y a de nombreuses règles redondantes au sein d'un même fichier, sans compter les règles inutilisées. Aussi une fois le site livré, nous nous sommes rendu compte que l'organisation n'était optimale, en effet, il aurait été plus intéressant de faire les règles générales pour le mobile et les \textit{media queries} pour la version bureau. Les règles \gls{CSS} aurait pu aussi être regroupées par fichier, non pas par rapport au module auquel il appartient mais selon la version du site auquel il appartient (mobile, bureau, tablette).\par
 \medskip
 Le manque d'un cahier des charges posa quelques problèmes, tous les points concernant le projet ne furent pas fixés à l'avance. Par exemple la page des brèves a été modifiée de nombreuses fois avant d'avoir un rendu satisfaisant.\par 
 De plus, la recherche d'information concernant une fonctionnalité était compliqué, car en l'absence de cahier des charges et avec un cahier fonctionnel non complet, la plupart des points qui on été fixés étaient regroupé dans un classeur. Ce classeur contenait des échanges de mails, des comptes rendus de réunions et des maquettes, ils étaient organisé par date. Il était donc difficile d'avoir une  vue d'ensemble sur le projet. Ce point aurait pu être corrigé en tenant à jour un document rangé par fonctionnalité et non pas par date.\par 
 
+\begin{center}
 \begin{sideways}
-\begin{ganttchart}[hgrid, vgrid]{1}{34}
+\begin{ganttchart}[hgrid, vgrid]{1}{38}
 \gantttitle{Septembre}{7}
 \gantttitle{Octobre}{8}
 \gantttitle{Novembre}{9}
 \gantttitle{Décembre}{9}
 \gantttitle{Janvier}{5}\\
 \gantttitlelist{8,15,22,29,6,13,20,27,3,10,17,24,1,8,15,22,29,5,12}{2} \\
-\ganttbar{Apprentissage}{1}{2} \\
+\ganttbar{Apprentissage}{1}{6} \\
 \ganttbar{Partage sur les réseaux sociaux}{3}{4}\\
 \ganttbar{Brèves}{3}{6}\\
-\ganttbar{Lanceurs mobiles et tablettes}{7}{8}\\
+\ganttbar{Développement du site mobile}{7}{10}\\
 \ganttbar{Test d'intégration}{8}{10}\\
 \ganttbar{Fil Twitter}{10}{12}\\
 \ganttbar{Retravail sur les brèves}{12}{14}\\
 \ganttbar{Cookies}{14}{15}\\
+\ganttbar{Tests et recette}{16}{19}\\
+\ganttmilestone{Livraison}{20}\\
 \ganttbar{Images sur le site}{21}{24}\\
 \ganttbar{Menu sur mobile}{21}{28}\\
 \ganttbar{Icone pour mobile}{29}{30}\\
 \ganttbar{Migration de Mantis}{30}{31}\\
 \ganttbar{Module évènementiel}{28}{29}\\
-\ganttbar{Bibliothèque et nettoyage espace interne}{30}{34}
+\ganttbar{Bibliothèque et nettoyage espace interne}{34}{38}
 \end{ganttchart}
 \end{sideways}
+\end{center}
 
 \newpage
 \section{Conclusion}
