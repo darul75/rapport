@@ -71,7 +71,9 @@ Mes principales attentes concernant le stage à la Fédération Nationale du Cr�
 \item travailler sur l'intégration de Bootstrap au sein d'un site,
 \item appliquer et approfondir les notions de gestion de projet vu au cours de la première année du cycle ingénieur,
 \item avoir un maitre de stage à mon écoute et prêt à m'aider à progresser.
-\end{itemize}
+\end{itemize}\par 
+\medskip
+Par rapport au planning du projet, le stage se déroule durant la seconde partie de celui-ci. Le développement a commencé, il faut le terminer et régler les bogues en vue de la mise en ligne du site. Une fois le site en ligne, il faudra corriger les éventuelles bogues et apporter des modifications en fonction des retours des utilisateurs.\par
 
 \newpage
 
@@ -198,7 +200,7 @@ Le stage se positionne comme support dans les travaux de l'entreprise. Le projet
 \subsection{Sujet du stage}
 Le sujet du stage consistait à participer à une refonte du site internet de le Fédération Nationale du Crédit Agricole : www.creditagricole.info, en vue de sa mise en production et corriger les éventuels bogues ensuite.\par
 Le site est basé sur un système de gestion de contenu (SCG ou CMS en anglais), \gls{JCMS} développé par Jalios.\par
-Le site utilisait la version 6 de \gls{JCMS}, sortie en 2009, et le but du projet était de migrer le site sur la version 9 de \gls{JCMS}, sortie en octobre 2014. En plus de ce changement de version, une refonte graphique était aussi prévue.\par
+Le site utilisait la version 6 de \gls{JCMS}, sortie en 2009 et plus supportée, et le but du projet était de migrer le site sur la version 9 de \gls{JCMS}, sortie en octobre 2014. En plus de ce changement de version, une refonte graphique était aussi prévue.\par
 Les technologies utilisées pour mener à bien ce projet sont :
 \begin{itemize}
 \item Java Entreprise Edition 1.6,
@@ -375,7 +377,7 @@ Aussi, la date de fin du projet a changé au cours de celui-ci, il était initia
 \ganttmilestone{Réunion avec Jalios}{3}\\
 \ganttbar{Lancement refonte graphique}{5}{9}\\
 \ganttbar{Développement avec JCMS 8}{5}{13}\\
-\ganttlinkedbar{Recette et tests}{14}{19}\\
+\ganttbar{Recette et tests}{14}{19}\\
 \ganttmilestone{Livraison BETC}{14}\\
 \ganttbar{Intégration graphique}{15}{22}\\
 \ganttmilestone{Installation JCMS 9 béta}{20}\\
@@ -715,15 +717,17 @@ Comme pour les bibliothèque la difficulté ici était de travailler avec une ve
 
 \newpage
 \subsection{Interprétation et critique des résultats}
-Dans son ensemble le site internet mis en ligne respecte le cahier fonctionnel émit par l'agence web BETC. Cependant, quelques ajustements ont dû être faits, tout en respectant la charte graphique, car le cahier fonctionnel n'était pas complet. Ces ajustements pour être de l'ordre de l'adaptation, par exemple pour les contenus vidéo, mais aussi de l'ordre de la création, par exemple pour les brèves. Aussi certaines maquettes n'ont pas été respectées, du fait de l'intégration de nouvelles fonctionnalités, comme par exemple pour la page d'accueil (Cf annexes page IX) avec le module Twitter. \par
-Concernant le site mobile, aucune maquette n'avait été prévu dans le cahier fonctionnel. Il a été décidé d'adapter le plus de portlet à un usage mobile, tout en donnant à la version mobile du site un aspect d'application native (Cf annexes page XI). Les mots d'ordre de la version mobile ont été rapidité, facilité d'utilisation et lisibilité.\par
-Lors de la mise en ligne aucun problème majeur n'a été détecté, les autres problèmes, notamment concernant le menu sur mobile, ont été corrigés rapidement.\par 
+Dans son ensemble le site internet mis en ligne respecte le cahier fonctionnel émit par l'agence web BETC. Cependant, quelques ajustements ont dû être faits, tout en respectant la charte graphique, car le cahier fonctionnel n'était pas complet. De ce fait, toutes les pages qui n'ont pas de maquette dans le cahier fonctionnel ont été adapté à partir des autres maquettes, avec plus ou moins une partie création. Par exemple la page des brèves a repris certain code de la page d'un article, pour l'affichage d'une brève, cependant le parcours au travers des brèves a été imaginé par l'entreprise afin de facilité la navigation. Aussi certaines maquettes n'ont pas été entièrement respectées, du fait de l'intégration de nouvelles fonctionnalités, comme par exemple pour la page d'accueil (Cf annexes page IX) avec le module Twitter. \par
+Le site livré respecte l'un des principaux objectifs de l'entreprise : l'uniformisation des versions bureau, tablette et mobile. Il y a peu de différence entre chaque version, les versions bureau et tablette sont quasiment identique, tandis que la version mobile diffère un peu du fait d'avoir une interface proche de celle d'une application mobile native (Cf annexes page XI). Ceci a été décidé par l'entreprise, car il n'y avait pas version mobile ou tablette des maquettes fournit dans le cahier fonctionnel.\par 
 
 \medskip
 Au niveau fonctionnel, le site correspondait parfaitement aux attentes, cependant au niveau du code, il n'a pas pu être optimisé par faute de délai très court. Par exemple le code \gls{CSS} produit aurait pu être optimisé, il y a de nombreuses règles redondantes au sein d'un même fichier, sans compter les règles inutilisées. Aussi une fois le site livré, nous nous sommes rendu compte que l'organisation n'était optimale, en effet, il aurait été plus intéressant de faire les règles générales pour le mobile et les \textit{media queries} pour la version bureau. Les règles \gls{CSS} aurait pu aussi être regroupées par fichier, non pas par rapport au module auquel il appartient mais selon la version du site auquel il appartient (mobile, bureau, tablette).\par
 \medskip
 Le manque d'un cahier des charges posa quelques problèmes, tous les points concernant le projet ne furent pas fixés à l'avance. Par exemple la page des brèves a été modifiée de nombreuses fois avant d'avoir un rendu satisfaisant.\par 
-De plus, la recherche d'information concernant une fonctionnalité était compliqué, car en l'absence de cahier des charges et avec un cahier fonctionnel non complet, la plupart des points qui on été fixés étaient regroupé dans un classeur. Ce classeur contenait des échanges de mails, des comptes rendus de réunions et des maquettes, ils étaient organisé par date. Il était donc difficile d'avoir une  vue d'ensemble sur le projet. Ce point aurait pu être corrigé en tenant à jour un document rangé par fonctionnalité et non pas par date.\par 
+Ce problème fut accentué par le fait d'avoir un cahier fonctionnel non complet. La création des maquettes manquante a été à la charge de l'entreprise et s'est déroulée tout au long du développement. Lors du travail sur une fonctionnalité du site, la maquette la plus récente était utilisé, cependant ce n'était pas forcément la maquette finale.
+De plus, la recherche d'information concernant une fonctionnalité était compliqué, car la plupart des points qui on été fixés tout au long du projet étaient regroupé dans un classeur. Ce classeur contenait des échanges de mails, des comptes rendus de réunions et des maquettes, ils étaient organisé par date. Il était donc difficile d'avoir une  vue d'ensemble sur le projet. Ce point aurait pu être corrigé en tenant à jour un document rangé par fonctionnalité et non pas par date.\par 
+\medskip
+Le diagramme suivant présente l'organisation des différentes tâches confiées au cours des 4 mois de stage.
 
 \begin{center}
 \begin{sideways}
@@ -771,6 +775,7 @@ D'autre tâches, comme la migration d'une application web m'ont été confié.\p
 \medskip
 Pour conclure, je suis satisfait de ce stage de fin de tronc commun. Au sein de l'entreprise j'ai intégré une équipe dynamique, ce qui nous a permis de bien terminer ce projet, et sur le plan personnel, d'acquérir de bonnes méthodes de travail.\par 
 Ce stage m'a permis de développer mes connaissances dans les langages web (\gls{HTML}, \gls{CSS} et Javascript) et sur la \textit{framework} Bootstrap, mais aussi de découvrir de nouvelles technologies (Less). Durant ce stage j'ai aussi été sensibilisé à l'univers mobile, et à l'importance d'avoir un site internet adapté à ces terminaux.\par 
+De plus, ce stage m'a permit de me remettre à jour sur les technologies utilisées sur le web, notamment le Javascript, qui connait une forte progression d'utilisation grâce au framework NodeJS.\par
 \newpage
 \section{Glossaire}
 \printglossaries
