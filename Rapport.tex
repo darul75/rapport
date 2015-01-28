@@ -518,9 +518,9 @@ Les flux RSS générés par le site ne contenaient pas de feuille de style. La t
 
 \newpage
 \subsubsection{Tests d'intégration continu}
-L'entreprise disposait de \gls{JADE} comme plateforme d'intégration. Elle permet d'effectuer les tests de chaque module, cependant les modules ne contenaient aucun fichier de test. La plupart d'entre eux n'en n'avaient pas besoin car il ne contenait pas de classes. Le travail proposé était donc de produire des tests des fonctions des différentes classes des modules développé par l'entreprise.\par
+L'entreprise disposait de \gls{JADE} comme plateforme d'intégration. Elle permet d'effectuer les tests de chaque module, cependant les modules ne contenaient aucun fichier de test. La plupart d'entre eux n'en n'avaient pas besoin car il ne contenait pas de classes. Le travail proposé était donc de produire des tests des fonctions des différentes classes des modules développés par l'entreprise.\par
 En Java et avec \gls{JCMS}, la production de test passe par la création de classes qui contiennent des méthodes qui testent les méthodes d'autres classes. Pour faire une classe de test, Jalios met a disposition une classe, \textit{JcmsTestCase}, dont il faut hériter. Cette classe permet de mettre en place un environnement de test, avec un store et des configurations spéciales. De ce fait, il est possible de lancer les tests directement depuis Eclipse, qui se chargera de démarrer l'application \gls{JCMS}.\par
-Cependant, il n'était pas possible de tester toutes les méthodes d'une classe. En effet, certaines fonctions étaient spécifiques à un élément, qui ne pouvait pas être recrée simplement dans un environnement de test.\par 
+Cependant, il n'était pas possible de tester toutes les méthodes d'une classe. En effet, certaines fonctions étaient spécifiques à un élément, et ne pouvaient être recrées simplement dans un environnement de test.\par
 
 \newpage
 \subsubsection{Fil Twitter}
